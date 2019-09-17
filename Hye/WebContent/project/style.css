@@ -1,5 +1,5 @@
 @charset "UTF-8";
-header ul, header li, footer ul, footer, li{float:left; list-style-type:none; border:1px solid gray}
-header>div, footer>div{width:1000px}
-div{width:1200px; border:1px solid red}
-li{width:100px}
+*{margin:0; padding:0;}
+ul,li{float:left; list-style-type:none}
+#mainMenu ul:first-child{width:100%; border:1px solid gray;}
+#mainMenu ul:last-child{width:100%; height:50px; background-color:lightblue}
