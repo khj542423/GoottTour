@@ -1,1 +1,5 @@
 @charset "UTF-8";
+header ul, header li, footer ul, footer, li{float:left; list-style-type:none; border:1px solid gray}
+header>div, footer>div{width:1000px}
+div{width:1200px; border:1px solid red}
+li{width:100px}
