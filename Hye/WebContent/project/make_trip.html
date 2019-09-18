@@ -3,41 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name = "viewport" content="width=device-width,initial-scale=1">
-<title>구트투어 상품리스트</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
 <style>
 	div{border : 1px solid red}
-	#tabmenu{margin-left : 30%; width : 603px; height : 50px; margin : 0px auto}
-	#tabmenu>div{float : left; width : 300px; height : 50px; text-align : center;}
-	#tabmenu>div:nth-child(1){background : blue;}
-	#list1, #list2{width : 1200px; height : 1500px; margin : 0px auto}
-	#list2{display : none;}
+	section>div:nth-child(1){border : 3px pink solid; width : 1200px; margin : 0px auto;}
+	#select{width : 1200px; height : 150px; margin : 0px auto;}
+	#select2{height : 700px ; width : 1200px; margin : 0px auto;}
+	#select2>div{float : left; text-align : center}
+	#select2>div:nth-child(1){width : 630px ; height : 700px}
+	#select2>div:nth-child(2){width : 500px ; height : 700px}
+	#car{margin-left : 50px;}
+	#price{width : 1200px ; margin : 0px auto; height : 100px;}
+	#room>div:nth-child(1){width : 400px; height : 100px;margin : 0px auto}
+	#car>div:nth-child(1){width : 300px; height : 100px;margin : 0px auto}
+	#room>div{border-radius : 20px;}
+	#car>div{border-radius : 20px;}
+	#roomresult,#carresult{width : 400px;height : 100px; margin : 0px auto}
+	#price>button{position : relative; left: 1050px; top : 60px}
+	button{background : sigma}
+	hr{width : 80%}
+	#selectRoom,#selectCar{position : absolute; left : 200px ; top : 300px; width : 70%; height : 700px; display : none}
+	#selectRoom>div:nth-child(1){float : left; width : 90%}
+	
 </style>
 <script>
 	$(function(){
-		$("#tabmenu>div").on("click",function(){
-			if(($(this).index() == 1)){
-				$(this).css("background","blue")
-				$("#tabmenu>div").not($(this)).css("background","white")
-				$("#list2").css("display","block")
-				$("#list1").css("display","none")
-			}
-			else{
-				$(this).css("background","blue")
-				$("#tabmenu>div").not($(this)).css("background","white")
-				$("#list1").css("display","block")
-				$("#list2").css("display","none")
-			}
+		$("button").hover(function(){
+			$(this).css("background","gray")
+		},function(){
+			$(this).css("background","none")
 		})
+		$("button").on("click",function(){
+			$("#selectRoom").css("display","block")
+		})
+		$("#close").on("click",function(){
+			$("#selectRoom").css("display","none")
+		})
+		
 	})
 </script>
 </head>
 <body>
-<header class = "navbar fixed-top navbar-expand-lg">
-	<div>
+	<header  class="navbar fixed-top navbar-expand-lg">
+		<div>
 				<div id="mainMenu">
 					<!-- 작은메뉴 -->
 					<ul id="miniMenu" class="navbar-header">
@@ -62,25 +74,38 @@
 				<!-- 이미지배너 -->
 				<div id="imgBanner"></div>
 			</div>
-</header>
-<section>
-<!-- 탭메뉴 인기상품 특가상품 -->
-	<div>
-		<div id = "tabmenu">
-			<div>인기상품</div>
-			<div>특가상품</div>
+	</header>
+	<section>
+		<div></div>
+		<div id = "select">
+			여행만들기 선택사항 출발지역 출발날짜 리턴날짜 인원수
 		</div>
-		<div id = "list1">
-		<!-- 인기상품 -->인기인기
+		<br>
+		<div id = "select2">
+			<div id = "room"><!-- 숙소 -->숙소선택
+				<div>숙소로고</div><br/>숙소<br/>
+				<div id = "roomresult">여기에 선택한 정보가 나옴</div><hr>
+				<button>선택</button><!-- 버튼을 누르면 선택할수있는 div 창이 열리게 -->
+			</div>
+			<div id = "car"><!-- 렌트카-->렌트카선택
+				<div>렌트카로고</div><br/>렌트카<br/>
+				<div id = "carresult">여기에 선택한 정보가 나옴</div><hr><button>선택</button>
+			</div>
 		</div>
-		<div id = "list2">
-		<!-- 특가상품 -->특가특가
+		<br/>
+		<div id = "price">총가격<button>예약하기</button></div>
+		<br/>
+		<!-- 여기부터는 버튼 눌렀을 때 나오는 div 들 -->
+		<div id = "selectRoom">
+			<!-- 숙소선택버튼을 눌렀을때 나올 내용들 -->
+			<div>여기엔 이미지 들어감</div><div id = "close">닫기</div>
 		</div>
-	</div>
-</section>
-
-<footer>
-	<!-- 메뉴 -->
+		<div id = "selectCar">
+			<!-- 렌트카선택버튼을 눌렀을때 나올 내용들 -->sdsdsdsdsdsd
+		</div>
+	</section>
+	<footer>
+		<!-- 메뉴 -->
 			<div id="footMenu">
 				<ul>
 					<li>회사소개</li>
@@ -108,6 +133,6 @@
 					<li><img src="../image/MenuLogo.png"/></li>
 				</ul>
 			</div>
-</footer>
+	</footer>
 </body>
 </html>

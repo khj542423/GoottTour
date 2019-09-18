@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+		<link rel="stylesheet" href="InfoCenterStyle.css" type="text/css"/>
+	</head>
+	<body>
+		<header class="navbar fixed-top navbar-expand-lg">
+			<div>
+				<div id="mainMenu">
+					<!-- 작은메뉴 -->
+					<ul id="miniMenu" class="navbar-header">
+						<li class="nav-item">고객센터</li>
+						<li class="nav-item">여행바구니</li>
+						<li class="nav-item">회원가입</li>
+						<li class="nav-item">로그인</li>
+					</ul>
+				<!-- 주메뉴 -->
+					<ul class="navbar-header">
+						<li class="nav-brand"><img src="../image/MenuLogo.png" id="mainLogo"/></li>
+						<li class="nav-item">수학여행</li>
+						<li class="nav-item">현장학습</li>
+						<li class="nav-item">1박2일</li>
+						<li class="nav-item">기업/단체</li>
+						<li class="nav-item">여행만들기</li>
+						<li class="nav-item">출발지</li>
+						<li class="nav-item">여행후기</li>
+						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
+					</ul>
+				</div>
+				<!-- 이미지배너 -->
+				<div id="imgBanner"></div>
+			</div>
+		</header>
+		<section>
+			<div id="sideMenu">
+				<div>고객센터</div>
+				<ul id="infoList" class="nav nav-tabs flex-column">
+					<li class="nav-item"><a href="#infoTab1"  class="nav-link" data-toggle="tab">공지사항</a></li>
+					<li class="nav-item"><a href="#infoTab2"  class="nav-link" data-toggle="tab">여행문의</a></li>
+					<li class="nav-item"><a href="#infoTab3"  class="nav-link" data-toggle="tab">환불규정</a></li>
+					<li class="nav-item"><a href="#infoTab4"  class="nav-link" data-toggle="tab">자주묻는질문</a></li>
+				</ul>
+			</div>
+			<div id="infoPan" class="tab-content">
+				<div id="infoTab1" class="tab-pane active"><h4>공지사항</h4><hr/>
+					<div id="infoTab">
+						<table id="infoTable" class="table table-striped">
+							<thead class="table table-secondary">
+								<tr>
+					  				<td>번호</td>
+					  				<td>제목</td>
+					  				<td>글쓴이</td>
+					  				<td>날짜</td>
+					  				<td>조회수</td>
+				  				</tr>
+							</thead>
+							<tbody>
+								<tr>
+				  					<td>10</td>
+				  					<td>추석이 다 지나고 공지를 올려서 죄송합니다.</td>
+				  					<td>구트투어</td>
+				  					<td>2019-09-22</td>
+				  					<td>1000</td>
+				  				</tr>
+				  				<tr>
+				  					<td>9</td>
+				  					<td>추석 휴일 안내</td>
+				  					<td>구트투어</td>
+				  					<td>2019-09-22</td>
+				  					<td>10</td>
+				  				</tr>
+				  				<tr>
+				  					<td>8</td>
+				  					<td>제대로적겠습니다</td>
+				  					<td>네..</td>
+				  					<td>2019-09-21</td>
+				  					<td>100</td>
+				  				</tr>
+				  				<tr>
+				  					<td>7</td>
+				  					<td>제대로 써야하는데</td>
+				  					<td>다음엔</td>
+				  					<td>2019-09-21</td>
+				  					<td>2</td>
+				  				</tr>
+				  				<tr>
+				  					<td>6</td>
+				  					<td>제목짓기가가장귀찮다</td>
+				  					<td>이름적기도귀찮다</td>
+				  					<td>2019-09-20</td>
+				  					<td>1</td>
+				  				</tr>
+				  				<tr>
+				  					<td>5</td>
+				  					<td>제목좀잘써라</td>
+				  					<td>글쓴애</td>
+				  					<td>2019-09-19</td>
+				  					<td>10</td>
+				  				</tr>
+								<tr>
+				  					<td>4</td>
+				  					<td>제목입니다</td>
+				  					<td>글쓴이</td>
+				  					<td>2019-09-18</td>
+				  					<td>1</td>
+				  				</tr>
+								<tr>
+				  					<td>3</td>
+				  					<td>제목뭐쓰지</td>
+				  					<td>아까걔</td>
+				  					<td>2019-09-17</td>
+				  					<td>0</td>
+				  				</tr>
+								<tr>
+				  					<td>2</td>
+				  					<td>제목제목</td>
+				  					<td>전게시글쓴애</td>
+				  					<td>2019-09-17</td>
+				  					<td>1</td>
+				  				</tr>
+								<tr>
+				  					<td>1</td>
+				  					<td>첫번째게시글</td>
+				  					<td>김혜진</td>
+				  					<td>2019-09-16</td>
+				  					<td>3</td>
+				  				</tr>
+							</tbody>
+						</table>
+					</div>
+					<div>
+						<ul id="infoPage" class="pagination pagination-sm justify-content-center">
+							<li class="page-item disabled"><a href="#" class="page-link">◀</a></li>
+							<li class="page-item active"><a href="#" class="page-link">1</a></li>
+							<li class="page-item"><a href="#" class="page-link">2</a></li>
+							<li class="page-item"><a href="#" class="page-link">3</a></li>
+							<li class="page-item"><a href="#" class="page-link">4</a></li>
+							<li class="page-item"><a href="#" class="page-link">5</a></li>
+							<li class="page-item"><a href="#" class="page-link">6</a></li>
+							<li class="page-item"><a href="#" class="page-link">7</a></li>
+							<li class="page-item"><a href="#" class="page-link">8</a></li>
+							<li class="page-item"><a href="#" class="page-link">9</a></li>
+							<li class="page-item"><a href="#" class="page-link">▶</a></li>
+						</ul>
+					</div>
+					<div id="infoSearch">
+					<select><option>작성자</option><option>제목</option></select>
+					<input type="text"/>
+					<button>검색</button>
+					<button id="write">글쓰기</button>
+					</div>
+				</div>
+				<div id="infoTab2" class="tab-pane"><h4>여행문의</h4><hr/>
+				
+				</div>
+				<div id="infoTab3" class="tab-pane"><h4>환불규정</h4><hr/>
+				
+				</div>
+				<div id="infoTab4" class="tab-pane"><h4>자주묻는질문</h4><hr/>
+				
+				</div>
+			</div>
+		</section>
+		<footer>
+			<!-- 메뉴 -->
+			<div id="footMenu">
+				<ul>
+					<li>회사소개</li>
+					<li>국내여행표준약관</li>
+					<li>개인정보취급방침</li>
+					<li>이용약관</li>
+					<li>고객센터</li>
+				</ul>
+			</div>
+			<!-- 회사정보 -->
+			<div id="footInfo">
+				<table>
+					<tr>
+						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
+					</tr>
+					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
+					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
+					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
+				</table>
+				<ul id="footImgList">
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+				</ul>
+			</div>
+		</footer>
+	</body>
+</html>
