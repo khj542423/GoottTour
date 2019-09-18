@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.row{border:1px solid green}
+.my-h1{border:0px; height:3px; background:gray; text-align:left;}
+#con td, tr{text-align:center; margin:0 auto;}
+#body td{height:70px;}
+#bottombt{text-align:right; margin-bottom:10px}
+#textbox{width:170px; text-align:right;}
+#count{text-align:right;}
+
