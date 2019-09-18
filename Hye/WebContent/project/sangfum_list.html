@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width=device-width,initial-scale=1">
+<title>구트투어 상품리스트</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style>
+	div{border : 1px solid red}
+	#tabmenu{margin-left : 30%; width : 603px; height : 50px;}
+	#tabmenu>div{float : left; width : 300px; height : 50px; text-align : center;}
+	#tabmenu>div:nth-child(1){background : blue;}
+	#list1, #list2{width : 1000px; height : 1500px; margin-left : 17%}
+	#list2{display : none;}
+</style>
+<script>
+	$(function(){
+		$("#tabmenu>div").on("click",function(){
+			if(($(this).index() == 1)){
+				$(this).css("background","blue")
+				$("#tabmenu>div").not($(this)).css("background","white")
+				$("#list2").css("display","block")
+				$("#list1").css("display","none")
+			}
+			else{
+				$(this).css("background","blue")
+				$("#tabmenu>div").not($(this)).css("background","white")
+				$("#list1").css("display","block")
+				$("#list2").css("display","none")
+			}
+		})
+	})
+</script>
+</head>
+<body>
+<header>
+
+</header>
+<section>
+<!-- 탭메뉴 인기상품 특가상품 -->
+	<div>
+		<div id = "tabmenu">
+			<div>인기상품</div>
+			<div>특가상품</div>
+		</div>
+		<div id = "list1">
+		<!-- 인기상품 -->인기인기
+		</div>
+		<div id = "list2">
+		<!-- 특가상품 -->특가특가
+		</div>
+	</div>
+</section>
+
+<footer>
+
+</footer>
+</body>
+</html>
