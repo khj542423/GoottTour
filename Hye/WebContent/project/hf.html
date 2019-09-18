@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!-- 
+	헤더랑 풋터 대충 잡아논 것 입니다.
+	스타일 시트로 나중에 디자인 해야합니다.
+	메인페이지 작업하시는 분은 이미지 배너를 다르게 지정하여 쓰시면 될 듯 합니다.
+
+ -->
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -10,40 +16,72 @@
 		<link rel="stylesheet" href="style.css" type="text/css"/>
 	</head>
 	<body>
-		<header>
-			<div id="mainMenu">
-				<!-- 작은메뉴 -->
-				<ul>
-					<li>로그인</li>
-					<li>회원가입</li>
-					<li>여행바구니</li>
-					<li>고객센터</li>
-				</ul>
-			<!-- 주메뉴 -->
-				<ul>
-					<li>수학여행</li>
-					<li>현장학습</li>
-					<li>1박2일</li>
-					<li>기업/단체</li>
-					<li>여행만들기</li>
-					<li>출발지</li>
-					<li>여행후기</li>
-					<li>검색창</li>
-				</ul>
+		<header class="navbar fixed-top navbar-expand-lg">
+			<div>
+				<div id="mainMenu">
+					<!-- 작은메뉴 -->
+					<ul id="miniMenu" class="navbar-header">
+						<li class="nav-item">고객센터</li>
+						<li class="nav-item">여행바구니</li>
+						<li class="nav-item">회원가입</li>
+						<li class="nav-item">로그인</li>
+					</ul>
+				<!-- 주메뉴 -->
+					<ul class="navbar-header">
+						<li class="nav-brand"><img src="../image/MenuLogo.png" id="mainLogo"/></li>
+						<li class="nav-item">수학여행</li>
+						<li class="nav-item">현장학습</li>
+						<li class="nav-item">1박2일</li>
+						<li class="nav-item">기업/단체</li>
+						<li class="nav-item">여행만들기</li>
+						<li class="nav-item">출발지</li>
+						<li class="nav-item">여행후기</li>
+						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
+					</ul>
+				</div>
+				<!-- 이미지배너 -->
+				<div id="imgBanner"></div>
 			</div>
-			<!-- 이미지배너 -->
-			<div></div>
-			<!-- 검색창 -->
-			<div></div>
 		</header>
 		<section>
-			<div id="mainPan" class="container">
-				<div>본문</div>
+			<div id="mainPan">
+				<div>
+					<h1>한국닛산이 지난달 31일 공식 전시장 한 곳의 문을 닫은 것으로 확인됐다. 지난 7월부터 시작된 '일본제품 불매운동' 이후 일본자동차 전시장이 공식적으로 폐점한 것이 확인된 건 처음이다.
+						
+						17일 닛산에 따르면 지난달 31일부로 경기도 용인시 기흥구에 위치한 '용인 전시장' 운영을 종료했다. 회사 홈페이지 전시장 안내에서도 용인 전시장은 사라진 상태다.
+						
+						닛산 관계자는 "해당 전시장 계약 종료는 상호 협의로 적합한 절차에 따라 진행됐다"고 설명했다. 또 다른 관계자는 "해당 전시장은 원래부터 차량 2대 정도만 들어가는 협소한 곳"이라며 "운영 종료가 예정돼 있던 것으로 안다"고 전했다.
+						
+						업계에서는 닛산의 판매 부진이 폐점에 영향을 줬을 것으로 본다. 닛산은 불매운동의 영향을 받기 전인 올 상반기까지 판매량이 지난해 대비 25.4% 줄었다. 일본차 전체판매량이 10% 가량 증가한 것과 상반된 모습이다.
+						
+						특히 불매운동이 시작된 후에는 판매량이 곤두박질쳤다. 지난달 닛산의 판매량은 58대로 지난해 같은 기간과 비교해 88%나 급감했다.
+						
+						지난 7일 외신을 통해서는 닛산의 한국 철수설까지 불거졌다. 이에 닛산 관계자는 "철수설 보도는 추측에 불과하다"며 "결정된 것은 아무것도 없고, 정상 근무 중"이라고 말했다. 그러나 영업 부진의 영향으로 닛산의 일부 딜러사는 이미 강제 휴무나 영업사원 감축 등 인력조정에 나서기도 했다.
+						
+						여기에 닛산은 불매운동 후 일본차 브랜드 중 처음으로 전시장 문을 닫게 됐다. 자동차와 달리 의류 브랜드의 경우 이미 폐점을 한 곳이 나왔다. 유니클로 종로3가점, 월계점 등이 대표적인 사례다.
+						
+						전시장 종료와 별개로 닛산은 이날 신차인 '뉴 맥시마'를 출시하며 철수설 불식 의지를 내비쳤다. 허성중 한국닛산 대표는 "소중한 국내 고객에게 최고의 제품과 서비스 제공을 위해 노력을 다하겠다"고 말했다.
+					</h1>
+				</div>
+				<div id="adsfd">
+					<div>
+					<img src="../image/Logo.png"/><img src="../image/Logo.png"/><img src="../image/Logo.png"/><img src="../image/Logo.png"/>
+					</div>
+					<div>
+					<img src="../image/Logo.png"/><img src="../image/Logo.png"/><img src="../image/Logo.png"/><img src="../image/Logo.png"/>
+					</div>
+					<div>
+					<img src="../image/Logo.png"/><img src="../image/Logo.png"/><img src="../image/Logo.png"/><img src="../image/Logo.png"/>
+					</div>
+					<div>
+					<img src="../image/Logo.png"/><img src="../image/Logo.png"/><img src="../image/Logo.png"/><img src="../image/Logo.png"/>
+					</div>
+				</div>
 			</div>
 		</section>
 		<footer>
 			<!-- 메뉴 -->
-			<div>
+			<div id="footMenu">
 				<ul>
 					<li>회사소개</li>
 					<li>국내여행표준약관</li>
@@ -53,7 +91,23 @@
 				</ul>
 			</div>
 			<!-- 회사정보 -->
-			<div></div>
+			<div id="footInfo">
+				<table>
+					<tr>
+						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
+					</tr>
+					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
+					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
+					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
+				</table>
+				<ul id="footImgList">
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+				</ul>
+			</div>
 		</footer>
 	</body>
 </html>
