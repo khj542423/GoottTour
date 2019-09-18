@@ -10,32 +10,65 @@
 <style>
 	div{border : 1px solid red}
 	#a1{width : 100px;}
-	#main{margin : 0px auto; width : 1200px}
-	#a1{margin-left : 500px; width : 200px;}
+	#main{margin : 0px auto; width : 1200px ;height : 600px;}
+	#a1{margin : 0px auto; width : 200px;}
 	#main2>div{float : left; width : 550px; height : 500px;}
 	#select>div:nth-child(1){margin : 50px 0px;}
 	#select>div:nth-child(3){margin-top : 50px; height : 200px;}
 	#select select{width : 100%}
-	option{text-align : center}
 	#count{margin-top : 40px; margin-left : 20px;}
 	#count>div{float : left; text-align:center}
 	#count>div:nth-child(2n + 1){width : 30px;}
 	#count>div:nth-child(2n){width : 40px;}
 	#price{text-align : right;font-size:2.5em; margin-top : 10px;}
-	#choice{padding : 10px; margin-left : 200px;}
+	#choice{padding : 10px; margin-left : 250px;}
 	#choice>button{padding : 20px 20px; margin-left : 20px;}
+	#prospec{height : 500px; margin : 0px auto; width : 1200px;}
+	#tabmenu>div{width : 395px; float : left; margin-left : 2px;}
+	#list1,#list2,#list3{height : 500px;}
+	#tabmenu>div:nth-child(1){background : blue;}
+	#list2 #list3{display : none;}
 	
 </style>
 <script>
 	$(function(){
 		var x = parseInt($("#count>div:nth-child(2)").html());
+		
 		$("#count>div").on("click",function(){
-			if($("#count>div:nth-child(2)").html() >= 0 && $(this).index() == 2)
-			{
+			if($("#count>div:nth-child(2)").html() >= 0 && $("#count>div:nth-child(2)").html() <=99 && $(this).index() == 2){
 				var cnt = x+=1
 				$("#count>div:nth-child(2)").text(cnt);
+				$("#price>span").text(parseInt($("#price>span").html())+92000)
 			}
-			if($("#count>div:nth-child(2)").html() <= 99 && $(this).index() == 0)
+			if($("#count>div:nth-child(2)").html() <= 100 &&$("#count>div:nth-child(2)").html() > 0 && $(this).index() == 0){
+				var cnt = x-=1
+				$("#count>div:nth-child(2)").text(cnt);
+				$("#price>span").text(parseInt($("#price>span").html())-92000)
+				
+			}
+		})
+		$("#tabmenu>div").on("click",function(){
+			if($(this).index() == 0){
+				$(this).css("background","blue")
+				$("#tabmenu>div").not($(this)).css("background","white")
+				$("#list1").css("display","block")
+				$("#list2").css("display","none")
+				$("#list3").css("display","none")
+			}
+			if($(this).index() == 1){
+				$(this).css("background","blue")
+				$("#tabmenu>div").not($(this)).css("background","white")
+				$("#list1").css("display","none")
+				$("#list2").css("display","block")
+				$("#list3").css("display","none")
+			}
+			if($(this).index() == 2){
+				$(this).css("background","blue")
+				$("#tabmenu>div").not($(this)).css("background","white")
+				$("#list1").css("display","none")
+				$("#list2").css("display","none")
+				$("#list3").css("display","block")
+			}
 		})
 	})
 </script>
@@ -45,11 +78,11 @@
 	
 	</header>
 	<section>
-		<div id = "main"> 
+		<div id = "main"> <!-- 윗칸 을 담고 있는 div -->
 			<div id = "a1"><!-- 상품제목 -->신나는 가을바다</div>
 			<div id = "main2">
-				<div id = "imgslide">
-					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style = "width : 400px ; margin : 50px auto" >
+				<div id = "imgslide"><!-- 상품 img 슬라이드 div -->
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style = "width : 400px ;margin : 50px auto" >
   							<ol class="carousel-indicators">
 							    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 							    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -76,14 +109,15 @@
 							  </a>
 					</div>
 				</div>
+				<!-- 가격 및 인원수 설정 및 버튼 -->
 				<div id = "select">
 					<div>제목제목<hr></div>
 					<div>
 							<select name='options'>
 							  <option value='' selected>-- 선택 --</option>
-							  <option value='gg'>gg</option>
-							  <option value='zzz'>zzz</option>
-							  <option value='sss'>sss</option>
+							  <option value='gg'>유아 : 3000</option>
+							  <option value='zzz'>청소년 : 12000</option>
+							  <option value='sss'>성인 : 30000</option>
 							</select>
 					</div>
 					<div style="text-align : center">
@@ -93,10 +127,27 @@
 							<div>0</div>
 							<div>+</div><br>
 						</div>
-						<div id = "price">가격:92000</div>
+						<div id = "price"><span>0</span>원</div>
 						<div id = "choice"><button>예약하기 </button><button>장바구니 </button></div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<!-- 상품 상세 설명 탭메뉴 -->
+		<div id = "prospec">
+			<div id = "tabmenu">
+				<div>상세정보</div>
+				<div>상품정보</div>
+				<div>질문답변</div>
+			</div>
+			<div id = "list1">
+				상세정보
+			</div>
+			<div id = "list2">
+				상품정보
+			</div>
+			<div id = "list3">
+				질문답변
 			</div>
 		</div>
 	</section>
