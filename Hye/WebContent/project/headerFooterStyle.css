@@ -12,6 +12,7 @@ section{padding-top:300px; width:1200px; margin:0px auto;}
 #mainLogo{position:relative; top:-20px}
 #footLogo{position:relative; top:-10px}
 #footreview{margin-top:20px}
+#footreview table tr:first-child td img{margin-right:30px}
 
 
 #mainMenu ul:first-child{float:right; width:100%; margin:0px; font-size:0.9em}
