@@ -1,7 +1,9 @@
 @charset "UTF-8";
 #sideMenu{width:130px; position:absolute; left:220px; top:304px;}
 #sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:lightblue}
-#infoList{width:130px; float:bottom}
+#infoList{width:130px; float:bottom; border:1px solid lightblue}
+#infoList li{width:130px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
+#infoList li:last-child{border-bottom:0px}
 #infoPan{width:100%; height:1000px}
 #infoPan h4{text-align:left; margin-left:30px; margin-top:20px}
 #infoPage{width:100%;}

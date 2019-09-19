@@ -7,16 +7,8 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
 		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
-		<link rel="stylesheet" href="writeFormStyle.css" type="text/css"/>
-		
-		<script>
-		$(function(){
-			CKEDITOR.replace( 'writeText' );
-		});
-		
-		</script>
+		<link rel="stylesheet" href="postStyle.css" type="text/css"/>
 	</head>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
@@ -55,35 +47,32 @@
 			</div>
 			<div id="reviewPan">
 				<div id="reviewTab1"><h4>여행후기</h4><hr/>
-					<div id="reviewWrite">
+					<div id="posting">
 						<table>
 							<tr>
-								<td>이름</td>
-								<td><input type="text" class="bora" id="writer"/></td>
+								<td colspan="4">
+									여행후기제목
+								</td>
 							</tr>
 							<tr>
-								<td>대분류</td>
-								<td><select id="lCategory" class="bora"><option>==대분류==</option></select></td>
+								<td>글쓴이</td>
+								<td>구트투어</td>
+								<td>이메일</td>
+								<td>aaaa@aaaa.aaa</td>
 							</tr>
 							<tr>
-								<td>소분류</td>
-								<td><select id="sCategory" class="bora"><option>==소분류==</option></select></td>
+								<td>날  짜</td>
+								<td>2019-09-22</td>
+								<td>조회수</td>
+								<td>1001</td>
 							</tr>
 							<tr>
-								<td>제목</td>
-								<td><input type="text" class="bora" id="writeTitle"/></td>
-							</tr>
-							<tr>
-								<td>내용</td>
-								<td><textarea id="writeText" name="writeText"></textarea></td>
-								
+								<td colspan="4"><textarea></textarea></td>
 							</tr>
 						</table>
 					</div>
-					<div id="button">
-						<button>돌아가기</button>
-						<button>글작성</button>
-					</div>
+					<hr/>
+					<button>목록보기</button>
 				</div>
 			</div>
 		</section>
