@@ -31,7 +31,7 @@ section{padding-top:300px; width:1200px; margin:0px auto;}
 #footMenu ul li{width:20%;}
 #footInfo td{text-align:left}
 
-#footImgList{margin-top: 20px;}
-#footImgList img{width:160px}
-#footImgList li{margin-right:50px}
+#footImgList{margin-top: 20px;width:100%;}
+#footImgList li{width:20%;text-align:left}
+#footImgList img{width:80%}
 #footImgList li:last-child{margin-right:0px}

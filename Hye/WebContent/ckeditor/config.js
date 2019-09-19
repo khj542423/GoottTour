@@ -10,7 +10,7 @@ CKEDITOR.editorConfig = function( config ) {
 	
 	// 입력창 높이
 	config.height = 400;
-	config.width = '102%';
+	config.width = '100%';
 	
 	// 한글폰트 사용 가능
 	config.font_names='맑은 고딕/Malgun Gothic;굴림/Gulim;돋움/Dotum;바탕/Batang;궁서/Gungsuh;'+ config.font_names; config.filebrowserUploadUrl = '/editor/upload.php';
