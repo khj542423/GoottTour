@@ -1,4 +1,4 @@
-@charset "UTF-8";@charset "UTF-8";
+@charset "UTF-8";
 *{margin:0px; padding:0px; text-align:center}
 header{background:#fff}
 footer {height:200px; margin:0px 15%;}
@@ -9,6 +9,7 @@ section{padding-top:300px; width:1200px; margin:0px auto;}
 
 .navbar{margin:0px; padding:0px 15%; width:100%;}
 #mainLogo, #footLogo{width:280px;}
+
 
 #mainMenu ul:first-child{float:right; width:100%; margin:0px; font-size:0.9em}
 #mainMenu ul:first-child li{float:right; width:80px}
