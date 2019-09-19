@@ -8,9 +8,11 @@ section{margin-bottom:50px}
 #reviewList{float:bottom}
 #reviewPan{width:100%;}
 #reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
-#posting table{border:1px solid #bbb; width:80%;margin:0px auto;margin-bottom:20px;}
-#posting table tr{height:40px;border-bottom:1px solid white;}
-#posting table tr:last-child {border-bottom:0px}
-#posting table tr td:nth-child(2n+1){width:100px; background:yellow}
-#posting table tr td:nth-child(2n){text-align:left; padding-left:20px}
-#posting table tr:last-child td{background:none}
+#posting table{width:80%;margin:0px auto;margin-bottom:20px;}
+#posting table:first-child{border-top:1px solid #ddd;}
+#posting table:first-child tr{height:40px;}
+#posting table:first-child tr:last-child {border-bottom:0px}
+#posting table:first-child tr td:nth-child(2n+1){width:100px; background:yellow;border-bottom:1px solid #fff;}
+#posting table:first-child tr td:nth-child(2n){text-align:left; padding-left:20px;border-bottom:1px solid #ddd;}
+#posting table:first-child tr:last-child td{border-bottom:1px solid #ddd}
+#posting table tr td pre{padding-top: 20px}
