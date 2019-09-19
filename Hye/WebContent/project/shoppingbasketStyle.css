@@ -6,7 +6,5 @@
 #body td{height:70px;}
 #bottombt{text-align:right; margin-bottom:10px}
 #textbox{width:170px; text-align:right;}
-#count{text-align:right;}  
+#count{text-align:right;}
 
-thead tr{height:30px; line-height:40px}
-thead tr th:first-child{margin:0px; padding:0px; height:15px; line-height:30px}
