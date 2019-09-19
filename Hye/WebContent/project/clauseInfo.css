@@ -1,6 +1,7 @@
 @charset "UTF-8";
 #navTab{width:100%; margin-top:10px; margin-bottom:10px}
 #navTab li{width:33%;}
+#navContent div{text-align:left}
 h4{text-align:left;}
 section{margin-bottom:30px}
 

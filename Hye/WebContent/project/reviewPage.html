@@ -8,7 +8,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
-		<link rel="stylesheet" href="InfoCenterStyle.css" type="text/css"/>
+		<link rel="stylesheet" href="reviewPageStyle.css" type="text/css"/>
 	</head>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
@@ -40,18 +40,15 @@
 		</header>
 		<section>
 			<div id="sideMenu">
-				<div>고객센터</div>
-				<ul id="infoList" class="nav flex-column">
-					<li class="nav-item"><a href="#infoTab1"  class="nav-link active" data-toggle="tab">공지사항</a></li>
-					<li class="nav-item"><a href="#infoTab2"  class="nav-link" data-toggle="tab">여행문의</a></li>
-					<li class="nav-item"><a href="#infoTab3"  class="nav-link" data-toggle="tab">환불규정</a></li>
-					<li class="nav-item"><a href="#infoTab4"  class="nav-link" data-toggle="tab">자주묻는질문</a></li>
+				<div>커뮤니티</div>
+				<ul id="reviewList" class="nav flex-column">
+					<li class="nav-item"><a href="#reviewTab1"  class="nav-link active" data-toggle="tab">여행후기</a></li>
 				</ul>
 			</div>
-			<div id="infoPan" class="tab-content">
-				<div id="infoTab1" class="tab-pane active"><h4>공지사항</h4><hr/>
-					<div id="infoTab">
-						<table id="infoTable" class="table table-striped">
+			<div id="reviewPan" class="tab-content">
+				<div id="reviewTab1" class="tab-pane active"><h4>여행후기</h4><hr/>
+					<div id="reviewTab">
+						<table id="reviewTable" class="table table-striped">
 							<thead class="table table-secondary">
 								<tr>
 					  				<td>번호</td>
@@ -136,7 +133,7 @@
 						</table>
 					</div>
 					<div>
-						<ul id="infoPage" class="pagination pagination-sm justify-content-center">
+						<ul id="reviewPage" class="pagination pagination-sm justify-content-center">
 							<li class="page-item disabled"><a href="#" class="page-link">◀</a></li>
 							<li class="page-item active"><a href="#" class="page-link">1</a></li>
 							<li class="page-item"><a href="#" class="page-link">2</a></li>
@@ -150,20 +147,12 @@
 							<li class="page-item"><a href="#" class="page-link">▶</a></li>
 						</ul>
 					</div>
-					<div id="infoSearch">
+					<div id="reviewSearch">
 					<select><option>작성자</option><option>제목</option></select>
 					<input type="text"/>
 					<button>검색</button>
+					<button id="write">글쓰기</button>
 					</div>
-				</div>
-				<div id="infoTab2" class="tab-pane"><h4>여행문의</h4><hr/>
-				
-				</div>
-				<div id="infoTab3" class="tab-pane"><h4>환불규정</h4><hr/>
-				
-				</div>
-				<div id="infoTab4" class="tab-pane"><h4>자주묻는질문</h4><hr/>
-				
 				</div>
 			</div>
 		</section>
@@ -179,7 +168,7 @@
 				</ul>
 			</div>
 			<!-- 회사정보 -->
-			<div id="footInfo">
+			<div id="footreview">
 				<table>
 					<tr>
 						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
