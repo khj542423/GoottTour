@@ -14,6 +14,10 @@
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <script>   
+		<style>
+     	 *{font-family:'Noto Sans KR',sans-serif;} 
+     	 </style>
+<script>
 	$(function(){
 		$('#chk_all').change(function(){
 			if(this.checked){
@@ -42,7 +46,7 @@
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header">
-						<li class="nav-brand"><img src="../image/MenuLogo.png" id="mainLogo"/></li>
+						<li class="nav-brand"><img src="img/MenuLogo.png" id="mainLogo"/></li>
 						<li class="nav-item">수학여행</li>
 						<li class="nav-item">현장학습</li>
 						<li class="nav-item">1박2일</li>
@@ -68,19 +72,19 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>선택<br/><input type='checkbox' id='chk_all' class='chk' style='width:20px;height:20px;'></th>
-          <th style='width:500px'>상품명</th>
-          <th style='width:200px'>출발일</th>
-          <th style='width:100px'>인원수</th>
-          <th style='width:100px'>예약상태</th>
-          <th style='width:200px'>가격</th>
+          <th id='chk1'>선택<br><input type='checkbox' id='chk_all' class='chk' style='width:20px;height:20px;'></input></th>
+          <th style='width:500px; line-height:48px;'>상품명</th>
+          <th style='width:200px; line-height:48px;'>출발일</th>
+          <th style='width:100px; line-height:48px;'>인원수</th>
+          <th style='width:100px; line-height:48px;'>예약상태</th>
+          <th style='width:200px; line-height:48px;'>가격</th>
         </tr>
       </thead>
       
       <tbody id='body'>
         <tr>
-          <td style= 'width:80px; text-align:center'><input type='checkbox' id='chk1' style='width:20px;height:20px;'></td>
-          <td></td>       
+          <td style= 'width:80px; text-align:center ' ><input type='checkbox' id='chk1' style='width:20px;height:20px;'></td>
+          <td>3424</td>       
           <td></td> 
           <td></td>
           <td></td>
@@ -129,18 +133,18 @@
 			<div id="footInfo">
 				<table>
 					<tr>
-						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
+						<td rowspan="4"><img src="img/MenuLogo.png" id="footLogo"/></td>
 					</tr>
 					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
 					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
 					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
 				</table>
 				<ul id="footImgList">
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="img/MenuLogo.png"/></li>
+					<li><img src="img/MenuLogo.png"/></li>
+					<li><img src="img/MenuLogo.png"/></li>
+					<li><img src="img/MenuLogo.png"/></li>
+					<li><img src="img/MenuLogo.png"/></li>
 				</ul>
 			</div>
 		</footer>

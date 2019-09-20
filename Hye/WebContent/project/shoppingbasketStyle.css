@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
-.row{border:1px solid green}
-.my-h1{border:0px; height:3px; background:gray; text-align:left;}
-#con td, tr{text-align:center; margin:0 auto;}
-#body td{height:70px;}
-#bottombt{text-align:right; margin-bottom:10px}
-#textbox{width:170px; text-align:right;}
-#count{text-align:right;}  
+	.row{border:1px solid green}
+	.my-h1{border:0px; height:3px; background:gray; text-align:left;}
+	#con td, tr{text-align:center; margin:0 auto;}
+	#body td{height:70px;}
+	#bottombt{text-align:right; margin-bottom:10px}
+	#textbox{width:170px; text-align:right;}
+	#count{text-align:right;}
+	#chk1 ~ th{line-height:48px;}
 
-thead tr{height:30px; line-height:40px}
-thead tr th:first-child{margin:0px; padding:0px; height:15px; line-height:30px}
