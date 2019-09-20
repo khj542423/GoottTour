@@ -23,7 +23,7 @@ section{padding-top:320px; width:1200px; margin:0px auto;}
 #mainMenu ul:last-child li:last-child{width:200px;}
 #mainMenu input:first-child{height:40px; width:160px;}
 #mainMenu input:last-child{height:40px; width:40px;font-size:0.8em; line-height:40px}
-#imgBanner{margin-top:104px; margin-left:-25%; width:150%; height:200px; background:yellow;}
+#imgBanner{margin-top:104px; margin-left:-25%; width:150%; height:200px; background:#00a7f0;}
 #imgBanner>div{position:absolute; top:158px}
 
 #footInfo{margin:0px 10%; margin-top:20px;white-space:nowrap;}
@@ -61,3 +61,5 @@ section{padding-top:320px; width:1200px; margin:0px auto;}
 #mainMenu a, #footMenu a{color:black; text-decoration:none}
 
 textarea{resize:none}
+
+.hrStyle{border:0; height: 3px; background:#ccc linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))}
