@@ -1,0 +1,24 @@
+@charset "UTF-8";
+section{margin-bottom:50px}
+#sideMenu{width:130px; position:absolute; left:220px; top:304px;}
+#reviewList{width:130px; float:bottom; border:1px solid lightblue}
+#reviewList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
+#reviewList li:last-child{border-bottom:0px}
+#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:lightblue}
+#reviewList{float:bottom}
+#reviewPan{width:100%;}
+#reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
+#reviewWrite{width:80%; margin:0px auto; margin-bottom:20px; border-top: 1px solid #ddd; border-bottom:1px solid #ddd}
+#reviewWrite table tr{height:60px}
+#reviewWrite table tr td:first-child{width:100px; background:yellow; border-bottom:1px solid white}
+#reviewWrite table tr td:last-child{width:90%; padding:20px; border-bottom:1px solid #ddd; text-align:left;}
+#reviewWrite table tr:last-child td:first-child{border-bottom:0px}
+#reviewWrite table tr:last-child td:last-child{border-bottom:0px}
+#button{margin-left:10%; text-align:left}
+#button button:last-child{position:relative; left:835px}
+
+.bora{border:1px solid #ddd; border-radius:3px}
+#writer{width:200px; text-align:left;}
+#lCategory{width:200px}
+#sCategory{width:200px}
+#writeTitle{width:400px; text-align:left}

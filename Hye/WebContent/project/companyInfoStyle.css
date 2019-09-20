@@ -1,5 +1,21 @@
 @charset "UTF-8";
-h4{text-align:left; margin-top:20px}
-hr{margin-bottom:30px}
-.divForm{margin:0px 10%; margin-bottom:100px; text-align:left}
-section div:last-child{text-align:center}
+#sideMenu{position:absolute; left:220px; top:304px;}
+#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:lightblue}
+#infoList{float:bottom}
+#infoPan{width:100%; height:1000px}
+#infoPan h4{text-align:left; margin-left:30px; margin-top:20px}
+#infoPage{width:100%;}
+#infoTable{border:1px solid #bbb; width:80%;margin:0px auto;margin-bottom:20px}
+thead{border-bottom:3px double gray}
+#infoSearch{width:100%; text-align:left; padding-left:120px}
+#write{position:relative; left:610px}
+
+.nav .nav-item .nav-link:not(.active) {
+    background:#fff;
+    color:black;
+}
+
+.nav .nav-item .nav-link {
+    background:rgb(0,123,255);
+    color:white;
+}
