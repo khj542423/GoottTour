@@ -10,13 +10,3 @@
 #infoTable{border:1px solid #bbb; width:80%;margin:0px auto;margin-bottom:20px}
 thead{border-bottom:3px double gray}
 #infoSearch{width:100%; text-align:left; padding-left:120px}
-
-.nav .nav-item .nav-link:not(.active) {
-    background:#fff;
-    color:black;
-}
-
-.nav .nav-item .nav-link {
-    background:rgb(0,123,255);
-    color:white;
-}

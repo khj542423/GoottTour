@@ -35,3 +35,23 @@ section{padding-top:300px; width:1200px; margin:0px auto;}
 #footImgList li{width:20%;text-align:left}
 #footImgList img{width:80%}
 #footImgList li:last-child{margin-right:0px}
+
+#sideBar{position:absolute; top:320px; left:82%; width:120px;}
+#sideBar button{width:100%; margin-bottom:5px; background:gray; color:white; border:none}
+#sideBar ul, #sidebar li{float:bottom; margin:0px}
+#sideBar>div:first-child li{width:100%;}
+#sideBar h6{font-weight:bold}
+
+.sideBarFirstUlList{padding:10px 2px 4px 2px; border-bottom:1px solid gray;}
+#sideBar>div:first-child>ul:first-child>li:last-child{border-bottom:0px}
+#sideBar>div:first-child>ul:first-child>li:first-child>ul>li:first-child{font-weight:bold; color:#6af}
+#sideBar>div:first-child>ul:first-child>li:first-child>ul>li:nth-child(2){font-size:0.75em}
+#sideBar>div:first-child>ul:first-child>li:first-child>ul>li:last-child{font-size:0.7em}
+.myHistory{width:100px; height:70px; border:1px solid gray; margin-bottom:5px}
+
+
+#sideBar>div:last-child>ul>li{height:80px; overflow:hidden; margin-bottom:5px}
+#sidBar>div:last-child>ul>li:last-child{margin-bottom:0px}
+.sideBarAdv{width:100%; height:80px}
+
+#sideBar>div:first-child>ul{border:1px solid gray}
