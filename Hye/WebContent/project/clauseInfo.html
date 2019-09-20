@@ -14,33 +14,51 @@
 		<style>
 		*{font-family:'Noto Sans KR',sans-serif;}
 		</style>
-	</head>
+	<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+				
+			});
+		</script>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
 			<div>
 				<div id="mainMenu">
 					<!-- 작은메뉴 -->
 					<ul id="miniMenu" class="navbar-header">
-						<li class="nav-item">고객센터</li>
-						<li class="nav-item">여행바구니</li>
-						<li class="nav-item">회원가입</li>
-						<li class="nav-item">로그인</li>
+						<li class="nav-item"><a href="#">고객센터</a></li>
+						<li class="nav-item"><a href="#">여행바구니</a></li>
+						<li class="nav-item"><a href="#">회원가입</a></li>
+						<li class="nav-item"><a href="#">로그인</a></li>
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header">
 						<li class="nav-brand"><img src="../image/MenuLogo.png" id="mainLogo"/></li>
-						<li class="nav-item">수학여행</li>
-						<li class="nav-item">현장학습</li>
-						<li class="nav-item">1박2일</li>
-						<li class="nav-item">기업/단체</li>
-						<li class="nav-item">여행만들기</li>
-						<li class="nav-item">출발지</li>
-						<li class="nav-item">여행후기</li>
+						<li class="nav-item"><a href="#">수학여행</a></li>
+						<li class="nav-item"><a href="#">현장학습</a></li>
+						<li class="nav-item"><a href="#">1박2일</a></li>
+						<li class="nav-item"><a href="#">기업/단체</a></li>
+						<li class="nav-item"><a href="#">여행만들기</a></li>
+						<li class="nav-item"><a href="#">출발지</a></li>
+						<li class="nav-item"><a href="#">여행후기</a></li>
 						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
 					</ul>
 				</div>
 				<!-- 이미지배너 -->
-				<div id="imgBanner"></div>
+				<div id="imgBanner">
+					<div>
+					<h1>헤더풋터</h1>
+					<h2>그리고 사이드</h2>
+					</div>
+				</div>
 			</div>
 		</header>
 		<section>
@@ -328,11 +346,11 @@
 			<!-- 메뉴 -->
 			<div id="footMenu">
 				<ul>
-					<li>회사소개</li>
-					<li>국내여행표준약관</li>
-					<li>개인정보취급방침</li>
-					<li>이용약관</li>
-					<li>고객센터</li>
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">국내여행표준약관</a></li>
+					<li><a href="#">개인정보취급방침</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">고객센터</a></li>
 				</ul>
 			</div>
 			<!-- 회사정보 -->
