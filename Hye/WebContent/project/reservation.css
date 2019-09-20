@@ -9,4 +9,5 @@ a:hover{color:blue; text-decoration:underline;}
 #telid{width:20px;} 
 #btn-rev{text-align:center; marign:50px auto; }
 #btn-rev button{margin:50px auto; width:100px; height:50px;}
- 
+#tel-bar, #tel-bar2{width:91px; height:34px; text-align:center; padding-left:15px;} 
+#email-bar, #email-bar2{width:181px; height:34px; margin-left:5px;}
