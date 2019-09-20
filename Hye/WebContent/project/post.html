@@ -9,6 +9,15 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
 		<link rel="stylesheet" href="postStyle.css" type="text/css"/>
+		<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+			});
+		</script>
 	</head>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
