@@ -7,16 +7,18 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <style>
-	div{border : 1px solid red}
 	#a1{width : 100px;}
 	#main{margin : 0px auto; width : 1200px ;height : 600px;}
-	#a1{margin : 0px auto; width : 200px;}
+	#a1{margin : 0px auto; width : 100%; height:50px; line-height:50px; font-size:20px;}
 	#main2>div{float : left; width : 550px; height : 500px;}
+	#imgslide, #select{border:1px solid #ddd; border-radius:5px; margin-top:20px; padding:10px}
+	#imgslide{margin-right:20px}
 	#select>div:nth-child(1){margin : 50px 0px;}
 	#select>div:nth-child(3){margin-top : 50px; height : 200px;}
 	#select select{width : 100%}
@@ -28,9 +30,9 @@
 	#choice{padding : 10px; margin-left : 250px;}
 	#choice>button{padding : 20px 20px; margin-left : 20px;}
 	#prospec{height : 500px; margin : 0px auto; width : 1200px;}
-	#tabmenu>div{width : 395px; float : left; margin-left : 2px;}
+	#tabmenu>div{border:1px solid #ddd; width : 33.33%; float : left;}
 	#list1,#list2,#list3{height : 500px;}
-	#tabmenu>div:nth-child(1){background : blue;}
+	#tabmenu>div:nth-child(1){background : #00a7f0; color:white}
 	#list2,#list3{display : none;}
 	hr{margin:10px 5px;}
 	
@@ -54,22 +56,22 @@
 		})
 		$("#tabmenu>div").on("click",function(){
 			if($(this).index() == 0){
-				$(this).css("background","blue")
-				$("#tabmenu>div").not($(this)).css("background","white")
+				$(this).css("background","#00a7f0").css("color","#fff");
+				$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
 				$("#list1").css("display","block")
 				$("#list2").css("display","none")
 				$("#list3").css("display","none")
 			}
 			if($(this).index() == 1){
-				$(this).css("background","blue")
-				$("#tabmenu>div").not($(this)).css("background","white")
+				$(this).css("background","#00a7f0").css("color","#fff");
+				$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
 				$("#list1").css("display","none")
 				$("#list2").css("display","block")
 				$("#list3").css("display","none")
 			}
 			if($(this).index() == 2){
-				$(this).css("background","blue")
-				$("#tabmenu>div").not($(this)).css("background","white")
+				$(this).css("background","#00a7f0").css("color","#fff");
+				$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
 				$("#list1").css("display","none")
 				$("#list2").css("display","none")
 				$("#list3").css("display","block")
@@ -78,13 +80,57 @@
 	})
 </script>
 </head>
-<body>
-<header>
-	
-	</header>
+		<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+				
+			});
+		</script>
+	<body>
+		<header class="navbar fixed-top navbar-expand-lg">
+			<div>
+				<div id="mainMenu">
+					<!-- 작은메뉴 -->
+					<ul id="miniMenu" class="navbar-header">
+						<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
+						<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
+						<li class="nav-item"><a href="new.html">회원가입</a></li>
+						<li class="nav-item"><a href="login.html">로그인</a></li>
+					</ul>
+				<!-- 주메뉴 -->
+					<ul class="navbar-header">
+						<li class="nav-brand"><a href="main.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
+						<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
+						<li class="nav-item"><a href="#">여행만들기</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
+						<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
+						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
+					</ul>
+				</div>
+				<!-- 이미지배너 -->
+				<div id="imgBanner">
+					<div>
+					<h1>헤더풋터</h1>
+					<h2>그리고 사이드</h2>
+					</div>
+				</div>
+			</div>
+		</header>
 	<section>
 		<div id = "main"> <!-- 윗칸 을 담고 있는 div -->
 			<div id = "a1"><!-- 상품제목 -->신나는 가을바다</div>
+			<hr/>
 			<div id = "main2">
 				<div id = "imgslide"><!-- 상품 img 슬라이드 div -->
 					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style = "width : 400px ;margin : 50px auto" >
@@ -115,7 +161,7 @@
 					</div>
 				</div>
 				<!-- 가격 및 인원수 설정 및 버튼 -->
-				<div id = "select">
+				<div id = "select" style="width:630px">
 					<div>제목제목<hr></div>
 					<div>
 							<select name='options'>
@@ -156,8 +202,35 @@
 			</div>
 		</div>
 	</section>
-	<footer>
-	
-	</footer>
+		<footer>
+			<!-- 메뉴 -->
+			<div id="footMenu">
+				<ul>
+					<li><a href="companyInfo.html">회사소개</a></li>
+					<li><a href="clauseInfoStyle.html">국내여행표준약관</a></li>
+					<li><a href="clauseInfoStyle.html">개인정보취급방침</a></li>
+					<li><a href="clauseInfoStyle.html">이용약관</a></li>
+					<li><a href="InfoCenter.html">고객센터</a></li>
+				</ul>
+			</div>
+			<!-- 회사정보 -->
+			<div id="footInfo">
+				<table>
+					<tr>
+						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
+					</tr>
+					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
+					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
+					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
+				</table>
+				<ul id="footImgList">
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+				</ul>
+			</div>
+		</footer>
 </body>
 </html>
