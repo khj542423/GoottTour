@@ -23,6 +23,18 @@
 			
 	})
 	
+ //이메일 도메인 선택
+
+ function changeEmailDomain(obj){
+
+  alert(obj);
+  alert(obj.value);
+  //document.emailForm.email2.value=obj.value;
+  //document.getElementById("email2").value=obj.value;
+  document.getElementsByName("email2")[0].value=obj.value;
+
+ }
+	
 	
 	
 	
@@ -126,13 +138,27 @@
 		 </select>-<input type="text" name='txt3' size='5' value='' maxlength='4' style='margin-left:5px; margin-right:5px;'>-<input type="text" name='txt4' size='5' value='' maxlength='4' style='margin-left:5px'></p>
 	<p>이메일<br><input type='text' name='txt5' size='15' maxlength='15' style='margin-right:5px'>@<select name="txt7" id='email-bar'>
 			<option value="not" selected>선택</option>
-			<option value="네이트">nate.com</option>
-			<option value="네이버">naver.com</option>
-			<option value="다음">daum.net</option>
-			<option value="구글">google.com</option> 
-			<option value="한메일">hanmail.net</option>
-		
+			 <option value="chol.com" >chol.com</option>
+			 <option value="dreamwiz.com" >dreamwiz.com</option>
+			 <option value="empal.com" >empal.com</option>
+			 <option value="freechal.com" >freechal.com</option>
+			 <option value="gmail.com" >gmail.com</option>
+			 <option value="hanafos.com" >hanafos.com</option>
+			 <option value="hanmail.net" >hanmail.net</option>
+			 <option value="hanmir.com" >hanmir.com</option>
+			 <option value="hitel.net" >hitel.net</option>
+			 <option value="hotmail.com" >hotmail.com</option>
+			 <option value="korea.com" >korea.com</option>
+			 <option value="lycos.co.kr" >lycos.co.kr</option>
+			 <option value="nate.com" >nate.com</option>
+			 <option value="naver.com" >naver.com</option>
+			 <option value="netian.com" >netian.com</option>
+			 <option value="paran.com" >paran.com</option> 
 		 </select>
+		 </p>
+			
+		 
+		 
 	<hr style='margin:10px auto;'>
 	<br> 
 	<p style='margin-top: -15px; font-size:15px'><input type='checkbox' >실제 여행자와 예약자가 동일하면 체크해주세요.</p>
@@ -151,11 +177,22 @@
 		 </select>-<input type="tel" name='txt3' size='5' value='' maxlength='4' style='margin-left:5px; margin-right:5px;'>-<input type="tel" name='txt4' size='5' value='' maxlength='4' style='margin-left:5px'></p>
 	<p>이메일<br><input type='email' name='txt5' size='15' maxlength='15' style='margin-right:5px'>@<select name="txt6" id='email-bar2'>
 			<option value="not" selected>선택</option>
-			<option value="네이트">nate.com</option>
-			<option value="네이버">naver.com</option>
-			<option value="다음">daum.net</option>
-			<option value="구글">google.com</option> 
-			<option value="한메일">hanmail.net</option>
+<option value="chol.com" >chol.com</option>
+			 <option value="dreamwiz.com" >dreamwiz.com</option>
+			 <option value="empal.com" >empal.com</option>
+			 <option value="freechal.com" >freechal.com</option>
+			 <option value="gmail.com" >gmail.com</option>
+			 <option value="hanafos.com" >hanafos.com</option>
+			 <option value="hanmail.net" >hanmail.net</option>
+			 <option value="hanmir.com" >hanmir.com</option>
+			 <option value="hitel.net" >hitel.net</option>
+			 <option value="hotmail.com" >hotmail.com</option>
+			 <option value="korea.com" >korea.com</option>
+			 <option value="lycos.co.kr" >lycos.co.kr</option>
+			 <option value="nate.com" >nate.com</option>
+			 <option value="naver.com" >naver.com</option>
+			 <option value="netian.com" >netian.com</option>
+			 <option value="paran.com" >paran.com</option> 
 			</select>
 			</p> 
 	<p>요청사항 & 문의사항<br><textarea name='content' rows='5' cols='50' style='text-align:left' required placeholder="1000자이내로 입력해주세요."></textarea></p>
