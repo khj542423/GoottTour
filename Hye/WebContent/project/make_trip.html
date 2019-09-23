@@ -7,13 +7,13 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <style>
-	div{border : 1px solid red}
-	section>div:nth-child(1){border : 3px pink solid; width : 1200px; margin : 0px auto;}
+	div{border:1px solid red}
 	#select{width : 1200px; height : 150px; margin : 0px auto;}
 	#select2{height : 700px ; width : 1200px; margin : 0px auto;}
 	#select2>div{float : left; text-align : center}
@@ -49,6 +49,20 @@
 		
 	})
 </script>
+	<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+				
+			});
+		</script>
 </head>
 <body>
 		<header class="navbar fixed-top navbar-expand-lg">
@@ -151,9 +165,9 @@
 			<div id="footMenu">
 				<ul>
 					<li><a href="companyInfo.html">회사소개</a></li>
-					<li><a href="clauseInfoStyle.html">국내여행표준약관</a></li>
-					<li><a href="clauseInfoStyle.html">개인정보취급방침</a></li>
-					<li><a href="clauseInfoStyle.html">이용약관</a></li>
+					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
+					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
+					<li><a href="clauseInfo.html">이용약관</a></li>
 					<li><a href="InfoCenter.html">고객센터</a></li>
 				</ul>
 			</div>
