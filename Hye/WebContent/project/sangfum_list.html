@@ -13,7 +13,6 @@
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <style>
-	div{border : 1px solid red}
 	#tabmenu{margin-left : 30%; width : 603px; height : 50px; margin : 0px auto}
 	#tabmenu>div{float : left; width : 300px; height : 50px; text-align : center;}
 	#tabmenu>div:nth-child(1){background : blue;}
@@ -38,6 +37,20 @@
 		})
 	})
 </script>
+	<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+				
+			});
+		</script>
 </head>
 <body>
 		<header class="navbar fixed-top navbar-expand-lg">
