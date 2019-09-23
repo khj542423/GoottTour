@@ -13,8 +13,9 @@
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <style>
-	#imgBanner{height:600px; width:159.3%; margin-left:-30%;}
-	#imgBanner>div{top:380px;}
+	#imgBanner{height:650px; width:159.3%; margin-left:-30%; overflow:hidden}
+	#bannerImg{width:100%;margin-top:-300px;pointer-events: none}
+	#imgBanner>div{top:420px;}
 	#imgBanner>div>input{height:70px}
 	#imgBanner>div>input:first-child{width:850px}
 	#imgBanner>div>input:last-child{width:60px}
@@ -47,6 +48,7 @@
 </script>
 </head>
 	<script>
+		var imgNum = 1;
 		$(function(){
 			var sectionHeight = $("section").height();
 			var sideBarHeight = $("#sideBar").height();
@@ -56,6 +58,19 @@
 			
 			var imgBannerTextWidth = $("#imgBanner>div").width();
 			$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+			
+			//배너 이미지 변경
+			$("#bannerImg").click(function(){
+				$("#bannerImg").attr("src","../image/main_img_banner_"+imgNum+".jpg");
+				imgNum++;
+				if(imgNum>9)imgNum=1;
+			});
+			
+			//자동이벤트 발생
+			setInterval(function(){
+					//						이벤트.
+					$("#bannerImg").trigger("click");
+			}, 4000);
 			
 		});
 	</script>
@@ -87,6 +102,7 @@
 	<section>
 		<!-- 이미지배너 -->
 		<div id="imgBanner">
+			<img src="../image/main_img_banner_1.jpg" id="bannerImg"/>
 			<div>
 			<input type="text"><input type="button" value="검색"/>
 			</div>
@@ -114,7 +130,7 @@
 			  </a>
 			</div>
 		</div>
-		<div id = "container"><!-- 인기상품  상품 클릭시 그 상품 페이지로 이동-->top Product<hr style='border:0; height: 3px; background:#ccc linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));'>
+		<div id = "container"><!-- 인기상품  상품 클릭시 그 상품 페이지로 이동-->top Product<hr class="hrStyle"/>
 			<div><img src = "../image/sangfum_01.jpg"><br/>상품정보</div>
 			<div><img src = "../image/sangfum_01.jpg"><br/>상품정보</div>
 			<div><img src = "../image/sangfum_01.jpg"><br/>상품정보</div>
