@@ -12,34 +12,48 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
      	 *{font-family:'Noto Sans KR',sans-serif;} 
-     	 </style>
+     	</style>
+    	
+    	<script type="text/javascript">
+     	
+    	$(function(){
+    		var same = $(this).checked;
+    		$('#samecheck').click(function(){
+    			var temp = document.getElementById('rev-name').value
+    			var temp2 = document.getElementById('rev-tel').value
+    			var temp3 = document.getElementById('rev-tel2').value
+    			document.getElementById('trv-name').value=temp;
+    			document.getElementById('trv-tel').value=temp2;
+    			document.getElementById('trv-tel2').value=document.getElementById('rev-tel2').value;
+    			document.getElementById('trv-tel3').value=document.getElementById('rev-tel3').value;
+    			if(same===true){
+    				$('#samecontent input').filter('input:text')
+    				.attr('disabled','disabled')
+    				.css('opactiy', 0.5);
+    			}else	
+	    			$('#samecontent input').filter('input:text').attr('readonly',false)
+	    			.css('opacity', 1);
+    		})
+    	}) 
+     	</script>
 	</head>
-	<script>
+
+<script>	
+
 	$(function(){
 			$('#btn1').on('click',function(){
 				$(this).css('background-color','orange').css('color','#fff');
 				alert('예약이완료됨.');
 			})
 			
-	})
-	
- //이메일 도메인 선택
+	});
 
- function changeEmailDomain(obj){
 
-  alert(obj);
-  alert(obj.value);
-  //document.emailForm.email2.value=obj.value;
-  //document.getElementById("email2").value=obj.value;
-  document.getElementsByName("email2")[0].value=obj.value;
 
- }
-	
-	
-	
-	
-	</script>
+</script>
+
 <script>
+	
 			$(function(){
 				var sectionHeight = $("section").height();
 				var sideBarHeight = $("#sideBar").height();
@@ -52,7 +66,7 @@
 				
 				
 			});
-		</script>
+</script>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
 			<div>
@@ -121,12 +135,15 @@
 	        <td>상품명</td> 
 	  
 	      </tr>
-	    </tbody>
+	    </tbody> 
 	  </table>
 	<div id='join'>
 	
-	<p>예약자<br><input type="text" name='txt1' size='10' maxlength='5' required placeholder="이름"></p>  
-	<p>연락처<br><select name="tel" id='tel-bar' style='margin-right:5px'>
+	<p>예약자<br><input type="text" name='rev-name' size='10' maxlength='5' required placeholder="이름" id='rev-name'></p>  
+	<p>연락처<br><input type='text' name='rev-tel' id='rev-tel' style="margin-right:5px">
+	
+	
+			<!-- <select name="rev-tel" id='rev-tel' style='margin-right:5px'>
 			<option value="not">==선택==</option>
 			<option value="010" selected>010</option>
 			<option value="서울">02</option>
@@ -135,8 +152,10 @@
 			<option value="광주">062</option> 
 			<option value="대전">042</option>
 			<option value="울산">052</option>
-		 </select>-<input type="text" name='txt3' size='5' value='' maxlength='4' style='margin-left:5px; margin-right:5px;'>-<input type="text" name='txt4' size='5' value='' maxlength='4' style='margin-left:5px'></p>
-	<p>이메일<br><input type='text' name='txt5' size='15' maxlength='15' style='margin-right:5px'>@<select name="txt7" id='email-bar'>
+			</select> -->-<input type="text" name='rev-tel2' size='2' value='' maxlength='4' id='rev-tel2' style='margin-left:5px; margin-right:5px;'>-<input type="text" name='rev-tel3' size='2' value='' id='rev-tel3' maxlength='4' style='margin-left:5px;'></p>
+	<p>이메일<br><input type='text' name='txt5' size='15' maxlength='15' id=email-bar style='margin-right:5px'>@
+	<input type='text' name='txt5' size='15' maxlength='15' id=email-bar2 style='margin-right:5px'>
+	<!-- <select name="txt7" id='email-bar'>
 			<option value="not" selected>선택</option>
 			 <option value="chol.com" >chol.com</option>
 			 <option value="dreamwiz.com" >dreamwiz.com</option>
@@ -154,18 +173,21 @@
 			 <option value="naver.com" >naver.com</option>
 			 <option value="netian.com" >netian.com</option>
 			 <option value="paran.com" >paran.com</option> 
-		 </select>
+		 </select> -->
 		 </p>
 			
 		 
 		 
 	<hr style='margin:10px auto;'>
 	<br> 
-	<p style='margin-top: -15px; font-size:15px'><input type='checkbox' >실제 여행자와 예약자가 동일하면 체크해주세요.</p>
+	<div id='samecontent'>
+	<p style='margin-top: -15px; font-size:15px'><input type='checkbox' id='samecheck' >실제 여행자와 예약자가 동일하면 체크해주세요.</p>
+	</div>
 	<hr style='margin:10px auto;'>
 	
-	<p>여행자<br><input type="text" name='txt1' size='10' maxlength='5' required placeholder="이름"></p>  
-	<p>연락처<br><select name="tel" id='tel-bar2' style='margin-right:5px'>
+	<p>여행자<br><input type="text" name='trv-name' size='10' maxlength='5' required placeholder="이름" id='trv-name'></p>  
+	<p>연락처<br><input type='text' name='trv-tel' id='trv-tel' style='margin-right:5px'>
+			<!-- <select name="trv-tel" id='trv-tel' style='margin-right:5px'>
 			<option value="not">==선택==</option>
 			<option value="010" selected>010</option>
 			<option value="서울">02</option>
@@ -174,10 +196,12 @@
 			<option value="광주">062</option> 
 			<option value="대전">042</option>
 			<option value="울산">052</option>
-		 </select>-<input type="tel" name='txt3' size='5' value='' maxlength='4' style='margin-left:5px; margin-right:5px;'>-<input type="tel" name='txt4' size='5' value='' maxlength='4' style='margin-left:5px'></p>
-	<p>이메일<br><input type='email' name='txt5' size='15' maxlength='15' style='margin-right:5px'>@<select name="txt6" id='email-bar2'>
+		 </select> -->-<input type="tel" id=trv-tel2 name='trv-tel2' size='2' value='' maxlength='4' style='margin-left:5px; margin-right:5px;'>-<input type="tel"  id='trv-tel3' name='trv-tel4' size='2' value='' maxlength='4' style='margin-left:5px'></p>
+	<p>이메일<br><input type='email' name='txt5' size='15' maxlength='15' id=email-bar3 style='margin-right:5px'>@
+			<input type='text' name='txt5' size='15' maxlength='15' id=email-bar4 style='margin-right:5px'>
+			<!-- <select name="txt6" id='email-bar2'>
 			<option value="not" selected>선택</option>
-<option value="chol.com" >chol.com</option>
+			<option value="chol.com" >chol.com</option>
 			 <option value="dreamwiz.com" >dreamwiz.com</option>
 			 <option value="empal.com" >empal.com</option>
 			 <option value="freechal.com" >freechal.com</option>
@@ -193,7 +217,7 @@
 			 <option value="naver.com" >naver.com</option>
 			 <option value="netian.com" >netian.com</option>
 			 <option value="paran.com" >paran.com</option> 
-			</select>
+			</select> -->
 			</p> 
 	<p>요청사항 & 문의사항<br><textarea name='content' rows='5' cols='50' style='text-align:left' required placeholder="1000자이내로 입력해주세요."></textarea></p>
 	<div id='btn-rev'>
