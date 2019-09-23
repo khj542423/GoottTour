@@ -24,9 +24,9 @@
 				var imgBannerTextWidth = $("#imgBanner>div").width();
 				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
 				
-				
 			});
 		</script>
+	</head>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
 			<div>
@@ -138,7 +138,30 @@
 				</table>
 			</div>
 			<h1>오시는길</h1><hr/>
-			<div class="divForm"><img src="../image/jeju_map.jpg"></div>		
+			<div class="divForm">
+				<div id="goottMap">
+					<!--
+						* 카카오맵 - 약도서비스
+						* 한 페이지 내에 약도를 2개 이상 넣을 경우에는
+						* 약도의 수 만큼 소스를 새로 생성, 삽입해야 합니다.
+					-->
+					<!-- 1. 약도 노드 -->
+					<div id="daumRoughmapContainer1569207905305" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+					
+					<!-- 2. 설치 스크립트 -->
+					<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+					
+					<!-- 3. 실행 스크립트 -->
+					<script charset="UTF-8">
+						new daum.roughmap.Lander({
+							"timestamp" : "1569207905305",
+							"key" : "v53e",
+							"mapWidth" : "640",
+							"mapHeight" : "360"
+						}).render();
+					</script>
+				</div>
+			</div>		
 		</section>
 		<footer>
 			<!-- 메뉴 -->
