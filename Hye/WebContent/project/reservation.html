@@ -11,13 +11,13 @@
 		<link rel='stylesheet' href='reservation.css' type='text/css'/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
-     	 *{font-family:'Noto Sans KR',sans-serif;} 
+     	 	*{font-family:'Noto Sans KR',sans-serif;} 
      	</style>
     	
     	<script type="text/javascript">
-     	
+     		
     	$(function(){
-    		var same = $(this).checked;
+    		var same = checked;
     		$('#samecheck').click(function(){
     			var temp = document.getElementById('rev-name').value
     			var temp2 = document.getElementById('rev-tel').value
@@ -26,15 +26,21 @@
     			document.getElementById('trv-tel').value=temp2;
     			document.getElementById('trv-tel2').value=document.getElementById('rev-tel2').value;
     			document.getElementById('trv-tel3').value=document.getElementById('rev-tel3').value;
-    			if(same===true){
+    			document.getElementById('email-bar3').value=document.getElementById('email-bar').value;
+    			document.getElementById('email-bar4').value=document.getElementById('email-bar2').value;
+    			console.log(checked)
+    			if(same==false){
     				$('#samecontent input').filter('input:text')
     				.attr('disabled','disabled')
     				.css('opactiy', 0.5);
-    			}else	
-	    			$('#samecontent input').filter('input:text').attr('readonly',false)
+    				/* console.log(checked); */
+    			}else{
+	    			$('#samecontent input').filter('input:text').attr('che',false)
 	    			.css('opacity', 1);
+	    			/* console.log(checked) */
+    			}
     		})
-    	}) 
+    	})
      	</script>
 	</head>
 
