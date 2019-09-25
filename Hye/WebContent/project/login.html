@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="logcss.css" type="text/css" />
+<link rel="stylesheet" href="headerFooterStyle.css" type="text/css" />
+<script>
+	function popup() {
+		var url = "pop.html";
+		var name = "아이디/비밀번호 찾기";
+		var option = "width=530, height=340, top=200, left=200 resizable=no"
+		window.open(url, name, option);
+	}
+</script>
+<script language="JavaScript">
+	function CheckIt_com(form) {
+
+		if (inputID.value == "") {
+			alert("아이디를 입력하여 주십시오!");
+			inputID.focus();
+			return false;
+		}
+
+		if (inputPassword.value == "") {
+			alert("비밀번호를 입력하여 주십시오!");
+			inputPassword.focus();
+			return false;
+		}
+
+		document.submit();
+
+	}
+
+	function CheckIt_mem(form) {
+
+		if (inputID.value == "") {
+			alert("아이디를 입력하여 주십시오!");
+			inputID.focus();
+			return false;
+		}
+
+		if (inputPassword.value == "") {
+			alert("비밀번호를 입력하여 주십시오!");
+			inputPassword.focus();
+			return false;
+		}
+
+		document.submit();
+	}
+</script>
+</head>
+
+<body>
+	<header class="navbar fixed-top navbar-expand-lg">
+		<div>
+			<div id="mainMenu">
+				<!-- 작은메뉴 -->
+				<ul id="miniMenu" class="navbar-header">
+					<li class="nav-item">고객센터</li>
+					<li class="nav-item">여행바구니</li>
+					<li class="nav-item">회원가입</li>
+					<li class="nav-item">로그인</li>
+				</ul>
+				<!-- 주메뉴 -->
+				<ul class="navbar-header">
+					<li class="nav-brand"><img src="../image/MenuLogo.png"
+						id="mainLogo" /></li>
+					<li class="nav-item">수학여행</li>
+					<li class="nav-item">현장학습</li>
+					<li class="nav-item">1박2일</li>
+					<li class="nav-item">기업/단체</li>
+					<li class="nav-item">여행만들기</li>
+					<li class="nav-item">출발지</li>
+					<li class="nav-item">여행후기</li>
+					<li class="nav-item"><div>
+							<input type="text"><input type="button" value="검색" />
+						</div></li>
+				</ul>
+			</div>
+			<!-- 이미지배너 -->
+			<div id="imgBanner"></div>
+		</div>
+	</header>
+	<section>
+		<form class="form-signin" action="main.html">
+			<div class="text-center">
+				<img src="img1/key.png">
+				<h1 class="h3 mb-3 font-weight-bold">로그인</h1>
+
+			</div>
+
+			<div class="form-label-group">
+				<input type="text" id="inputID" class="form-control" required
+					autofocus> <label for="userid">아이디</label>
+			</div>
+
+			<div class="form-label-group">
+				<input type="password" id="inputPassword" class="form-control">
+				<label for="userpwd">패스워드</label>
+			</div>
+			<button class="btn btn-lg btn-secondary btn-block" type="submit"
+				id="log" onClick="return CheckIt_com(this.form)">로그인</button>
+			<a target="_blank" id="idinquiry" href="new.html">회원가입</a><a
+				id="pwinquiry" href="#" onclick="popup();">아이디/비밀번호 찾기</a>
+		</form>
+	</section>
+	<footer>
+		<!-- 메뉴 -->
+		<div id="footMenu">
+			<ul>
+				<li>회사소개</li>
+				<li>국내여행표준약관</li>
+				<li>개인정보취급방침</li>
+				<li>이용약관</li>
+				<li>고객센터</li>
+			</ul>
+		</div>
+		<!-- 회사정보 -->
+		<div id="footInfo">
+			<table>
+				<tr>
+					<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo" /></td>
+				</tr>
+				<tr>
+					<td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td>
+				</tr>
+				<tr>
+					<td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제
+						2019-어쩌구형-0001호</td>
+				</tr>
+				<tr>
+					<td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td>
+				</tr>
+			</table>
+			<ul id="footImgList">
+				<li><img src="../image/MenuLogo.png" /></li>
+				<li><img src="../image/MenuLogo.png" /></li>
+				<li><img src="../image/MenuLogo.png" /></li>
+				<li><img src="../image/MenuLogo.png" /></li>
+				<li><img src="../image/MenuLogo.png" /></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

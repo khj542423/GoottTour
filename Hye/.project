@@ -28,4 +28,46 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/project/img1/btn.login.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/btn.login.png</locationURI>
+		</link>
+		<link>
+			<name>WebContent/project/img1/btn_idpw_close.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/btn_idpw_close.png</locationURI>
+		</link>
+		<link>
+			<name>WebContent/project/img1/btn_join.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/btn_join.png</locationURI>
+		</link>
+		<link>
+			<name>WebContent/project/img1/key.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/key.png</locationURI>
+		</link>
+		<link>
+			<name>WebContent/project/img1/log.gif</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/log.gif</locationURI>
+		</link>
+		<link>
+			<name>WebContent/project/img1/log.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/log.png</locationURI>
+		</link>
+		<link>
+			<name>WebContent/project/img1/mo.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/mo.png</locationURI>
+		</link>
+		<link>
+			<name>WebContent/project/img1/tit_idpw.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/tit_idpw.png</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
