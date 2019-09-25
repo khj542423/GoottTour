@@ -5,7 +5,9 @@
 <meta name = "viewport" content="width=device-width,initial-scale=1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="jquery-ui.min.css" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -13,22 +15,14 @@
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <style>
-	
+	#makeTrip{border:1px solid #ddd; border-radius:5px}
 	
 </style>
 <script>
 	$(function(){
-		$("button").hover(function(){
-			$(this).css("background","gray")
-		},function(){
-			$(this).css("background","none")
-		})
-		$("button").on("click",function(){
-			$("#selectRoom").css("display","block")
-		})
-		$("#close").on("click",function(){
-			$("#selectRoom").css("display","none")
-		})
+		//날짜선택
+		$("#depDate").datepicker();
+		$("#delDate").datepicker();
 		
 	})
 </script>
@@ -115,8 +109,26 @@
 					</ul>
 				</div>
 			</div>
-		<div>
-		
+		<h3 style="text-align:left">여행만들기</h3>
+		<hr class="hrStyle"/>
+		<div id="makeTrip">
+			<table>
+				<tr>
+					<td>출발지역</td>
+					<td colspan="3">
+						<select>
+							<option>김포출발</option>
+						</select>
+					</td>
+					<td>출발일자</td>
+					<td><input type="text" id="depDate"/></td>
+					<td>도착일자</td>
+					<td><input type="text" id="delDate"/></td>
+				</tr>
+				<tr>
+					<td>출발인원</td>
+				</tr>
+			</table>
 		</div>
 	</section>
 		<footer>
