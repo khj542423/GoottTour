@@ -9,7 +9,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
 <link rel="stylesheet" href="shoppingbasketStyle.css" type="text/css"/>
-<script>   
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<style>
+     	 *{font-family:'Noto Sans KR',sans-serif;} 
+     	 </style>
+<script>
 	$(function(){
 		$('#chk_all').change(function(){
 			if(this.checked){
@@ -25,35 +29,88 @@
 </script>
 
 </head>
-<body>
+<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+				
+			});
+		</script>
+	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
 			<div>
 				<div id="mainMenu">
 					<!-- 작은메뉴 -->
 					<ul id="miniMenu" class="navbar-header">
-						<li class="nav-item">고객센터</li>
-						<li class="nav-item">여행바구니</li>
-						<li class="nav-item">회원가입</li>
-						<li class="nav-item">로그인</li>
+						<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
+						<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
+						<li class="nav-item"><a href="new.html">회원가입</a></li>
+						<li class="nav-item"><a href="login.html">로그인</a></li>
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header">
-						<li class="nav-brand"><img src="../image/MenuLogo.png" id="mainLogo"/></li>
-						<li class="nav-item">수학여행</li>
-						<li class="nav-item">현장학습</li>
-						<li class="nav-item">1박2일</li>
-						<li class="nav-item">기업/단체</li>
-						<li class="nav-item">여행만들기</li>
-						<li class="nav-item">출발지</li>
-						<li class="nav-item">여행후기</li>
+						<li class="nav-brand"><a href="main.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
+						<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
+						<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
+						<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
 						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
 					</ul>
 				</div>
 				<!-- 이미지배너 -->
-				<div id="imgBanner"></div>
+				<div id="imgBanner">
+					<div>
+					<h1>헤더풋터</h1>
+					<h2>그리고 사이드</h2>
+					</div>
+				</div>
 			</div>
 		</header>
 		<section>
+			<div id="sideBar">
+				<div>
+					<ul>
+						<li class="sideBarFirstUlList">
+							<h6>고객센터</h6>
+							<ul>
+								<li>00-0000-0000</li>
+								<li>평일/00:00-23:59</li>
+								<li>공휴일/주말 휴무</li>
+							</ul>
+						</li>
+						<li class="sideBarFirstUlList">
+							<h6>여행바구니</h6>
+							<a href="shoppingbasket.html">0</a>
+						</li>
+						<li class="sideBarFirstUlList">
+							<h6>내가본상품</h6>
+							<ul id="myHistory">
+								<li><img src="../image/Logo.png" class="myHistory"/></li>
+								<li><img src="../image/MenuLogo.png" class="myHistory"/></li>
+								<li><img src="../image/sangfum_01.jpg" class="myHistory"/></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<button>TOP▲</button>
+				<div>
+					<ul>
+						<li><img src="../image/sideBarAdv_01.png" class="sideBarAdv"/></li>
+						<li><img src="../image/sideBarAdv_02.png" class="sideBarAdv"/></li>
+						<li><img src="../image/sideBarAdv_03.png" class="sideBarAdv"/></li>
+					</ul>
+				</div>
+			</div>
 		<!-- 장바구니   -->
 
 <div id='con'>
@@ -64,23 +121,23 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>선택<br/><input type='checkbox' id='chk_all' class='chk' style='width:20px;height:20px;'></th>
-          <th style='width:500px'>상품명</th>
-          <th style='width:200px'>출발일</th>
-          <th style='width:100px'>인원수</th>
-          <th style='width:100px'>예약상태</th>
-          <th style='width:200px'>가격</th>
+          <th id='chk1'>선택<br><input type='checkbox' id='chk_all' class='chk' style='width:20px;height:20px;'></input></th>
+          <th style='width:500px; line-height:48px;'>상품명</th>
+          <th style='width:200px; line-height:48px;'>출발일</th>
+          <th style='width:100px; line-height:48px;'>인원수</th>
+          <th style='width:100px; line-height:48px;'>예약상태</th>
+          <th style='width:200px; line-height:48px;'>가격</th>
         </tr>
       </thead>
       
       <tbody id='body'>
-        <tr>
-          <td style= 'width:80px; text-align:center'><input type='checkbox' id='chk1' style='width:20px;height:20px;'></td>
-          <td></td>       
-          <td></td> 
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr> 
+          <td style= 'width:80px; text-align:center ' ><input type='checkbox' id='chk1' style='width:20px;height:20px;'></td>
+          <td><a href='#'>지상최대 지상낙원</a></td>       
+          <td>2019년9월22일</td> 
+          <td>10명</td>
+          <td>대기</td>
+          <td>220,000원</td>
         </tr>
          <tr>
           <td style= 'width:80px; text-align:center ' ><input type='checkbox' id='chk2' style='width:20px;height:20px;'></td>
@@ -102,8 +159,8 @@
     </table>
     <div id='bottombt'>
     	<p id='count'>총금액=<input type='text' id='textbox'></p>
-     	<button class='btn btn-secondary active'>삭제하기</button>
-     	<button class='btn btn-secondary active'>예약하기</button>
+     	<button class='btn active'>삭제하기</button>
+     	<button class='btn active'>예약하기</button>
      	
     </div>
   </div>
@@ -114,11 +171,11 @@
 			<!-- 메뉴 -->
 			<div id="footMenu">
 				<ul>
-					<li>회사소개</li>
-					<li>국내여행표준약관</li>
-					<li>개인정보취급방침</li>
-					<li>이용약관</li>
-					<li>고객센터</li>
+					<li><a href="companyInfo.html">회사소개</a></li>
+					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
+					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
+					<li><a href="clauseInfo.html">이용약관</a></li>
+					<li><a href="InfoCenter.html">고객센터</a></li>
 				</ul>
 			</div>
 			<!-- 회사정보 -->

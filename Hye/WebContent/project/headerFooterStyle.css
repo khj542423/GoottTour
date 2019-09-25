@@ -1,17 +1,18 @@
 @charset "UTF-8";
-*{margin:0px; padding:0px; text-align:center}
-header{background:#fff;}
-footer {height:200px; margin:0px 15%;}
+*{margin:0px; padding:0px; text-align:center; font-family:'Noto Sans KR',sans-serif;}
+header{background:#fff; margin-bottom:50px;}
+footer {height:200px; margin:0px 15%; margin-top:100px}
 ul,li{float:left; list-style-type:none;}
 
 /*섹션 기본으로 아래 설정은 적용 해주세요. {헤더에 의한 잘림방지; 가로사이즈; 가로정렬} 입니다.*/
-section{padding-top:300px; width:1200px; margin:0px auto;}
+section{padding-top:320px; width:1200px; margin:0px auto;}
 
 .navbar{margin:0px; padding:0px 15%; width:100%;}
 #mainLogo, #footLogo{width:280px;}
 #mainLogo{position:relative; top:-20px}
 #footLogo{position:relative; top:-10px}
 #footreview{margin-top:20px}
+#footreview table tr:first-child td img{margin-right:30px}
 
 
 #mainMenu ul:first-child{float:right; width:100%; margin:0px; font-size:0.9em}
@@ -22,15 +23,43 @@ section{padding-top:300px; width:1200px; margin:0px auto;}
 #mainMenu ul:last-child li:last-child{width:200px;}
 #mainMenu input:first-child{height:40px; width:160px;}
 #mainMenu input:last-child{height:40px; width:40px;font-size:0.8em; line-height:40px}
-#imgBanner{margin-top:104px; margin-left:-25%; width:150%; height:200px; background:yellow}
+#imgBanner{margin-top:104px; margin-left:-25%; width:150%; height:200px; background:#00a7f0;}
+#imgBanner>div{position:absolute; top:158px}
 
 #footInfo{margin:0px 10%; margin-top:20px;white-space:nowrap;}
 #footMenu{margin-left:-25%; width:146.4%; height:40px; background:#aaa}
 #footMenu ul{margin: 0px 15%; width:70%; background-color:#aaa; height:40px; line-height:40px}
 #footMenu ul li{width:20%;}
 #footInfo td{text-align:left}
+#footInfo tr:nth-child(2) td,#footInfo tr:nth-child(3) td,#footInfo tr:last-child td{padding-left:20px}
 
-#footImgList{margin-top: 20px;}
-#footImgList img{width:160px}
-#footImgList li{margin-right:50px}
+#footImgList{margin-top: 20px;width:100%;}
+#footImgList li{width:20%;text-align:left}
+#footImgList img{width:80%}
 #footImgList li:last-child{margin-right:0px}
+
+#sideBar{position:absolute; top:330px; left:85%; width:120px;}
+#sideBar button{width:100%; height:30px; margin-bottom:5px; background:gray; color:white; border:none}
+#sideBar ul, #sidebar li{float:bottom; margin:0px}
+#sideBar>div:first-child li{width:100%;}
+#sideBar h6{font-weight:bold}
+
+.sideBarFirstUlList{padding:10px 2px 4px 2px; border-bottom:1px solid gray;}
+#sideBar>div:first-child>ul:first-child>li:last-child{border-bottom:0px}
+#sideBar>div:first-child>ul:first-child>li:first-child>ul>li:first-child{font-weight:bold; color:#6af}
+#sideBar>div:first-child>ul:first-child>li:first-child>ul>li:nth-child(2){font-size:0.75em}
+#sideBar>div:first-child>ul:first-child>li:first-child>ul>li:last-child{font-size:0.7em}
+.myHistory{width:100px; height:70px; border:1px solid gray; margin-bottom:5px}
+
+
+#sideBar>div:last-child>ul>li{height:80px; overflow:hidden; margin-bottom:5px}
+#sidBar>div:last-child>ul>li:last-child{margin-bottom:0px}
+.sideBarAdv{width:100%; height:80px}
+
+#sideBar>div:first-child>ul{border:1px solid gray}
+
+#mainMenu a, #footMenu a{color:black; text-decoration:none}
+
+textarea{resize:none}
+
+.hrStyle{border:0; height: 3px; background:#ccc linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))}

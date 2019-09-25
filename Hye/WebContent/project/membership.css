@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+#row-span{ text-align:center; padding-top:30px; width:100px; font-size:25px;}
+#diamond ~ th{width:200px; }
+#top-table{margin-bottom:50px; }
+h1{text-align:left; margin-bottom:0; margin-top:15px;}
+#top-p, #bot-p{font-size:20px; width:200px; height:50px; text-align:center; 
+				font-weight:bold; line-height:50px; background:#00a7f0; color:white;}
+#last-row{height:70px; font-size:20px; padding-top:20px;}
+#last-row ~ td{padding-top:20px}
+hr{border:0; height: 3px; background:#ccc linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
+section th{background:#ddd;}
+section tr th:first-child{background:#ddd;border-bottom:1px solid white}
+section table tr:nth-child(2) td:first-child{border-bottom:1px solid white; border-right:1px solid white}
+section table tr:nth-child(2) td:nth-child(2){background:#ddd; border-bottom:1px solid white}
+section tr td:first-child{background:#ddd;border-bottom:1px solid white}

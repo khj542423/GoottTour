@@ -9,6 +9,23 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
 		<link rel="stylesheet" href="companyInfoStyle.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<style>
+		*{font-family:'Noto Sans KR',sans-serif;}
+		</style>
+	<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+			});
+		</script>
 	</head>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
@@ -16,47 +33,179 @@
 				<div id="mainMenu">
 					<!-- 작은메뉴 -->
 					<ul id="miniMenu" class="navbar-header">
-						<li class="nav-item">고객센터</li>
-						<li class="nav-item">여행바구니</li>
-						<li class="nav-item">회원가입</li>
-						<li class="nav-item">로그인</li>
+						<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
+						<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
+						<li class="nav-item"><a href="new.html">회원가입</a></li>
+						<li class="nav-item"><a href="login.html">로그인</a></li>
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header">
-						<li class="nav-brand"><img src="../image/MenuLogo.png" id="mainLogo"/></li>
-						<li class="nav-item">수학여행</li>
-						<li class="nav-item">현장학습</li>
-						<li class="nav-item">1박2일</li>
-						<li class="nav-item">기업/단체</li>
-						<li class="nav-item">여행만들기</li>
-						<li class="nav-item">출발지</li>
-						<li class="nav-item">여행후기</li>
+						<li class="nav-brand"><a href="main.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
+						<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
+						<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
+						<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
 						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
 					</ul>
 				</div>
 				<!-- 이미지배너 -->
-				<div id="imgBanner"></div>
+				<div id="imgBanner">
+					<div>
+					<h1>헤더풋터</h1>
+					<h2>그리고 사이드</h2>
+					</div>
+				</div>
 			</div>
 		</header>
 		<section>
-			<h4>회사소개</h4><hr/>
-			<div class="divForm">회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개회사소개</div>
-			<h4>회사개요</h4><hr/>
-			<div class="divForm">회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요회사개요</div>
-			<h4>회사연혁</h4><hr/>
-			<div class="divForm">회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁회사연혁</div>
-			<h4>오시는길</h4><hr/>
-			<div class="divForm"><img src="../image/jeju_map.jpg"></div>		
+			<div id="sideBar">
+				<div>
+					<ul>
+						<li class="sideBarFirstUlList">
+							<h6>고객센터</h6>
+							<ul>
+								<li>00-0000-0000</li>
+								<li>평일/00:00-23:59</li>
+								<li>공휴일/주말 휴무</li>
+							</ul>
+						</li>
+						<li class="sideBarFirstUlList">
+							<h6>여행바구니</h6>
+							<a href="shoppingbasket.html">0</a>
+						</li>
+						<li class="sideBarFirstUlList">
+							<h6>내가본상품</h6>
+							<ul id="myHistory">
+								<li><img src="../image/Logo.png" class="myHistory"/></li>
+								<li><img src="../image/MenuLogo.png" class="myHistory"/></li>
+								<li><img src="../image/sangfum_01.jpg" class="myHistory"/></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<button>TOP▲</button>
+				<div>
+					<ul>
+						<li><img src="../image/sideBarAdv_01.png" class="sideBarAdv"/></li>
+						<li><img src="../image/sideBarAdv_02.png" class="sideBarAdv"/></li>
+						<li><img src="../image/sideBarAdv_03.png" class="sideBarAdv"/></li>
+					</ul>
+				</div>
+			</div>
+			<h1>회사소개</h1><hr/>
+			<div class="divForm">
+				우리 구트투어는 다양한 테마(수학여행,체험학습 등)의 여행을 기준으로 사용자가 원하는 여행을 제공하고,<br/>
+				정해져 있는 여행이 아닌 사용자가 원하는 여행을 직접 만들어 여행할 수 있게 도와드리고 있습니다.<br/><br/>
+				단체여행을 중점으로 다른 여행에 비해 저렴한 가격으로 고객님께서 이용하실 수 있고,<br/>
+				해외여행 을 추구하는 최근 경향 과 다르게 국내의 다양한 장소를 사용자가 경험할 수 있게 하는 것을 목표로 하고있습니다. 
+			</div>
+			<h1>회사개요</h1><hr/>
+			<div class="divForm">
+				<table id="summary">
+					<tr>
+						<td>회사명</td>
+						<td>구트투어</td>
+					</tr>
+					<tr>
+						<td>소재지</td>
+						<td>서울시 구로구 구로동</td>
+					</tr>
+					<tr>
+						<td>대표이사</td>
+						<td>누구</td>
+					</tr>
+					<tr>
+						<td>전화번호</td>
+						<td>00-0000-0000</td>
+					</tr>
+					<tr>
+						<td>설립일</td>
+						<td>2200.01.01</td>
+					</tr>
+					<tr>
+						<td>주요사업</td>
+						<td>사업자등록번호:123-45-67890/국내관광업</td>
+					</tr>
+					<tr>
+						<td>주요서비스</td>
+						<td>일반여행업(제76호)</td>
+					</tr>
+				</table>
+			</div>
+			<h1>회사연혁</h1><hr/>
+			<div class="divForm">
+				<table id="history">
+					<tr>
+						<td>2200.01</td>
+						<td>회사설립<br/>
+							첫계약성사<br/>
+							폐업
+						</td>
+					</tr>
+					<tr>
+						<td>2200.02</td>
+						<td>회사설립</td>
+					</tr>
+					<tr>
+						<td>2200.03</td>
+						<td>폐업</td>
+					</tr>
+					<tr>
+						<td>2200.04</td>
+						<td>회사설립</td>
+					</tr>
+					<tr>
+						<td>2200.10</td>
+						<td>폐업</td>
+					</tr>
+					<tr>
+						<td>2300.11</td>
+						<td>회사설립</td>
+					</tr>
+					<tr>
+						<td>3019.09</td>
+						<td>폐업</td>
+					</tr>
+				</table>
+			</div>
+			<h1>오시는길</h1><hr/>
+			<div class="divForm">
+				<div id="goottMap">
+					<!--
+						* 카카오맵 - 약도서비스
+						* 한 페이지 내에 약도를 2개 이상 넣을 경우에는
+						* 약도의 수 만큼 소스를 새로 생성, 삽입해야 합니다.
+					-->
+					<!-- 1. 약도 노드 -->
+					<div id="daumRoughmapContainer1569207905305" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+					
+					<!-- 2. 설치 스크립트 -->
+					<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+					
+					<!-- 3. 실행 스크립트 -->
+					<script charset="UTF-8">
+						new daum.roughmap.Lander({
+							"timestamp" : "1569207905305",
+							"key" : "v53e",
+							"mapWidth" : "640",
+							"mapHeight" : "360"
+						}).render();
+					</script>
+				</div>
+			</div>		
 		</section>
 		<footer>
 			<!-- 메뉴 -->
 			<div id="footMenu">
 				<ul>
-					<li>회사소개</li>
-					<li>국내여행표준약관</li>
-					<li>개인정보취급방침</li>
-					<li>이용약관</li>
-					<li>고객센터</li>
+					<li><a href="companyInfo.html">회사소개</a></li>
+					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
+					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
+					<li><a href="clauseInfo.html">이용약관</a></li>
+					<li><a href="InfoCenter.html">고객센터</a></li>
 				</ul>
 			</div>
 			<!-- 회사정보 -->

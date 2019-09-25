@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+		<link rel='stylesheet' href='reservation.css' type='text/css'/>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<style>
+     	 	*{font-family:'Noto Sans KR',sans-serif;} 
+     	</style>
+    	
+    	<script type="text/javascript">
+     		
+    	$(function(){
+    		var same = checked;
+    		$('#samecheck').click(function(){
+    			var temp = document.getElementById('rev-name').value
+    			var temp2 = document.getElementById('rev-tel').value
+    			var temp3 = document.getElementById('rev-tel2').value
+    			document.getElementById('trv-name').value=temp;
+    			document.getElementById('trv-tel').value=temp2;
+    			document.getElementById('trv-tel2').value=document.getElementById('rev-tel2').value;
+    			document.getElementById('trv-tel3').value=document.getElementById('rev-tel3').value;
+    			document.getElementById('email-bar3').value=document.getElementById('email-bar').value;
+    			document.getElementById('email-bar4').value=document.getElementById('email-bar2').value;
+    			console.log(checked)
+    			if(same==false){
+    				$('#samecontent input').filter('input:text')
+    				.attr('disabled','disabled')
+    				.css('opactiy', 0.5);
+    				/* console.log(checked); */
+    			}else{
+	    			$('#samecontent input').filter('input:text').attr('che',false)
+	    			.css('opacity', 1);
+	    			/* console.log(checked) */
+    			}
+    		})
+    	})
+     	</script>
+	</head>
+
+<script>	
+
+	$(function(){
+			$('#btn1').on('click',function(){
+				$(this).css('background-color','orange').css('color','#fff');
+				alert('예약이완료됨.');
+			})
+			
+	});
+
+
+
+</script>
+
+<script>
+	
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+				
+			});
+</script>
+	<body>
+		<header class="navbar fixed-top navbar-expand-lg">
+			<div>
+				<div id="mainMenu">
+					<!-- 작은메뉴 -->
+					<ul id="miniMenu" class="navbar-header">
+						<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
+						<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
+						<li class="nav-item"><a href="new.html">회원가입</a></li>
+						<li class="nav-item"><a href="login.html">로그인</a></li>
+					</ul>
+				<!-- 주메뉴 -->
+					<ul class="navbar-header">
+						<li class="nav-brand"><a href="main.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
+						<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
+						<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
+						<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
+						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
+					</ul>
+				</div>
+				<!-- 이미지배너 -->
+				<div id="imgBanner">
+					<div>
+					<h1>헤더풋터</h1>
+					<h2>그리고 사이드</h2>
+					</div>
+				</div>
+			</div>
+		</header>
+	<section>
+		<div id="sideBar">
+				<div>
+					<ul>
+						<li class="sideBarFirstUlList">
+							<h6>고객센터</h6>
+							<ul>
+								<li>00-0000-0000</li>
+								<li>평일/00:00-23:59</li>
+								<li>공휴일/주말 휴무</li>
+							</ul>
+						</li>
+						<li class="sideBarFirstUlList">
+							<h6>여행바구니</h6>
+							<a href="shoppingbasket.html">0</a>
+						</li>
+						<li class="sideBarFirstUlList">
+							<h6>내가본상품</h6>
+							<ul id="myHistory">
+								<li><img src="../image/Logo.png" class="myHistory"/></li>
+								<li><img src="../image/MenuLogo.png" class="myHistory"/></li>
+								<li><img src="../image/sangfum_01.jpg" class="myHistory"/></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<button>TOP▲</button>
+				<div>
+					<ul>
+						<li><img src="../image/sideBarAdv_01.png" class="sideBarAdv"/></li>
+						<li><img src="../image/sideBarAdv_02.png" class="sideBarAdv"/></li>
+						<li><img src="../image/sideBarAdv_03.png" class="sideBarAdv"/></li>
+					</ul>
+				</div>
+			</div>
+	<div id='main'>
+	<h1 id='rev-h1'>예약하기</h1>
+	<hr class="hrStyle"/>
+	 <table class="table table-bordered table-lg" id='tbid'>
+	  <thead>
+	     <tr id='trid'> 
+	       <th style='width:400px'>상품명</th>
+	       <th style='width:250px'>여행기간</th>
+	        <th>예약인원</th>
+	        <th>결제금액</th>
+	      </tr>
+	    </thead>
+	    
+	    <tbody>
+	      <tr>
+	        <td><a href='#' id='sname'>지상최대 지상낙원</a></td>
+	        <td>2019.09.22~2019.09.25</td>
+	        <td>10명</td>
+	        <td>220,000원</td>
+	      </tr>
+	      <tr>
+	        <td>가즈아 전주로</td>
+	        <td></td>
+	        <td>상품명</td>
+	        <td>상품명</td>
+	    
+	      </tr>
+	      <tr>
+	        <td>순창 고추장</td>
+	        <td></td>
+	        <td>상품명</td>
+	        <td>상품명</td> 
+	  
+	      </tr>
+	    </tbody> 
+	  </table>
+	<div id='join'>
+	
+	<p>예약자<br><input type="text" name='rev-name' size='10' maxlength='5' required placeholder="이름" id='rev-name'></p>  
+	<p>연락처<br><input type='text' name='rev-tel' id='rev-tel' style="margin-right:5px">
+	
+	
+			<!-- <select name="rev-tel" id='rev-tel' style='margin-right:5px'>
+			<option value="not">==선택==</option>
+			<option value="010" selected>010</option>
+			<option value="서울">02</option>
+			<option value="경기">032</option>
+			<option value="부산">051</option>
+			<option value="광주">062</option> 
+			<option value="대전">042</option>
+			<option value="울산">052</option>
+			</select> -->-<input type="text" name='rev-tel2' size='2' value='' maxlength='4' id='rev-tel2' style='margin-left:5px; margin-right:5px;'>-<input type="text" name='rev-tel3' size='2' value='' id='rev-tel3' maxlength='4' style='margin-left:5px;'></p>
+	<p>이메일<br><input type='text' name='txt5' size='15' maxlength='15' id=email-bar style='margin-right:5px'>@
+	<input type='text' name='txt5' size='15' maxlength='15' id=email-bar2 style='margin-right:5px'>
+	<!-- <select name="txt7" id='email-bar'>
+			<option value="not" selected>선택</option>
+			 <option value="chol.com" >chol.com</option>
+			 <option value="dreamwiz.com" >dreamwiz.com</option>
+			 <option value="empal.com" >empal.com</option>
+			 <option value="freechal.com" >freechal.com</option>
+			 <option value="gmail.com" >gmail.com</option>
+			 <option value="hanafos.com" >hanafos.com</option>
+			 <option value="hanmail.net" >hanmail.net</option>
+			 <option value="hanmir.com" >hanmir.com</option>
+			 <option value="hitel.net" >hitel.net</option>
+			 <option value="hotmail.com" >hotmail.com</option>
+			 <option value="korea.com" >korea.com</option>
+			 <option value="lycos.co.kr" >lycos.co.kr</option>
+			 <option value="nate.com" >nate.com</option>
+			 <option value="naver.com" >naver.com</option>
+			 <option value="netian.com" >netian.com</option>
+			 <option value="paran.com" >paran.com</option> 
+		 </select> -->
+		 </p>
+			
+		 
+		 
+	<hr style='margin:10px auto;'>
+	<br> 
+	<div id='samecontent'>
+	<p style='margin-top: -15px; font-size:15px'><input type='checkbox' id='samecheck' >실제 여행자와 예약자가 동일하면 체크해주세요.</p>
+	</div>
+	<hr style='margin:10px auto;'>
+	
+	<p>여행자<br><input type="text" name='trv-name' size='10' maxlength='5' required placeholder="이름" id='trv-name'></p>  
+	<p>연락처<br><input type='text' name='trv-tel' id='trv-tel' style='margin-right:5px'>
+			<!-- <select name="trv-tel" id='trv-tel' style='margin-right:5px'>
+			<option value="not">==선택==</option>
+			<option value="010" selected>010</option>
+			<option value="서울">02</option>
+			<option value="경기">032</option>
+			<option value="부산">051</option>
+			<option value="광주">062</option> 
+			<option value="대전">042</option>
+			<option value="울산">052</option>
+		 </select> -->-<input type="tel" id=trv-tel2 name='trv-tel2' size='2' value='' maxlength='4' style='margin-left:5px; margin-right:5px;'>-<input type="tel"  id='trv-tel3' name='trv-tel4' size='2' value='' maxlength='4' style='margin-left:5px'></p>
+	<p>이메일<br><input type='email' name='txt5' size='15' maxlength='15' id=email-bar3 style='margin-right:5px'>@
+			<input type='text' name='txt5' size='15' maxlength='15' id=email-bar4 style='margin-right:5px'>
+			<!-- <select name="txt6" id='email-bar2'>
+			<option value="not" selected>선택</option>
+			<option value="chol.com" >chol.com</option>
+			 <option value="dreamwiz.com" >dreamwiz.com</option>
+			 <option value="empal.com" >empal.com</option>
+			 <option value="freechal.com" >freechal.com</option>
+			 <option value="gmail.com" >gmail.com</option>
+			 <option value="hanafos.com" >hanafos.com</option>
+			 <option value="hanmail.net" >hanmail.net</option>
+			 <option value="hanmir.com" >hanmir.com</option>
+			 <option value="hitel.net" >hitel.net</option>
+			 <option value="hotmail.com" >hotmail.com</option>
+			 <option value="korea.com" >korea.com</option>
+			 <option value="lycos.co.kr" >lycos.co.kr</option>
+			 <option value="nate.com" >nate.com</option>
+			 <option value="naver.com" >naver.com</option>
+			 <option value="netian.com" >netian.com</option>
+			 <option value="paran.com" >paran.com</option> 
+			</select> -->
+			</p> 
+	<p>요청사항 & 문의사항<br><textarea name='content' rows='5' cols='50' style='text-align:left' required placeholder="1000자이내로 입력해주세요."></textarea></p>
+	<div id='btn-rev'>
+	<a href='https://www.naver.com'>
+	<button class='btn active' id='btn1'>예약하기</button>
+	</a>
+	</div>
+	</div>	
+	</div>	
+	</section>
+		<footer>
+			<!-- 메뉴 -->
+			<div id="footMenu">
+				<ul>
+					<li><a href="companyInfo.html">회사소개</a></li>
+					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
+					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
+					<li><a href="clauseInfo.html">이용약관</a></li>
+					<li><a href="InfoCenter.html">고객센터</a></li>
+				</ul>
+			</div>
+			<!-- 회사정보 -->
+			<div id="footInfo">
+				<table>
+					<tr>
+						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
+					</tr>
+					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
+					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
+					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
+				</table>
+				<ul id="footImgList">
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+				</ul>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -7,48 +7,104 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
 		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
-		<link rel="stylesheet" href="reviewPageStyle.css" type="text/css"/>
+		<link rel="stylesheet" href="writeFormStyle.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<style>
+			*{font-family:'Noto Sans KR',sans-serif;}
+		</style>
+		<script>
+		$(function(){
+			CKEDITOR.replace( 'writeText' );
+		});
+		
+		</script>
 	</head>
+<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+				
+			});
+		</script>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
 			<div>
 				<div id="mainMenu">
 					<!-- 작은메뉴 -->
 					<ul id="miniMenu" class="navbar-header">
-						<li class="nav-item">고객센터</li>
-						<li class="nav-item">여행바구니</li>
-						<li class="nav-item">회원가입</li>
-						<li class="nav-item">로그인</li>
+						<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
+						<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
+						<li class="nav-item"><a href="new.html">회원가입</a></li>
+						<li class="nav-item"><a href="login.html">로그인</a></li>
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header">
-						<li class="nav-brand"><img src="../image/MenuLogo.png" id="mainLogo"/></li>
-						<li class="nav-item">수학여행</li>
-						<li class="nav-item">현장학습</li>
-						<li class="nav-item">1박2일</li>
-						<li class="nav-item">기업/단체</li>
-						<li class="nav-item">여행만들기</li>
-						<li class="nav-item">출발지</li>
-						<li class="nav-item">여행후기</li>
+						<li class="nav-brand"><a href="main.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
+						<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
+						<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
+						<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
+						<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
 						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
 					</ul>
 				</div>
 				<!-- 이미지배너 -->
-				<div id="imgBanner"></div>
+				<div id="imgBanner">
+					<div>
+					<h1>헤더풋터</h1>
+					<h2>그리고 사이드</h2>
+					</div>
+				</div>
 			</div>
 		</header>
 		<section>
 			<div id="sideMenu">
 				<div>커뮤니티</div>
-				<ul id="reviewList" class="nav flex-column">
-					<li class="nav-item"><a href="#reviewTab1"  class="nav-link active" data-toggle="tab">여행후기</a></li>
+				<ul id="reviewList">
+					<li><a>여행후기</a></li>
 				</ul>
 			</div>
-			<div id="reviewPan" class="tab-content">
-				<div id="reviewTab1" class="tab-pane active"><h4>여행후기</h4><hr/>
-					<div id="reviewTab">
-						
+			<div id="reviewPan">
+				<div id="reviewTab1"><h4>여행후기</h4><hr style='border:0; height:3px; background:#ccc; linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0, 0.75), rgba(0,0,0,0))'>
+					<div id="reviewWrite">
+						<table>
+							<tr>
+								<td>이름</td>
+								<td><input type="text" class="bora" id="writer"/></td>
+							</tr>
+							<tr>
+								<td>대분류</td>
+								<td><select id="lCategory" class="bora"><option>==대분류==</option></select></td>
+							</tr>
+							<tr>
+								<td>소분류</td>
+								<td><select id="sCategory" class="bora"><option>==소분류==</option></select></td>
+							</tr>
+							<tr>
+								<td>제목</td>
+								<td><input type="text" class="bora" id="writeTitle"/></td>
+							</tr>
+							<tr>
+								<td>내용</td>
+								<td><textarea id="writeText" name="writeText"></textarea></td>
+								
+							</tr>
+						</table>
+					</div>
+					<div id="button">
+						<button>돌아가기</button>
+						<button>글작성</button>
 					</div>
 				</div>
 			</div>
@@ -57,15 +113,15 @@
 			<!-- 메뉴 -->
 			<div id="footMenu">
 				<ul>
-					<li>회사소개</li>
-					<li>국내여행표준약관</li>
-					<li>개인정보취급방침</li>
-					<li>이용약관</li>
-					<li>고객센터</li>
+					<li><a href="companyInfo.html">회사소개</a></li>
+					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
+					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
+					<li><a href="clauseInfo.html">이용약관</a></li>
+					<li><a href="InfoCenter.html">고객센터</a></li>
 				</ul>
 			</div>
 			<!-- 회사정보 -->
-			<div id="footreview">
+			<div id="footInfo">
 				<table>
 					<tr>
 						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>

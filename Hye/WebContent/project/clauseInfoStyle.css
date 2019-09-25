@@ -5,12 +5,15 @@
 h4{text-align:left;}
 section{margin-bottom:30px}
 
+#navContent>div>div{border:1px solid #ddd; border-radius:5px; padding:40px}
+
 .nav-tabs .nav-item .nav-link:not(.active) {
     background:#fff;
+    border-bottom:#ddd;
     color:black;
 }
 
 .nav-tabs .nav-item .nav-link {
-    background:rgb(0,123,255);
+    background:#00a7f0;
     color:white;
 }
