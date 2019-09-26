@@ -8,8 +8,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
-<link rel="stylesheet" href="Main.css" type="text/css"/>
+<link rel="stylesheet" href="project/headerFooterStyle.css" type="text/css"/>
+<link rel="stylesheet" href="project/Main.css" type="text/css"/>
 <style>
 
 </style>
@@ -19,10 +19,10 @@
 		function setImage(){
 			
 			var imglist = '';
-			var url = ['sangfum1.html','sangfum1.html','sangfum1.html','sangfum1.html','sangfum1.html',
-						'sangfum1.html','sangfum1.html','sangfum1.html','sangfum1.html']
+			var url = ['project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html',
+						'project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html']
 			for(i=1; i<=9; i++){
-				imglist += '<a href="'+url[i-1]+'"><img src="../image/main_img_banner_';
+				imglist += '<a href="'+url[i-1]+'"><img src="image/main_img_banner_';
 				if(i<=9)
 				imglist += i;
 			imglist+='.jpg"/></a>'
@@ -45,7 +45,7 @@
 			
 			//배너 이미지 변경
 			$("#bannerImg").click(function(){
-				$("#bannerImg").attr("src","../image/main_img_banner_"+imgNum+".jpg");
+				$("#bannerImg").attr("src","image/main_img_banner_"+imgNum+".jpg");
 				imgNum++;
 				if(imgNum>9)imgNum=1;
 			});
@@ -64,21 +64,21 @@
 				<div id="mainMenu">
 					<!-- 작은메뉴 -->
 					<ul id="miniMenu" class="navbar-header">
-						<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
-						<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
-						<li class="nav-item"><a href="new.html">회원가입</a></li>
-						<li class="nav-item"><a href="login.html">로그인</a></li>
+						<li class="nav-item"><a href="project/InfoCenter.html">고객센터</a></li>
+						<li class="nav-item"><a href="project/shoppingbasket.html">여행바구니</a></li>
+						<li class="nav-item"><a href="project/new.html">회원가입</a></li>
+						<li class="nav-item"><a href="project/login.html">로그인</a></li>
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header">
-						<li class="nav-brand"><a href="main.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
-						<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
-						<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
-						<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
+						<li class="nav-brand"><a href="index.html"><img src="image/MenuLogo.png"id="mainLogo"/></a></li>
+						<li class="nav-item"><a href="project/sangfum_list.html">수학여행</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.html">현장학습</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.html">1박2일</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.html">기업/단체</a></li>
+						<li class="nav-item"><a href="project/make_trip.html">여행만들기</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.html">출발지</a></li>
+						<li class="nav-item"><a href="project/reviewPage.html">여행후기</a></li>
 						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
 					</ul>
 				</div>
@@ -87,7 +87,7 @@
 	<section>
 		<!-- 이미지배너 -->
 		<div id="imgBanner">
-			<img src="../image/main_img_banner_1.jpg" id="bannerImg"/>
+			<img src="image/main_img_banner_1.jpg" id="bannerImg"/>
 			<div>
 			<input type="text"><input type="button" value="검색"/>
 			</div>
@@ -96,13 +96,13 @@
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
-			      <img class="d-block w-100" src="../image/sangfum_01.jpg" alt="First slide">
+			      <img class="d-block w-100" src="image/sangfum_01.jpg" alt="First slide">
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="../image/sangfum_01.jpg" alt="Second slide">
+			      <img class="d-block w-100" src="image/sangfum_01.jpg" alt="Second slide">
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="../image/sangfum_01.jpg" alt="Third slide">
+			      <img class="d-block w-100" src="image/sangfum_01.jpg" alt="Third slide">
 			    </div>
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -120,9 +120,9 @@
 		
 		<!-- 여기부터 작업해주시면 됩니당 ^^ -->
 		<div>
-			<img src="../image/sideBarAdv_01.png"/>
+			<img src="image/sideBarAdv_01.png"/>
 			 <div>
-			 	<img src="../ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png"/>
+			 	<img src="project/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png"/>
 			 	<div id='cjimg'></div>
 			 </div>
 		</div>
@@ -133,29 +133,29 @@
 			<!-- 메뉴 -->
 			<div id="footMenu">
 				<ul>
-					<li><a href="companyInfo.html">회사소개</a></li>
-					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
-					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
-					<li><a href="clauseInfo.html">이용약관</a></li>
-					<li><a href="InfoCenter.html">고객센터</a></li>
+					<li><a href="project/companyInfo.html">회사소개</a></li>
+					<li><a href="project/clauseInfo.html">국내여행표준약관</a></li>
+					<li><a href="project/clauseInfo.html">개인정보취급방침</a></li>
+					<li><a href="project/clauseInfo.html">이용약관</a></li>
+					<li><a href="project/InfoCenter.html">고객센터</a></li>
 				</ul>
 			</div>
 			<!-- 회사정보 -->
 			<div id="footInfo">
 				<table>
 					<tr>
-						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
+						<td rowspan="4"><img src="image/MenuLogo.png" id="footLogo"/></td>
 					</tr>
 					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
 					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
 					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
 				</table>
 				<ul id="footImgList">
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="image/MenuLogo.png"/></li>
+					<li><img src="image/MenuLogo.png"/></li>
+					<li><img src="image/MenuLogo.png"/></li>
+					<li><img src="image/MenuLogo.png"/></li>
+					<li><img src="image/MenuLogo.png"/></li>
 				</ul>
 			</div>
 		</footer>
