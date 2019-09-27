@@ -13,24 +13,24 @@
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <style>
-	#tabmenu{margin-left : 30%; width : 603px; height : 50px; margin : 0px auto}
-	#tabmenu>div{float : left; width : 300px; height : 50px; text-align : center;}
-	#tabmenu>div:nth-child(1){background : blue;}
-	#list1, #list2{width : 1200px; height : 1500px; margin : 0px auto}
+	#tabmenu{margin-left : 30%; width : 603px; height : 50px; margin : 0px auto; border:1px solid #ddd;}
+	#tabmenu>div{float : left; width : 50%; height : 50px; text-align : center; line-height:50px; font-size:1.1em}
+	#tabmenu>div:nth-child(1){background : #00a7f0; color:white}
+	#list1, #list2{width : 100%; height : 1500px; margin : 0px auto; margin-top:20px; border:1px solid #ddd}
 	#list2{display : none;}
 </style>
 <script>
 	$(function(){
 		$("#tabmenu>div").on("click",function(){
 			if(($(this).index() == 1)){
-				$(this).css("background","blue")
-				$("#tabmenu>div").not($(this)).css("background","white")
+				$(this).css("background","#00a7f0").css("color","white")
+				$("#tabmenu>div").not($(this)).css("background","white").css("border-bottom","1px solid #ddd").css("color","black")
 				$("#list2").css("display","block")
 				$("#list1").css("display","none")
 			}
 			else{
-				$(this).css("background","blue")
-				$("#tabmenu>div").not($(this)).css("background","white")
+				$(this).css("background","#00a7f0").css("color","white")
+				$("#tabmenu>div").not($(this)).css("background","white").css("border-bottom","1px solid #ddd").css("color","black")
 				$("#list1").css("display","block")
 				$("#list2").css("display","none")
 			}
