@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="project/headerFooterStyle.css" type="text/css"/>
 <link rel="stylesheet" href="project/Main.css" type="text/css"/>
 <style>
-
+#cjimg>div{width:400px; hegith:400px; border:1px solid red;}
 </style>
 
 </head>
@@ -22,10 +22,10 @@
 			var url = ['project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html',
 						'project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html']
 			for(i=1; i<=9; i++){
-				imglist += '<a href="'+url[i-1]+'"><img src="image/main_img_banner_';
+				imglist += '<div><a href="'+url[i-1]+'"><img src="image/main_img_banner_';
 				if(i<=9)
 				imglist += i;
-			imglist+='.jpg"/></a>'
+			imglist+='.jpg"/></a>1111</div>'
 			}
 	
 			document.getElementById('cjimg').innerHTML=imglist;
@@ -147,7 +147,7 @@
 		
 		<!-- 여기부터 작업해주시면 됩니당 ^^ -->
 		<div>
-			<div class='row'>
+			<div class='row' id='rowdiv'>
 				
 				<div id='jeju' style='background-image:url(image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
 					<h1>2112</h1>
@@ -166,14 +166,17 @@
 				
 			
 			</div>
-		</div>
+		</div> 
 			
 			
 			 <div>
-			<hr class="hrStyle"/> 
-			 	<h1> 추천여행지 </h1>
-			 	<div id='cjimg'></div>
-			 </div>
+			
+				<h1> <span style='color:red;'>HOT</span> Recommend</h1><br>
+			 	<h5> 추천여행지로 원하시는 여행을 즐겨보세요. </h5>
+			 	<hr class="hrStyle"/>
+			 	<div id='cjimg' style='margin-top:50px;'></div>
+			 	
+			 	</div>
 	
 		
 
