@@ -106,30 +106,9 @@
 	margin-top: 10px
 }
 
-#id {
-	margin-left: -468px;
-}
+#loginFrm tr>td:nth-child(2){text-align:left}
+#loginFrm tr:nth-child(6)>td,#loginFrm tr:nth-child(7)>td{text-align:left}
 
-#pwd {
-	margin-left: -468px;
-}
-
-#pwd2 {
-	margin-left: -695px;
-}
-
-#name {
-	margin-left: -695px;
-}
-
-#email {
-	margin-left: -102px;
-}
-
-#tel {
-	margin-left: -316px;
-}
-
-#mo {
-	margin-left: -580px;
+#addr,#detailAddr{
+	width:600px;
 }

@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String pageName = "회사소개";
+	String pageSideName = "구트투어 회사소개";
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,81 +26,13 @@
 				
 				if(sideBarHeight>=sectionHeight){
 					$("section").height("750px")};
-				
-				var imgBannerTextWidth = $("#imgBanner>div").width();
-				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
-				
 			});
 		</script>
 	</head>
 	<body>
-		<header class="navbar fixed-top navbar-expand-lg">
-			<div>
-				<div id="mainMenu">
-					<!-- 작은메뉴 -->
-					<ul id="miniMenu" class="navbar-header">
-						<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
-						<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
-						<li class="nav-item"><a href="new.html">회원가입</a></li>
-						<li class="nav-item"><a href="login.html">로그인</a></li>
-					</ul>
-				<!-- 주메뉴 -->
-					<ul class="navbar-header">
-						<li class="nav-brand"><a href="../index.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
-						<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
-						<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
-						<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
-						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
-					</ul>
-				</div>
-				<!-- 이미지배너 -->
-				<div id="imgBanner">
-					<div>
-					<h1>헤더풋터</h1>
-					<h2>그리고 사이드</h2>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file="header.jspf"%>
 		<section>
-			<div id="sideBar">
-				<div>
-					<ul>
-						<li class="sideBarFirstUlList">
-							<h6>고객센터</h6>
-							<ul>
-								<li>00-0000-0000</li>
-								<li>평일/00:00-23:59</li>
-								<li>공휴일/주말 휴무</li>
-							</ul>
-						</li>
-						<li class="sideBarFirstUlList">
-							<h6>여행바구니</h6>
-							<a href="shoppingbasket.html">0</a>
-						</li>
-						<li class="sideBarFirstUlList">
-							<h6>내가본상품</h6>
-							<ul id="myHistory">
-								<li><img src="../image/Logo.png" class="myHistory"/></li>
-								<li><img src="../image/MenuLogo.png" class="myHistory"/></li>
-								<li><img src="../image/sangfum_01.jpg" class="myHistory"/></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<button>TOP▲</button>
-				<div>
-					<ul>
-						<li><img src="../image/sideBarAdv_01.png" class="sideBarAdv"/></li>
-						<li><img src="../image/sideBarAdv_02.png" class="sideBarAdv"/></li>
-						<li><img src="../image/sideBarAdv_03.png" class="sideBarAdv"/></li>
-					</ul>
-				</div>
-			</div>
+			<%@ include file="sidebar.jspf"%>
 			<h1>회사소개</h1><hr/>
 			<div class="divForm">
 				우리 구트투어는 다양한 테마(수학여행,체험학습 등)의 여행을 기준으로 사용자가 원하는 여행을 제공하고,<br/>
@@ -197,35 +135,6 @@
 				</div>
 			</div>		
 		</section>
-		<footer>
-			<!-- 메뉴 -->
-			<div id="footMenu">
-				<ul>
-					<li><a href="companyInfo.html">회사소개</a></li>
-					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
-					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
-					<li><a href="clauseInfo.html">이용약관</a></li>
-					<li><a href="InfoCenter.html">고객센터</a></li>
-				</ul>
-			</div>
-			<!-- 회사정보 -->
-			<div id="footInfo">
-				<table>
-					<tr>
-						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
-					</tr>
-					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
-					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
-					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
-				</table>
-				<ul id="footImgList">
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-				</ul>
-			</div>
-		</footer>
+		<%@ include file="footer.jspf"%>
 	</body>
 </html>

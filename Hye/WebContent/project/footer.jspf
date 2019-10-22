@@ -9,29 +9,29 @@
 	<!-- 메뉴 -->
 	<div id="footMenu">
 		<ul>
-			<li><a href="companyInfo.html">회사소개</a></li>
-			<li><a href="clauseInfo.html">국내여행표준약관</a></li>
-			<li><a href="clauseInfo.html">개인정보취급방침</a></li>
-			<li><a href="clauseInfo.html">이용약관</a></li>
-			<li><a href="InfoCenter.html">고객센터</a></li>
+			<li><a href="<%=request.getContextPath()%>/project/companyInfo.jsp">회사소개</a></li>
+			<li><a href="<%=request.getContextPath()%>/project/clauseInfo.jsp?cip=1">국내여행표준약관</a></li><!-- 나중에 do로 고쳐야 함. -->
+			<li><a href="<%=request.getContextPath()%>/project/clauseInfo.jsp?cip=2">개인정보취급방침</a></li>
+			<li><a href="<%=request.getContextPath()%>/project/clauseInfo.jsp?cip=3">이용약관</a></li>
+			<li><a href="<%=request.getContextPath()%>/project/InfoCenter.jsp">고객센터</a></li>
 		</ul>
 	</div>
 	<!-- 회사정보 -->
 	<div id="footInfo">
 		<table>
 			<tr>
-				<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
+				<td rowspan="4"><img src="<%=request.getContextPath()%>/image/MenuLogo.png" id="footLogo"/></td>
 			</tr>
 			<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
 			<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
 			<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
 		</table>
 		<ul id="footImgList">
-			<li><img src="../image/MenuLogo.png"/></li>
-			<li><img src="../image/MenuLogo.png"/></li>
-			<li><img src="../image/MenuLogo.png"/></li>
-			<li><img src="../image/MenuLogo.png"/></li>
-			<li><img src="../image/MenuLogo.png"/></li>
+			<li><img src="<%=request.getContextPath()%>/image/MenuLogo.png"/></li>
+			<li><img src="<%=request.getContextPath()%>/image/MenuLogo.png"/></li>
+			<li><img src="<%=request.getContextPath()%>/image/MenuLogo.png"/></li>
+			<li><img src="<%=request.getContextPath()%>/image/MenuLogo.png"/></li>
+			<li><img src="<%=request.getContextPath()%>/image/MenuLogo.png"/></li>
 		</ul>
 	</div>
 </footer>

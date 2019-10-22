@@ -1,99 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name = "viewport" content="width=device-width,initial-scale=1">
-<title>Insert title here</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<style>
-*{font-family:'Noto Sans KR',sans-serif;}
-</style>
-<style>
-	#a1{width : 100px;}
-	#main{margin : 0px auto; width : 1200px ;height : 600px;}
-	#a1{margin : 0px auto; width : 100%; height:50px; line-height:50px; font-size:20px;}
-	#main2>div{float : left; width : 550px; height : 500px;}
-	#imgslide, #select{border:1px solid #ddd; border-radius:5px; margin-top:20px; padding:10px}
-	#imgslide{margin-right:20px}
-	#select>div:nth-child(1){margin : 50px 0px;}
-	#select>div:nth-child(3){margin-top : 50px; height : 200px;}
-	#select select{width : 100%}
-	#count{margin-top : 40px; margin-left : 20px;}
-	#count>div{float : left; text-align:center}
-	#count>div:nth-child(2n + 1){width : 30px;}
-	#count>div:nth-child(2n){width : 40px;}
-	#price{text-align : right;font-size:2.5em; margin-top : 10px;}
-	#choice{padding : 10px; margin-left : 250px;}
-	#choice>button{padding : 20px 20px; margin-left : 20px;}
-	#prospec{height : 500px; margin : 0px auto; width : 1200px;}
-	#tabmenu>div{border:1px solid #ddd; width : 33.33%; float : left;}
-	#list1,#list2,#list3{height : 500px;}
-	#tabmenu>div:nth-child(1){background : #00a7f0; color:white}
-	#list2,#list3{display : none;}
-	hr{margin:10px 5px;}
-	
-</style>
-<script>
-	$(function(){
-		var x = parseInt($("#count>div:nth-child(2)").html());
-		
-		$("#count>div").on("click",function(){
-			if($("#count>div:nth-child(2)").html() >= 0 && $("#count>div:nth-child(2)").html() <=99 && $(this).index() == 2){
-				var cnt = x+=1
-				$("#count>div:nth-child(2)").text(cnt);
-				$("#price>span").text(parseInt($("#price>span").html())+92000)
-			}
-			if($("#count>div:nth-child(2)").html() <= 100 &&$("#count>div:nth-child(2)").html() > 0 && $(this).index() == 0){
-				var cnt = x-=1
-				$("#count>div:nth-child(2)").text(cnt);
-				$("#price>span").text(parseInt($("#price>span").html())-92000)
-				
-			}
-		})
-		$("#tabmenu>div").on("click",function(){
-			if($(this).index() == 0){
-				$(this).css("background","#00a7f0").css("color","#fff");
-				$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
-				$("#list1").css("display","block")
-				$("#list2").css("display","none")
-				$("#list3").css("display","none")
-			}
-			if($(this).index() == 1){
-				$(this).css("background","#00a7f0").css("color","#fff");
-				$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
-				$("#list1").css("display","none")
-				$("#list2").css("display","block")
-				$("#list3").css("display","none")
-			}
-			if($(this).index() == 2){
-				$(this).css("background","#00a7f0").css("color","#fff");
-				$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
-				$("#list1").css("display","none")
-				$("#list2").css("display","none")
-				$("#list3").css("display","block")
-			}
-		})
-	})
-</script>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name = "viewport" content="width=device-width,initial-scale=1">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<style>
+		*{font-family:'Noto Sans KR',sans-serif;}
+		</style>
+		<style>
+			#a1{width : 100px;}
+			#main{margin : 0px auto; width : 1200px ;height : 600px;}
+			#a1{margin : 0px auto; width : 100%; height:50px; line-height:50px; font-size:20px;}
+			#main2>div{float : left; width : 550px; height : 500px;}
+			#imgslide, #select{border:1px solid #ddd; border-radius:5px; margin-top:20px; padding:10px}
+			#imgslide{margin-right:20px}
+			#select>div:nth-child(1){margin : 50px 0px;}
+			#select>div:nth-child(3){margin-top : 50px; height : 200px;}
+			#select select{width : 100%}
+			#count{margin-top : 40px; margin-left : 20px;}
+			#count>div{float : left; text-align:center}
+			#count>div:nth-child(2n + 1){width : 30px;}
+			#count>div:nth-child(2n){width : 40px;}
+			#price{text-align : right;font-size:2.5em; margin-top : 10px;}
+			#choice{padding : 10px; margin-left : 250px;}
+			#choice>button{padding : 20px 20px; margin-left : 20px;}
+			#prospec{height : 500px; margin : 0px auto; width : 1200px;}
+			#tabmenu>div{border:1px solid #ddd; width : 33.33%; float : left;}
+			#list1,#list2,#list3{height : 500px;}
+			#tabmenu>div:nth-child(1){background : #00a7f0; color:white}
+			#list2,#list3{display : none;}
+			hr{margin:10px 5px;}
+		</style>
 		<script>
 			$(function(){
+				var x = parseInt($("#count>div:nth-child(2)").html());
+				
+				$("#count>div").on("click",function(){
+					if($("#count>div:nth-child(2)").html() >= 0 && $("#count>div:nth-child(2)").html() <=99 && $(this).index() == 2){
+						var cnt = x+=1
+						$("#count>div:nth-child(2)").text(cnt);
+						$("#price>span").text(parseInt($("#price>span").html())+92000)
+					}
+					if($("#count>div:nth-child(2)").html() <= 100 &&$("#count>div:nth-child(2)").html() > 0 && $(this).index() == 0){
+						var cnt = x-=1
+						$("#count>div:nth-child(2)").text(cnt);
+						$("#price>span").text(parseInt($("#price>span").html())-92000)
+						
+					}
+				})
+				$("#tabmenu>div").on("click",function(){
+					if($(this).index() == 0){
+						$(this).css("background","#00a7f0").css("color","#fff");
+						$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
+						$("#list1").css("display","block")
+						$("#list2").css("display","none")
+						$("#list3").css("display","none")
+					}
+					if($(this).index() == 1){
+						$(this).css("background","#00a7f0").css("color","#fff");
+						$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
+						$("#list1").css("display","none")
+						$("#list2").css("display","block")
+						$("#list3").css("display","none")
+					}
+					if($(this).index() == 2){
+						$(this).css("background","#00a7f0").css("color","#fff");
+						$("#tabmenu>div").not($(this)).css("background","white").css("color","#000");
+						$("#list1").css("display","none")
+						$("#list2").css("display","none")
+						$("#list3").css("display","block")
+					}
+				})
+				
 				var sectionHeight = $("section").height();
 				var sideBarHeight = $("#sideBar").height();
 				
-				if(sideBarHeight>=sectionHeight){
-					$("section").height("750px")};
-				
-				var imgBannerTextWidth = $("#imgBanner>div").width();
-				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
-				
-				
-			});
+			})
 		</script>
+	</head>
 	<body>
 		<header class="navbar fixed-top navbar-expand-lg">
 			<div>

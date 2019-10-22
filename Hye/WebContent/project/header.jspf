@@ -17,29 +17,29 @@
 		<div id="mainMenu">
 			<!-- 작은메뉴 -->
 			<ul id="miniMenu" class="navbar-header">
-				<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
-				<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
-				<li class="nav-item"><a href="new.html">회원가입</a></li>
-				<li class="nav-item"><a href="login.html">로그인</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/InfoCenter.jsp">고객센터</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/shoppingbasket.jsp">여행바구니</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/new.jsp">회원가입</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/login.jsp">로그인</a></li>
 			</ul>
 		<!-- 주메뉴 -->
 			<ul class="navbar-header">
-				<li class="nav-brand"><a href="../index.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
-				<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
-				<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
-				<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
-				<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
-				<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
-				<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
-				<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
+				<li class="nav-brand"><a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/image/MenuLogo.png"id="mainLogo"/></a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">수학여행</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">현장학습</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">1박2일</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">기업/단체</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/make_trip.jsp">여행만들기</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">출발지</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/reviewPage.jsp">여행후기</a></li>
 				<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
 			</ul>
 		</div>
 		<!-- 이미지배너 -->
 		<div id="imgBanner">
 			<div>
-			<h1><%=name%></h1>
-			<h2><%=sideName %></h2>
+			<h1><%=pageName%></h1>
+			<h2><%=pageSideName %></h2>
 			</div>
 		</div>
 	</div>
