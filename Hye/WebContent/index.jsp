@@ -23,8 +23,8 @@
 		function setImage(){
 			
 			var imglist = '';
-			var url = ['project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html',
-						'project/sangfum1.html','project/sangfum1.html','project/sangfum1.html','project/sangfum1.html']
+			var url = ['project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp',
+						'project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp']
 			for(i=1; i<=9; i++){
 				imglist += '<div><a href="'+url[i-1]+'"><img src="image/main_img_banner_';
 				if(i<=9)
@@ -90,21 +90,21 @@
 				<div id="mainMenu">
 					<!-- 작은메뉴 -->
 					<ul id="miniMenu" class="navbar-header">
-						<li class="nav-item"><a href="project/InfoCenter.html">고객센터</a></li>
-						<li class="nav-item"><a href="project/shoppingbasket.html">여행바구니</a></li>
-						<li class="nav-item"><a href="project/new.html">회원가입</a></li>
-						<li class="nav-item"><a href="project/login.html">로그인</a></li>
+						<li class="nav-item"><a href="project/InfoCenter.jsp">고객센터</a></li>
+						<li class="nav-item"><a href="project/shoppingbasket.jsp">여행바구니</a></li>
+						<li class="nav-item"><a href="project/new.jsp">회원가입</a></li>
+						<li class="nav-item"><a href="project/login.jsp">로그인</a></li>
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header">
-						<li class="nav-brand"><a href="index.html" id='mainlogo' style="font-size:40px;">GooTTour</a></li>
-						<li class="nav-item"><a href="project/sangfum_list.html">수학여행</a></li>
-						<li class="nav-item"><a href="project/sangfum_list.html">현장학습</a></li>
-						<li class="nav-item"><a href="project/sangfum_list.html">1박2일</a></li>
-						<li class="nav-item"><a href="project/sangfum_list.html">기업/단체</a></li>
-						<li class="nav-item"><a href="project/make_trip.html">여행만들기</a></li>
-						<li class="nav-item"><a href="project/sangfum_list.html">출발지</a></li>
-						<li class="nav-item"><a href="project/reviewPage.html">여행후기</a></li>
+						<li class="nav-brand"><a href="index.jsp" id='mainlogo' style="font-size:40px;">GooTTour</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.jsp">수학여행</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.jsp">현장학습</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.jsp">1박2일</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.jsp">기업/단체</a></li>
+						<li class="nav-item"><a href="project/make_trip.jsp">여행만들기</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.jsp">출발지</a></li>
+						<li class="nav-item"><a href="project/reviewPage.jsp">여행후기</a></li>
 						<li class="nav-item"><div><input type="text" style="border:none; border-radius: 15px 0 0 15px"><input type="submit"  style="background-image:url('image/magno.png'); color:transparent; background-size: 20px 20px;vertical-align: 2px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0;"></div></li>
 					</ul>
 				</div>
@@ -117,7 +117,7 @@
 			
 			<div> 
 																														<!-- 이동만 보려고 임시로 클릭이벤트로 해놓음. -->
-			<input type="text" style="border:none; border-radius: 15px 0 0 15px; font-size:150%"><input type="submit" onclick="location.href='project/search.html'" style="background-image:url('image/magno.png'); color:transparent; background-size: 40px 40px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0; vertical-align: 3px;">
+			<input type="text" style="border:none; border-radius: 15px 0 0 15px; font-size:150%"><input type="submit" onclick="location.href='project/search.jsp'" style="background-image:url('image/magno.png'); color:transparent; background-size: 40px 40px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0; vertical-align: 3px;">
 			 
 			</div>
 		</div>
@@ -186,35 +186,6 @@
 		
 
 	</section>
-		<footer>
-			<!-- 메뉴 -->
-			<div id="footMenu">
-				<ul>
-					<li><a href="project/companyInfo.html">회사소개</a></li>
-					<li><a href="project/clauseInfo.html">국내여행표준약관</a></li>
-					<li><a href="project/clauseInfo.html">개인정보취급방침</a></li>
-					<li><a href="project/clauseInfo.html">이용약관</a></li>
-					<li><a href="project/InfoCenter.html">고객센터</a></li>
-				</ul>
-			</div>
-			<!-- 회사정보 -->
-			<div id="footInfo">
-				<table>
-					<tr>
-						<td rowspan="4"><img src="image/MenuLogo.png" id="footLogo"/></td>
-					</tr>
-					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
-					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
-					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
-				</table>
-				<ul id="footImgList">
-					<li><img src="image/MenuLogo.png"/></li>
-					<li><img src="image/MenuLogo.png"/></li>
-					<li><img src="image/MenuLogo.png"/></li>
-					<li><img src="image/MenuLogo.png"/></li>
-					<li><img src="image/MenuLogo.png"/></li>
-				</ul>
-			</div>
-		</footer>
+		<%@ include file="project/footer.jspf" %>
 </body>
 </html>

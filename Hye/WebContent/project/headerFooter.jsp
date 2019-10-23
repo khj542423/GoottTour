@@ -2,8 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
-	String name = "헤더풋터";
-	String sideName = "그리고 사이드";
+	String pageName = "헤더풋터";
+	String pageSideName = "그리고 사이드";
 %>
 <!DOCTYPE html>
 <html>
@@ -17,6 +17,7 @@
 	<body>
 		<%@ include file="header.jspf"%>
 		<section>
+		<%@ include file="sidebar.jspf"%>
 			섹션!
 		</section>
 		<%@ include file="footer.jspf"%>

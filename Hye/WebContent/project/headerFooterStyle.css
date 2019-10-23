@@ -41,6 +41,7 @@ section{padding-top:320px; width:1200px; margin:0px auto;}
 #sideBar{position:absolute; top:330px; left:85%; width:120px;}
 #sideBar button{width:100%; height:30px; margin-bottom:5px; background:gray; color:white; border:none}
 #sideBar ul, #sidebar li{float:bottom; margin:0px}
+#sideBar>div>ul>li:nth-child(2){height:80px}
 #sideBar>div:first-child li{width:100%;}
 #sideBar h6{font-weight:bold}
 
@@ -63,3 +64,6 @@ section{padding-top:320px; width:1200px; margin:0px auto;}
 textarea{resize:none}
 
 .hrStyle{border:0; height: 3px; background:#ccc linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))}
+
+#imgBanner h1{text-align:center}
+#imgBanner h2{text-align:center}
