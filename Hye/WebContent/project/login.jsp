@@ -6,6 +6,73 @@
 %>
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="logcss.css" type="text/css" />
+	<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<script>
+	
+		function popup() {
+			var url = "pop.jsp";
+			var name = "popup test";
+			var option = "width=530, height=340, top=200, left=200 resizable=no"
+			window.open(url,name,option);
+		}
+	</script>
+	<script>
+		function CheckIt_com(form) {
+
+
+
+			if (inputID.value == "") { alert("아이디를 입력하여 주십시오!"); inputID.focus(); return false; }
+
+
+			if (inputPassword.value == "") { alert("비밀번호를 입력하여 주십시오!"); inputPassword.focus(); return false; }
+
+			document.submit();
+
+		}
+
+
+		function CheckIt_mem(form) {
+
+			if (inputID.value == "") { alert("아이디를 입력하여 주십시오!"); inputID.focus(); return false; }
+
+
+			if (inputPassword.value == "") { alert("비밀번호를 입력하여 주십시오!"); inputPassword.focus(); return false; }
+
+			document.submit();
+		}
+
+
+	</script>
+</head>
+
+	<script>
+			$(function(){
+				var sectionHeight = $("section").height();
+				var sideBarHeight = $("#sideBar").height();
+				
+				if(sideBarHeight>=sectionHeight){
+					$("section").height("750px")};
+				
+				var imgBannerTextWidth = $("#imgBanner>div").width();
+				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+				
+				
+			});
+		</script>
+=======
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
@@ -54,6 +121,7 @@
 	
 		</script>
 	</head>
+>>>>>>> refs/remotes/origin/master
 	<body>
 	<%@ include file="header.jspf"%>
 	<section>
