@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +13,6 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="project/headerFooterStyle.css" type="text/css"/>
 <link rel="stylesheet" href="project/Main.css" type="text/css"/>
-<style>
-
-#cjimg>div{width:400px; hegith:400px; border:1px solid red;}
-
-</style>
 
 </head>
 	<script>
@@ -122,7 +118,7 @@
 			</div>
 		</div>
 		<div id = "imgslide"><!-- 이벤트 이미지 슬라이드 -->
-			<div id="carouselExampleControls" class="car	ousel slide" data-ride="carousel">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
 			      <img class="d-block w-100" src="image/event_01.jpg" alt="First slide">
@@ -145,25 +141,25 @@
 			</div>
 		</div>
 		<div id='top-h1'>
-		<h1><span style='color:red;'>HOT</span> Destination</h1><br><h5>인기 여행지로 즐거운 여행을 즐겨보세요.</h5>
+		<h1 style="font-family: fantasy; font-size: 50px;"><span style='color:red;font-family: fantasy;'>HOT</span> Destination</h1><br><h5>인기 여행지로 즐거운 여행을 즐겨보세요.</h5>
 		</div>
 		<!-- 여기부터 작업해주시면 됩니당 ^^ -->
-		<div>
+		<div style="margin-bottom:50px;">
 			<div class='row' id='rowdiv'>
 				
 				<div id='hot1' style='background-image:url(image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
-					<h1 style="color:white"><a href="#">경주</a></h1>
+					<h1 style="color:white"><a href="#">경주(Gyeongju)</a></h1>
 					
 				</div>
 				
 				<div id='hot2' style='background-image:url(image/gyeongju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
-					<h1 style="color:white"><a href="#">제주</a></h1>
+					<h1 style="color:white"><a href="#">제주(Jeju)</a></h1>
 					
 				</div>
 				
 				<div id='hot3' style='background-image:url(image/seoul.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
-					<h1 style="color:white"><a href="#">서울</a></h1>
-					
+					<h1 style="color:white"><a href="#">서울(Seoul)</a></h1>
+					 
 				</div>
 				
 			
@@ -173,7 +169,7 @@
 			
 			
 			 <div style="margin-top:50px">
-				<h1> <span style='color:red;'>HOT</span> Recommend</h1><br>
+				<h1 style="font-family: fantasy; font-size: 50px;"> <span style='color:red; font-family: fantasy;'>HOT</span> Recommend</h1><br>
 			 	<h5> 추천여행지로 원하시는 여행을 즐겨보세요. </h5>
 			 	<div id='cjimg' style='margin-top:50px;'></div>
 			 </div>
