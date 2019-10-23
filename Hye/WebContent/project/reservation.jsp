@@ -45,14 +45,7 @@
 				$(this).css('background-color','orange').css('color','#fff');
 				alert('예약이완료됨.');
 			});
-			
-			var sectionHeight = $("section").height();
-			var sideBarHeight = $("#sideBar").height();
-			
-			if(sideBarHeight>=sectionHeight){
-				$("section").height("750px")};
 				
-			
 			$("#samecheck").change(function(){
 				if(this.checked){
 					for(i=0; i<6; i++){

@@ -32,9 +32,6 @@
 			
 			.modal{top:100px}
 			
-			#lodgingRadio{padding:20px; background:#adf; border-radius:5px}
-			#lodgingRadio>input:last-child{margin-left:10px}
-			
 			#selectLodgingList{margin-top:20px; width:100%}
 			#selectLodgingList tr{width:10%; height:50px; border-bottom:1px solid #ddd}
 			#selectLodgingList tr td:first-child{width:55%}
@@ -46,12 +43,6 @@
 				//날짜선택
 				$("#depDate").datepicker();
 				$("#delDate").datepicker();
-				
-				var sectionHeight = $("section").height();
-				var sideBarHeight = $("#sideBar").height();
-				
-				if(sideBarHeight>=sectionHeight){
-					$("section").height("750px")};
 			})
 		</script>
 	</head>
@@ -109,11 +100,6 @@
 						<div id="lodgingSelect">
 							<h4 style="text-align:left">숙소</h4>
 							<hr style="margin-top:0px"/>
-							<div id="lodgingRadio">
-								<input type="radio"/>한곳에서 연박하기
-								<input type="radio"/>따로따로 숙박하기
-							</div>
-							<div>
 							<table id="selectLodgingList">
 								<tr>
 									<td>선택된 숙박이 없습니다.</td>
@@ -121,7 +107,6 @@
 									<td><button data-toggle="modal" data-target="#lodgingModal">선택</button> <!-- 누르면 숙소 모달 --></td>
 								</tr>
 							</table>
-							</div>
 						</div>
 					</td>
 				</tr>

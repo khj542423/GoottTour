@@ -18,6 +18,12 @@
 		$("#sideBarTopBtn").click(function(){
 			$("html").scrollTop(0);
 		});
+		
+		var sectionHeight = $("section").height();
+		var sideBarHeight = $("#sideBar").height();
+		
+		if(sideBarHeight>=sectionHeight){
+			$("section").height("750px")};
 	});
 </script>
 <div id="sideBar">

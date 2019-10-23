@@ -23,12 +23,7 @@
 		<script>
 		$(function(){
 			CKEDITOR.replace( 'writeText' );
-			
-			var sectionHeight = $("section").height();
-			var sideBarHeight = $("#sideBar").height();
-			
-			if(sideBarHeight>=sectionHeight){
-				$("section").height("750px")};
+
 		});
 		</script>
 	</head>

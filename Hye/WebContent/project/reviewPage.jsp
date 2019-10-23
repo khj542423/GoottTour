@@ -22,14 +22,7 @@
 		</style>
 	</head>
 		<script>
-			$(function(){
-				var sectionHeight = $("section").height();
-				var sideBarHeight = $("#sideBar").height();
-				
-				if(sideBarHeight>=sectionHeight){
-					$("section").height("750px")};
-				
-			});
+
 		</script>
 	<body>
 		<%@ include file="header.jspf"%>

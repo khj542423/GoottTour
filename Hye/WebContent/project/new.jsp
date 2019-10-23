@@ -6,7 +6,6 @@
 %>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -20,6 +19,7 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <link rel="stylesheet" href="new.css" type="text/css" />
 <link rel="stylesheet" href="headerFooterStyle.css" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -62,15 +62,6 @@
 		document.submit();
 	}
 	
-	$(function(){
-		var sectionHeight = $("section").height();
-		var sideBarHeight = $("#sideBar").height();
-		
-		if(sideBarHeight>=sectionHeight){
-			$("section").height("750px")};
-		
-		
-	});
 </script>
 </head>
 	<body>
@@ -86,7 +77,7 @@
 
 		<div class="container">
 			<div id="layerPOP2">
-				<form method="get" name='m' id='loginFrm' action="../index.html">
+				<form method="get" name='m' id='loginFrm' action="../index.jsp">
 					<input type='hidden' name='spam_chk_val' value=''>
 					<table class="member">
 						<tr>
@@ -118,7 +109,12 @@
 						</tr>
 						<tr>
 							<td class="stit" rowspan="3">주소</td>
-							<td class="frm"><input type="text" class="ipf" name='zipcode' id='zipcode'></td>
+							<td class="frm">
+								<div id="wrap" style="display:none;border:1px solid; width:500px; height:300px; margin:-10px 0px 5px -10px;position:absolute">
+									<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+								</div>
+								<input type="text" class="ipf" name='zipcode' id='zipcode'><input type="button" class="btn btn-secondary" onclick="sample3_execDaumPostcode()" value="검색"/>
+							</td>
 						</tr>
 						<tr>
 							<td class="frm"><input type="text" class="ipf" name='addr'id='addr'></td>
@@ -135,9 +131,9 @@
 						<tr>
 							<td class="stit">연락처</td>
 							<td class="frm"><input type="text" class="ipf2" name='tel'
-								id='tel'>-<input type="text" class="ipf2"
-								name='m_phone2'>-<input type="text" class="ipf2"
-								name='m_phone3'>&nbsp;&nbsp;연락가능한 휴대폰번호를 입력하세요</td>
+								id='tel' maxlength="3">-<input type="text" class="ipf2"
+								name='m_phone2' maxlength="4">-<input type="text" class="ipf2"
+								name='m_phone3' maxlength="4">&nbsp;&nbsp;연락가능한 휴대폰번호를 입력하세요</td>
 						</tr>
 
 						<tr>
@@ -371,8 +367,59 @@
 				</form>
 			</div>
 		</div>
+		<script>
+		   	 // 우편번호 찾기 찾기 화면을 넣을 element
+		       var element_wrap = document.getElementById('wrap');
+		
+		       function foldDaumPostcode() {
+		           // iframe을 넣은 element를 안보이게 한다.
+		           element_wrap.style.display = 'none';
+		       }
+		
+		       function sample3_execDaumPostcode() {
+		           // 현재 scroll 위치를 저장해놓는다.
+		           var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+		           new daum.Postcode({
+		               oncomplete: function(data) {
+		                   // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+		
+		                   // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+		                   // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+		                   var addr = ''; // 주소 변수
+		                   var extraAddr = ''; // 참고항목 변수
+		
+		                   //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+		                   if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+		                       addr = data.roadAddress;
+		                   } else { // 사용자가 지번 주소를 선택했을 경우(J)
+		                       addr = data.jibunAddress;
+		                   }
+		                   // 우편번호와 주소 정보를 해당 필드에 넣는다.
+		                   document.getElementById('zipcode').value = data.zonecode;
+		                   document.getElementById("addr").value = addr;
+		                   // 커서를 상세주소 필드로 이동한다.
+		                   document.getElementById("detailAddr").focus();
+		
+		                   // iframe을 넣은 element를 안보이게 한다.
+		                   // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+		                   element_wrap.style.display = 'none';
+		
+		                   // 우편번호 찾기 화면이 보이기 이전으로 scroll 위치를 되돌린다.
+		                   document.body.scrollTop = currentScroll;
+		               },
+		               // 우편번호 찾기 화면 크기가 조정되었을때 실행할 코드를 작성하는 부분. iframe을 넣은 element의 높이값을 조정한다.
+		               onresize : function(size) {
+		                   element_wrap.style.height = size.height+'px';
+		               },
+		               width : '100%',
+		               height : '100%'
+		           }).embed(element_wrap);
+		
+		           // iframe을 넣은 element를 보이게 한다.
+		           element_wrap.style.display = 'block';
+		       }
+		</script>
 	</section>
 	<%@ include file="footer.jspf"%>
 </body>
-
 </html>

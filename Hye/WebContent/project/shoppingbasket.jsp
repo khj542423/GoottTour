@@ -29,13 +29,6 @@
 						
 						$('#body td input').prop('checked', false);
 					}
-					
-					var sectionHeight = $("section").height();
-					var sideBarHeight = $("#sideBar").height();
-					
-					if(sideBarHeight>=sectionHeight){
-						$("section").height("750px")};
-	
 				});
 			});
 		</script>

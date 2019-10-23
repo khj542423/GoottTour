@@ -82,10 +82,7 @@
 						$("#list3").css("display","block")
 					}
 				})
-				
-				var sectionHeight = $("section").height();
-				var sideBarHeight = $("#sideBar").height();
-				
+
 			})
 		</script>
 	</head>
