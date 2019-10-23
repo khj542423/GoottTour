@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 	*{font-family:'Noto Sans KR',sans-serif;}
-	#imgBanner{width:1920px; margin-top:-130px; height:100vh; margin-left:-30%; overflow:hidden}
+	#imgBanner{width:1920px; margin-top:-130px; height:85vh; margin-left:-30%; overflow:hidden}
 	#bannerImg{width:1920px; }
 	#imgBanner li{color:white;}
-	#imgBanner>div{top:400px;} 
+	#imgBanner>div{top:350px;} 
 	#imgBanner>div>input{height:55px}
 	#imgBanner>div>input:first-child{width:850px; text-align:left; padding-left:20px; padding-right:20px}
 	#imgBanner>div>input:last-child{width:60px}
