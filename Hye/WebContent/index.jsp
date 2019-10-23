@@ -25,7 +25,7 @@
 				imglist += '<div><a href="'+url[i-1]+'"><img src="image/main_img_banner_';
 				if(i<=9)
 				imglist += i;
-			imglist+='.jpg"/></a>1111</div>'
+			imglist+='.jpg"/></a>'+url[i-1]+'</div>'
 			}
 	
 			document.getElementById('cjimg').innerHTML=imglist;
