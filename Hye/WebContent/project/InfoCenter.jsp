@@ -19,6 +19,7 @@
 		<style>
 		*{font-family:'Noto Sans KR',sans-serif;}
 		</style>
+
 	<script>
 			$(function(){
 				var sectionHeight = $("section").height();
@@ -27,6 +28,7 @@
 				if(sideBarHeight>=sectionHeight){
 					$("section").height("750px")};
 			});
+
 		</script>
 	</head>
 	<body>

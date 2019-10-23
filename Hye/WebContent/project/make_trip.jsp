@@ -32,6 +32,7 @@
 			
 			.modal{top:100px}
 			
+<<<<<<< HEAD
 			#lodgingRadio{padding:20px; background:#adf; border-radius:5px}
 			#lodgingRadio>input:last-child{margin-left:10px}
 			
@@ -122,6 +123,83 @@
 								</tr>
 							</table>
 							</div>
+=======
+			#selectLodgingList{margin-top:20px; width:100%}
+			#selectLodgingList tr{width:10%; height:50px; border-bottom:1px solid #ddd}
+			#selectLodgingList tr td:first-child{width:55%}
+			#selectLodgingList tr td:nth-child(2){width:30%}
+			#selectLodgingList tr td:last-child{width:15%}
+		</style>
+		<script>
+			$(function(){
+				//날짜선택
+				$("#depDate").datepicker();
+				$("#delDate").datepicker();
+			})
+		</script>
+	</head>
+	<body>
+		<%@ include file="header.jspf"%>
+		<section>
+			<%@ include file="sidebar.jspf"%>
+			<h3 style="text-align:left">여행만들기</h3>
+			<hr class="hrStyle"/>
+			<div id="makeTrip">
+				<form>
+				<table>
+					<tr>
+						<td>출발지역</td>
+						<td colspan="3">
+							<select id="startingDay">
+								<option>김포출발</option>
+							</select>
+						</td>
+						<td>출발일자</td>
+						<td><input type="text" id="depDate"/></td>
+						<td>도착일자</td>
+						<td><input type="text" id="delDate"/></td>
+						<td rowspan="2"><button>적용</button></td>
+					</tr>
+					<tr>
+						<td>출발인원</td>
+						<td><select><option>성인 1명</option></select></td>
+						<td><select><option>소아 1명</option></select></td>
+						<td><select><option>유아 1명</option></select></td>
+						<td colspan="4" style="text-align:left; font-size:0.9em">(성인 : 만 13세이상 / 소아 : 만2세~12세 / 유아 : 만24개월미만)</td>
+					</tr>
+				</table>
+				</form>
+			</div>
+			<table id="rlSelect">
+				<tr>
+					<td>
+						<div id="routeSelect" style="margin-right:20px">
+							<h4 style="text-align:left">여행지</h4>
+							<hr style="margin-top:0px"/>
+							<div style="text-align:left; margin:2%">
+							<h5 style="text-align:left">지역선택</h5>
+							<select style="width:100%; margin-right:2%">
+								<option>지역 설정</option>
+							</select>
+							</div>
+							<div style="margin:2%; width: 96%; border:1px solid #ddd; height:300px">지도이미지 나오는 div</div>
+							<h5 style="text-align:left; margin-left:2%">경로</h5>
+							<div style="margin:2%; width:96%; border:1px solid #ddd; height:100px">경로가 글로 나오는 div</div>
+							<button data-toggle="modal" data-target="#routeModal">선택</button> <!-- 누르면  지도 모달 -->
+						</div>
+					</td>
+					<td>
+						<div id="lodgingSelect">
+							<h4 style="text-align:left">숙소</h4>
+							<hr style="margin-top:0px"/>
+							<table id="selectLodgingList">
+								<tr>
+									<td>선택된 숙박이 없습니다.</td>
+									<td>[선택날짜]</td>
+									<td><button data-toggle="modal" data-target="#lodgingModal">선택</button> <!-- 누르면 숙소 모달 --></td>
+								</tr>
+							</table>
+>>>>>>> refs/remotes/origin/master
 						</div>
 					</td>
 				</tr>

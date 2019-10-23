@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String pageName = "구트투어 이용약관";
+	String pageSideName = "구트투어 이용약관";
+	int cip = Integer.parseInt((String)request.getParameter("cip"));
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,96 +21,22 @@
 		<style>
 		*{font-family:'Noto Sans KR',sans-serif;}
 		</style>
-	<script>
-			$(function(){
-				var sectionHeight = $("section").height();
-				var sideBarHeight = $("#sideBar").height();
-				
-				if(sideBarHeight>=sectionHeight){
-					$("section").height("750px")};
-				
-				var imgBannerTextWidth = $("#imgBanner>div").width();
-				$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
-				
-				
-			});
+		<script>
+
 		</script>
+	</head>
 	<body>
-		<header class="navbar fixed-top navbar-expand-lg">
-			<div>
-				<div id="mainMenu">
-					<!-- 작은메뉴 -->
-					<ul id="miniMenu" class="navbar-header">
-						<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
-						<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
-						<li class="nav-item"><a href="new.html">회원가입</a></li>
-						<li class="nav-item"><a href="login.html">로그인</a></li>
-					</ul>
-				<!-- 주메뉴 -->
-					<ul class="navbar-header">
-						<li class="nav-brand"><a href="../index.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
-						<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
-						<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
-						<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
-						<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
-						<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
-					</ul>
-				</div>
-				<!-- 이미지배너 -->
-				<div id="imgBanner">
-					<div>
-					<h1>헤더풋터</h1>
-					<h2>그리고 사이드</h2>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file="header.jspf" %>
 		<section>
-			<div id="sideBar">
-				<div>
-					<ul>
-						<li class="sideBarFirstUlList">
-							<h6>고객센터</h6>
-							<ul>
-								<li>00-0000-0000</li>
-								<li>평일/00:00-23:59</li>
-								<li>공휴일/주말 휴무</li>
-							</ul>
-						</li>
-						<li class="sideBarFirstUlList">
-							<h6>여행바구니</h6>
-							<a href="shoppingbasket.html">0</a>
-						</li>
-						<li class="sideBarFirstUlList">
-							<h6>내가본상품</h6>
-							<ul id="myHistory">
-								<li><img src="../image/Logo.png" class="myHistory"/></li>
-								<li><img src="../image/MenuLogo.png" class="myHistory"/></li>
-								<li><img src="../image/sangfum_01.jpg" class="myHistory"/></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<button>TOP▲</button>
-				<div>
-					<ul>
-						<li><img src="../image/sideBarAdv_01.png" class="sideBarAdv"/></li>
-						<li><img src="../image/sideBarAdv_02.png" class="sideBarAdv"/></li>
-						<li><img src="../image/sideBarAdv_03.png" class="sideBarAdv"/></li>
-					</ul>
-				</div>
-			</div>
+		<%@ include file="sidebar.jspf" %>
 			<div>
 				<ul id="navTab" class="nav nav-tabs">
-					<li class="nav-item"><a href="#clause1" class="nav-link active" data-toggle="tab">국내여행표준약관</a></li>
-					<li class="nav-item"><a href="#clause2" class="nav-link" data-toggle="tab">개인정보취급방침</a></li>
-					<li class="nav-item"><a href="#clause3" class="nav-link" data-toggle="tab">이용약관</a></li>
+					<li class="nav-item"><a href="#clause1" class="nav-link <%if(cip==1){%>active<%}%>" data-toggle="tab">국내여행표준약관</a></li>
+					<li class="nav-item"><a href="#clause2" class="nav-link <%if(cip==2){%>active<%}%>" data-toggle="tab">개인정보취급방침</a></li>
+					<li class="nav-item"><a href="#clause3" class="nav-link <%if(cip==3){%>active<%}%>" data-toggle="tab">이용약관</a></li>
 				</ul>
 				<div id="navContent" class="tab-content">
-					<div id="clause1" class="tab-pane active"><h4>국내여행표준약관</h4><hr class="hrStyle"/>
+					<div id="clause1" class="tab-pane <%if(cip==1){%>active<%}%>"><h4>국내여행표준약관</h4><hr class="hrStyle"/>
 					<div>
 						제1조 (목적)
 						이 약관은 (주)구트투어(이하 당사라 한다.)와 여행자가 체결한 국외여행계약의 세부 이행 및 준수사항을 정함을 목적으로 합니다.<br>
@@ -280,7 +211,7 @@
 						6. (개정일) 이 약관은 2011년 10월 10일부터 시행한다.<br>
 					</div>
 					</div>
-					<div id="clause2" class="tab-pane"><h4>개인정보취급방침</h4><hr class="hrStyle"/>
+					<div id="clause2" class="tab-pane <%if(cip==2){%>active<%}%>"><h4>개인정보취급방침</h4><hr class="hrStyle"/>
 					<div>
 					(주)구트투어(이하 ‘당사’)는 고객님의 개인정보처리방침을 매우 중요시하며, 『정보통신망 이용촉진 및 정보보호"에 관한 법률』상의 개인정보보호 규정 및 행정안전부가 제정한 『개인정보보호법』을 준수하고 있습니다.
 					당사는 개인정보취급(처리)방침을 통하여 귀하께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
@@ -322,7 +253,7 @@
 					- 종이에 출력된 개인정보: 분쇄기를 이용하여 분쇄<br>
 					- 전자적파일형태로 저장된 개인정보: 개인정보는 남기지 않으며, 기록을 재생 할수 없는 방법을 통하여 기록삭제</div>
 					</div>
-					<div id="clause3" class="tab-pane"><h4>이용약관</h4><hr class="hrStyle"/>
+					<div id="clause3" class="tab-pane <%if(cip==3){%>active<%}%>"><h4>이용약관</h4><hr class="hrStyle"/>
 <div>
 제1조 (목적)<br>
 이 통합약관은 (주)구트투어 주식회사가 운영하는 A: 구트투어닷컴, B:구트티켓 등 인터넷쇼핑몰(이하 "회사"라 한다)에서 제공하는 인터넷관련 서비스(이하 "서비스"라 한다)를 구트의 ID 로 각 사이트에 가입하여 이용함에 있어 구트투어 및 구트투어서비스와 이용자의 권리 의무 및 책임사항을 규정함을 목적으로 합니다.<br>
@@ -378,35 +309,6 @@
 				</div>
 			</div>
 		</section>
-		<footer>
-			<!-- 메뉴 -->
-			<div id="footMenu">
-				<ul>
-					<li><a href="companyInfo.html">회사소개</a></li>
-					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
-					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
-					<li><a href="clauseInfo.html">이용약관</a></li>
-					<li><a href="InfoCenter.html">고객센터</a></li>
-				</ul>
-			</div>
-			<!-- 회사정보 -->
-			<div id="footInfo">
-				<table>
-					<tr>
-						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
-					</tr>
-					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
-					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
-					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
-				</table>
-				<ul id="footImgList">
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-					<li><img src="../image/MenuLogo.png"/></li>
-				</ul>
-			</div>
-		</footer>
+		<%@ include file="footer.jspf" %>
 	</body>
 </html>

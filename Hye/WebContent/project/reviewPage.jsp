@@ -22,6 +22,7 @@
 		</style>
 	</head>
 		<script>
+<<<<<<< HEAD
 			$(function(){
 				var sectionHeight = $("section").height();
 				var sideBarHeight = $("#sideBar").height();
@@ -30,6 +31,9 @@
 					$("section").height("750px")};
 				
 			});
+=======
+
+>>>>>>> refs/remotes/origin/master
 		</script>
 	<body>
 		<%@ include file="header.jspf"%>

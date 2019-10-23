@@ -45,6 +45,7 @@
 				$(this).css('background-color','orange').css('color','#fff');
 				alert('예약이완료됨.');
 			});
+<<<<<<< HEAD
 			
 			var sectionHeight = $("section").height();
 			var sideBarHeight = $("#sideBar").height();
@@ -53,6 +54,9 @@
 				$("section").height("750px")};
 				
 			
+=======
+				
+>>>>>>> refs/remotes/origin/master
 			$("#samecheck").change(function(){
 				if(this.checked){
 					for(i=0; i<6; i++){

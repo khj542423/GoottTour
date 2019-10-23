@@ -20,6 +20,7 @@
      	 *{font-family:'Noto Sans KR',sans-serif;} 
      	 </style>
      	 <script>
+<<<<<<< HEAD
 			$(function(){
 				var sectionHeight = $("section").height();
 				var sideBarHeight = $("#sideBar").height();
@@ -27,6 +28,9 @@
 				if(sideBarHeight>=sectionHeight){
 					$("section").height("750px")};
 			});
+=======
+
+>>>>>>> refs/remotes/origin/master
 		</script>
 	</head>
 	<body>

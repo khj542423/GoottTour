@@ -20,6 +20,7 @@
      	 *{font-family:'Noto Sans KR',sans-serif;} 
      	 </style>
 	</head>
+<<<<<<< HEAD
 <script>
 			$(function(){
 				var sectionHeight = $("section").height();
@@ -33,6 +34,10 @@
 				
 				
 			});
+=======
+		<script>
+
+>>>>>>> refs/remotes/origin/master
 		</script>
 	<body>
 		<%@ include file="header.jspf"%>
