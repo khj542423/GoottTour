@@ -41,7 +41,7 @@ section{padding-top:320px; width:1200px; margin:0px auto;}
 #sideBar{position:absolute; top:330px; left:85%; width:120px;}
 #sideBar button{width:100%; height:30px; margin-bottom:5px; background:gray; color:white; border:none}
 #sideBar ul, #sidebar li{float:bottom; margin:0px}
-#sideBar>div>ul>li:nth-child(2){height:80px}
+#sideBar>div:first-child>ul>li:nth-child(2){height:80px}
 #sideBar>div:first-child li{width:100%;}
 #sideBar h6{font-weight:bold}
 
@@ -53,9 +53,9 @@ section{padding-top:320px; width:1200px; margin:0px auto;}
 .myHistory{width:100px; height:70px; border:1px solid gray; margin-bottom:5px}
 
 
-#sideBar>div:last-child>ul>li{height:80px; overflow:hidden; margin-bottom:5px}
+#sideBar>div:last-child>ul>li{overflow:hidden; margin-bottom:5px}
 #sidBar>div:last-child>ul>li:last-child{margin-bottom:0px}
-.sideBarAdv{width:100%; height:80px}
+.sideBarAdv{width:100%}
 
 #sideBar>div:first-child>ul{border:1px solid gray}
 

@@ -67,7 +67,7 @@
 	<div id='main'>
 	<h1 id='rev-h1'>예약하기</h1>
 	<hr class="hrStyle"/>
-		<table class="table table-bordered">
+		<table class="table table-bordered" style="table-layout:fixed">
 			<thead>
 			  <tr>
 				<th style='width:150px;'>예약날짜</th> 
@@ -75,7 +75,7 @@
 				<th style='width:240px;'>상품명</th>
 				<th style='width:100px;'>결제금액</th>
 				<th style='width:60px;'>인원</th>
-			    <th>출발일</th>
+			    <th style='width:150px;'>출발일</th>
 			    <th>여행도우미</th>
 			    <th>예약상태</th>
 			    <th>상품평</th>
@@ -85,7 +85,7 @@
 			  <tr>
 			    <td>2019년9월19일</td>
 			    <td><a href='#'>AAP3412TWB</a></td>
-			    <td>제주도 5일_특급 신라호텔 바로출발제주도 5일_준특급 신라호텔</td>
+			    <td style="width:240px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">제주도 5일_특급 신라호텔 바로출발제주도 5일_준특급 신라호텔</td>
 			    <td>500,000</td>
 			    <td>2</td>
 			    <td>2019년10월20일</td>

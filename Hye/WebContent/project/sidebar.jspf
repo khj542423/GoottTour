@@ -44,9 +44,8 @@
 			<li class="sideBarFirstUlList">
 				<h6>내가본상품</h6>
 				<ul id="myHistory">
-					<li><img src="<%=request.getContextPath()%>/image/Logo.png" class="myHistory"/></li>
-					<li><img src="<%=request.getContextPath()%>/image/MenuLogo.png" class="myHistory"/></li>
-					<li><img src="<%=request.getContextPath()%>/image/sangfum_01.jpg" class="myHistory"/></li>
+					<li><img src="<%=request.getContextPath()%>/image/main_img_banner_3.jpg" class="myHistory"/></li>
+					<li><img src="<%=request.getContextPath()%>/image/main_img_banner_7.jpg" class="myHistory"/></li>
 				</ul>
 			</li>
 		</ul>
@@ -54,9 +53,8 @@
 	<button id="sideBarTopBtn">TOP▲</button>
 	<div>
 		<ul>
-			<li><img src="<%=request.getContextPath()%>/image/sideBarAdv_01.png" class="sideBarAdv"/></li>
-			<li><img src="<%=request.getContextPath()%>/image/sideBarAdv_02.png" class="sideBarAdv"/></li>
-			<li><img src="<%=request.getContextPath()%>/image/sideBarAdv_03.png" class="sideBarAdv"/></li>
+			<li><img src="<%=request.getContextPath()%>/image/sideBarAdv_1.png" class="sideBarAdv"/></li>
+			<li><img src="<%=request.getContextPath()%>/image/sideBarAdv_2.png" class="sideBarAdv"/></li>
 		</ul>
 	</div>
 </div>

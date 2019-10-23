@@ -99,20 +99,13 @@
 </head>
 
 <body>
-	<div class='container'>
+	<div>
 		<div class="popidpw">
 			<table class="title">
 				<tr>
 					<td><img src="img1/tit_idpw.png" id="pop"></td>
-					<td><a href="javascript:window.close();"><img
-							src="img1/btn_idpw_close.png" id="close"></a></td>
 				</tr>
 			</table>
-
-
-
-
-
 			<div id="layerPOP">
 				<form method="post" action="?c=id" name="cm">
 					<table class="box_join wrap_white_shadow">
