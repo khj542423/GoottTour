@@ -82,14 +82,7 @@
 						$("#list3").css("display","block")
 					}
 				})
-<<<<<<< HEAD
-				
-				var sectionHeight = $("section").height();
-				var sideBarHeight = $("#sideBar").height();
-				
-=======
 
->>>>>>> refs/remotes/origin/master
 			})
 		</script>
 	</head>
