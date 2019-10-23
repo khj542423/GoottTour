@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name = "viewport" content="width=device-width,initial-scale=1">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="jquery-ui.min.css" type="text/css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="jquery-ui.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		<style>
+			*{font-family:'Noto Sans KR',sans-serif;}
+		</style>
+		<style>
+			#searchPan{width:100%;}
+			#searchPan>h3{text-align:left}
+			#search{width:100%; height:50px; border:3px solid #00a7f0; text-align:left; padding-left:10px; padding-right:10px; margin-bottom:20px}
+			#searchPan>ul{width:100%;}
+			#searchPan>ul>li{border-bottom:1px solid #ddd; width:100%; height:50px; line-height:50px; text-align:left}
+		</style>
+		<script>
+				$(function(){
+					var sectionHeight = $("section").height();
+					var sideBarHeight = $("#sideBar").height();
+					
+					if(sideBarHeight>=sectionHeight){
+						$("section").height("750px")};
+					
+					var imgBannerTextWidth = $("#imgBanner>div").width();
+					$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+					
+					
+				});
+			</script>
+	</head>
+	<body>
+			<header class="navbar fixed-top navbar-expand-lg">
+				<div>
+					<div id="mainMenu">
+						<!-- 작은메뉴 -->
+						<ul id="miniMenu" class="navbar-header">
+							<li class="nav-item"><a href="InfoCenter.html">고객센터</a></li>
+							<li class="nav-item"><a href="shoppingbasket.html">여행바구니</a></li>
+							<li class="nav-item"><a href="new.html">회원가입</a></li>
+							<li class="nav-item"><a href="login.html">로그인</a></li>
+						</ul>
+					<!-- 주메뉴 -->
+						<ul class="navbar-header">
+							<li class="nav-brand"><a href="../index.html"><img src="../image/MenuLogo.png"id="mainLogo"/></a></li>
+							<li class="nav-item"><a href="sangfum_list.html">수학여행</a></li>
+							<li class="nav-item"><a href="sangfum_list.html">현장학습</a></li>
+							<li class="nav-item"><a href="sangfum_list.html">1박2일</a></li>
+							<li class="nav-item"><a href="sangfum_list.html">기업/단체</a></li>
+							<li class="nav-item"><a href="make_trip.html">여행만들기</a></li>
+							<li class="nav-item"><a href="sangfum_list.html">출발지</a></li>
+							<li class="nav-item"><a href="reviewPage.html">여행후기</a></li>
+							<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
+						</ul>
+					</div>
+					<!-- 이미지배너 -->
+					<div id="imgBanner">
+						<div>
+						<h1>헤더풋터</h1>
+						<h2>그리고 사이드</h2>
+						</div>
+					</div>
+				</div>
+			</header>
+		<section>
+			<div id="sideBar">
+				<div>
+					<ul>
+						<li class="sideBarFirstUlList">
+							<h6>고객센터</h6>
+							<ul>
+								<li>00-0000-0000</li>
+								<li>평일/00:00-23:59</li>
+								<li>공휴일/주말 휴무</li>
+							</ul>
+						</li>
+						<li class="sideBarFirstUlList">
+							<h6>여행바구니</h6>
+							<a href="shoppingbasket.html">0</a>
+						</li>
+						<li class="sideBarFirstUlList">
+							<h6>내가본상품</h6>
+							<ul id="myHistory">
+								<li><img src="../image/Logo.png" class="myHistory"/></li>
+								<li><img src="../image/MenuLogo.png" class="myHistory"/></li>
+								<li><img src="../image/sangfum_01.jpg" class="myHistory"/></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<button>TOP▲</button>
+				<div>
+					<ul>
+						<li><img src="../image/sideBarAdv_01.png" class="sideBarAdv"/></li>
+						<li><img src="../image/sideBarAdv_02.png" class="sideBarAdv"/></li>
+						<li><img src="../image/sideBarAdv_03.png" class="sideBarAdv"/></li>
+					</ul>
+				</div>
+			</div>
+			<div id="searchPan">
+				<input type="text" id="search"/>
+				<input type="submit" id="searchButton" style="position:relative; left:570px; top:-57px; background-image:url('../image/magno.png'); color:transparent; background-size: 20px 20px; background-position:center; background-color:white; border:none; background-repeat:no-repeat;">
+				<h3>검색결과(4건)</h3>
+				<ul>
+					<li>검색결과1</li>
+					<li>검색결과2</li>
+					<li>검색결과3</li>
+					<li>검색결과4</li>
+				</ul>
+			</div>
+		</section>
+		<footer>
+			<!-- 메뉴 -->
+			<div id="footMenu">
+				<ul>
+					<li><a href="companyInfo.html">회사소개</a></li>
+					<li><a href="clauseInfo.html">국내여행표준약관</a></li>
+					<li><a href="clauseInfo.html">개인정보취급방침</a></li>
+					<li><a href="clauseInfo.html">이용약관</a></li>
+					<li><a href="InfoCenter.html">고객센터</a></li>
+				</ul>
+			</div>
+			<!-- 회사정보 -->
+			<div id="footInfo">
+				<table>
+					<tr>
+						<td rowspan="4"><img src="../image/MenuLogo.png" id="footLogo"/></td>
+					</tr>
+					<tr><td>회사이름 : GOOTTOUR | 대표 : 누구 | 주소 : 어쩌구저쩌구</td></tr>
+					<tr><td>관광사업허가 : 국내여행업 | 사업자등록 : 000-00-00000 | 통신판매등록 : 제 2019-어쩌구형-0001호</td></tr>
+					<tr><td>대표전화 : 0000-0000 | FAX | 00-0000-0000 | 개인정보관리책임자 : 누구</td></tr>
+				</table>
+				<ul id="footImgList">
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+					<li><img src="../image/MenuLogo.png"/></li>
+				</ul>
+			</div>
+		</footer>
+	</body>
+</html>
