@@ -122,16 +122,16 @@
 			</div>
 		</div>
 		<div id = "imgslide"><!-- 이벤트 이미지 슬라이드 -->
-			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			<div id="carouselExampleControls" class="car	ousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
-			      <img class="d-block w-100" src="image/event_04.jpg" alt="First slide">
+			      <img class="d-block w-100" src="image/event_01.jpg" alt="First slide">
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="image/event_02.png" alt="Second slide">
+			      <img class="d-block w-100" src="image/event_01.jpg" alt="Second slide">
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="image/event_03.jpg" alt="Third slide">
+			      <img class="d-block w-100" src="image/event_01.jpg" alt="Third slide">
 			    </div>
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -147,41 +147,36 @@
 		<div id='top-h1'>
 		<h1><span style='color:red;'>HOT</span> Destination</h1><br><h5>인기 여행지로 즐거운 여행을 즐겨보세요.</h5>
 		</div>
-		
-		<hr class="hrStyle"/>
-		
 		<!-- 여기부터 작업해주시면 됩니당 ^^ -->
 		<div>
 			<div class='row' id='rowdiv'>
 				
-				<div id='jeju' style='background-image:url(image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
-					<h1>2112</h1>
+				<div id='hot1' style='background-image:url(image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
+					<h1 style="color:white"><a href="#">경주</a></h1>
 					
 				</div>
 				
-				<div id='jeju' style='background-image:url(image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
-					<h1>2112</h1>
+				<div id='hot2' style='background-image:url(image/gyeongju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
+					<h1 style="color:white"><a href="#">제주</a></h1>
 					
 				</div>
 				
-				<div id='jeju' style='background-image:url(image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
-					<h1>2112</h1>
+				<div id='hot3' style='background-image:url(image/seoul.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
+					<h1 style="color:white"><a href="#">서울</a></h1>
 					
 				</div>
 				
 			
-			</div>
+			</div> 
 		</div> 
+			<hr class="hrStyle"/>
 			
 			
-			 <div>
-			
+			 <div style="margin-top:50px">
 				<h1> <span style='color:red;'>HOT</span> Recommend</h1><br>
 			 	<h5> 추천여행지로 원하시는 여행을 즐겨보세요. </h5>
-			 	<hr class="hrStyle"/>
 			 	<div id='cjimg' style='margin-top:50px;'></div>
-			 	
-			 	</div>
+			 </div>
 	
 		
 
