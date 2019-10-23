@@ -67,39 +67,34 @@
 	<div id='main'>
 	<h1 id='rev-h1'>예약하기</h1>
 	<hr class="hrStyle"/>
-	 <table class="table table-bordered table-lg" id='tbid'>
-	  <thead>
-	     <tr id='trid'> 
-	       <th style='width:400px'>상품명</th>
-	       <th style='width:250px'>여행기간</th>
-	        <th>예약인원</th>
-	        <th>결제금액</th>
-	      </tr>
-	    </thead>
-	    
-	    <tbody>
-	      <tr>
-	        <td><a href='#' id='sname'>지상최대 지상낙원</a></td>
-	        <td>2019.09.22~2019.09.25</td>
-	        <td>10명</td>
-	        <td>220,000원</td>
-	      </tr>
-	      <tr>
-	        <td>가즈아 전주로</td>
-	        <td></td>
-	        <td>상품명</td>
-	        <td>상품명</td>
-	    
-	      </tr>
-	      <tr>
-	        <td>순창 고추장</td>
-	        <td></td>
-	        <td>상품명</td>
-	        <td>상품명</td> 
-	  
-	      </tr>
-	    </tbody> 
-	  </table>
+		<table class="table table-bordered">
+			<thead>
+			  <tr>
+				<th style='width:150px;'>예약날짜</th> 
+				<th style='width:140px;'>상품코드</th>
+				<th style='width:240px;'>상품명</th>
+				<th style='width:100px;'>결제금액</th>
+				<th style='width:60px;'>인원</th>
+			    <th>출발일</th>
+			    <th>여행도우미</th>
+			    <th>예약상태</th>
+			    <th>상품평</th>
+			  </tr>
+			</thead>
+			<tbody id='rev-body'>
+			  <tr>
+			    <td>2019년9월19일</td>
+			    <td><a href='#'>AAP3412TWB</a></td>
+			    <td>제주도 5일_특급 신라호텔 바로출발제주도 5일_준특급 신라호텔</td>
+			    <td>500,000</td>
+			    <td>2</td>
+			    <td>2019년10월20일</td>
+			    <td>man</td>
+			    <td>Yes</td>
+			    <td><button class='btn'>작성하기 </button></td>
+			  </tr>
+			</tbody>
+		</table>
 	<div id='join'>
 	
 	<form id="reserFrm">

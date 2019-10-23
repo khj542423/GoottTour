@@ -65,7 +65,7 @@
 				  				</tr>
 				  				<tr>
 				  					<td>8</td>
-				  					<td>제대로적겠습니다</td>
+				  					<td><a href="payment.jsp">제대로적겠습니다</a></td>
 				  					<td>네..</td>
 				  					<td>2019-09-21</td>
 				  					<td>100</td>
