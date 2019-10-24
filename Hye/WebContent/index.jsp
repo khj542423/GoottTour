@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="project/headerFooterStyle.css" type="text/css"/>
 <link rel="stylesheet" href="project/Main.css" type="text/css"/>
 
+
 </head>
 	<script>
 		function setImage(){
@@ -58,26 +59,7 @@
 			
 		});
 		
-		$(window).scroll(function(){
-			//bar 이동
-			var mainban = $('#mainbanner').css('display')
-			var scrollTop = $(window).scrollTop();//스크롤 정보
-			var topSpace = 0;
-		
-			if(mainban =='block'){
-				topSpace = 100;
-			}
-			
-			//console.log(h1+','+scrollTop);
-			if(scrollTop==topSpace){
-				$('#bar').css('top',scrollTop-topSpace+'px');
-				$('#bannerLeft').css('top',scrollTop-topSpace+'px');
-				$('#bannerRight').css('top',scrollTop-topSpace+'px');
-			}else{
-				//bar , bannerleft, bannerright
-				$('#mainbanner').css('top','-100');
-			}
-		});
+
 		
 	</script>
 <body onload='setImage();'>
@@ -92,9 +74,9 @@
 						<li class="nav-item"><a href="project/login.jsp">로그인</a></li>
 					</ul>
 				<!-- 주메뉴 -->
-					<ul class="navbar-header">
-						<li class="nav-brand"><a href="index.jsp" id='mainlogo' style="font-size:40px;">GooTTour</a></li>
-						<li class="nav-item"><a href="project/sangfum_list.jsp">수학여행</a></li>
+					<ul class="navbar-header"> 
+						<li class="nav-brand"><a href="index.jsp" id='mainlogo' style="font-size:40px;"><img src="image/Mainlogo.png"/></a></li>
+						<li class="nav-item"><a href="project/sangfum_list.jsp">수학여행</a></li> 
 						<li class="nav-item"><a href="project/sangfum_list.jsp">현장학습</a></li>
 						<li class="nav-item"><a href="project/sangfum_list.jsp">1박2일</a></li>
 						<li class="nav-item"><a href="project/sangfum_list.jsp">기업/단체</a></li>
@@ -141,28 +123,22 @@
 			</div>
 		</div>
 		<div id='top-h1'>
-		<h1 style="font-family: fantasy; font-size: 50px;"><span style='color:red;font-family: fantasy;'>HOT</span> Destination</h1><br><h5>인기 여행지로 즐거운 여행을 즐겨보세요.</h5>
+		<h1 style="font-family: fantasy; font-size: 50px;"><span style='color:red;font-family: fantasy;'>HOT</span> Place</h1><br><h5>인기 여행지로 즐거운 여행을 즐겨보세요.</h5>
 		</div>
-		<!-- 여기부터 작업해주시면 됩니당 ^^ -->
+	
 		<div style="margin-bottom:50px;">
 			<div class='row' id='rowdiv'>
-				
 				<div id='hot1' style='background-image:url(image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
 					<h1 style="color:white"><a href="#">경주(Gyeongju)</a></h1>
-					
 				</div>
 				
 				<div id='hot2' style='background-image:url(image/gyeongju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
 					<h1 style="color:white"><a href="#">제주(Jeju)</a></h1>
-					
 				</div>
 				
 				<div id='hot3' style='background-image:url(image/seoul.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
 					<h1 style="color:white"><a href="#">서울(Seoul)</a></h1>
-					 
 				</div>
-				
-			
 			</div> 
 		</div> 
 			<hr class="hrStyle"/>

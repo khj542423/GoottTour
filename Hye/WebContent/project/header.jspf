@@ -10,9 +10,32 @@
 	$(function(){
 		var imgBannerTextWidth = $("#imgBanner>div").width();
 		$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+		
 	});
+	
+	$(window).scroll(function(){
+		//bar 이동
+		var mainban = $('#mainbanner').css('display')
+		var scrollTop = $(window).scrollTop();//스크롤 정보
+		var topSpace = 0;
+	
+		if(mainban =='block'){
+			topSpace = 100;
+		}
+		
+		//console.log(h1+','+scrollTop);
+		if(scrollTop==topSpace){
+			$('#bar').css('top',scrollTop-topSpace+'px');
+			$('#bannerLeft').css('top',scrollTop-topSpace+'px');
+			$('#bannerRight').css('top',scrollTop-topSpace+'px');
+		}else{
+			//bar , bannerleft, bannerright
+			$('#mainbanner').css('top','-100');
+		}
+	});
+	
 </script>
-<header class="navbar fixed-top navbar-expand-lg">
+<header class="navbar navbar-expand-lg">
 	<div>
 		<div id="mainMenu">
 			<!-- 작은메뉴 -->
@@ -24,19 +47,17 @@
 			</ul>
 		<!-- 주메뉴 -->
 			<ul class="navbar-header">
-				<li class="nav-brand"><a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/image/MenuLogo.png"id="mainLogo"/></a></li>
-				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">수학여행</a></li>
-				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">현장학습</a></li>
-				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">1박2일</a></li>
-				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">기업/단체</a></li>
+				<li class="nav-brand"><a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/image/Mainlogo.png"id="mainLogo"/></a></li>
+				<li class="nav-item menu1"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">구트여행</a></li>
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/make_trip.jsp">여행만들기</a></li>
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">출발지</a></li>
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/reviewPage.jsp">여행후기</a></li>
-				<li class="nav-item"><div><input type="text"><input type="button" value="검색"/></div></li>
+				<li class="nav-item"><div><input type="text" style="border:none; border-radius: 15px 0 0 15px"><input type="submit"  style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); color:transparent; background-size: 20px 20px;vertical-align: 2px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0;"></div></li>
 			</ul>
 		</div>
 		<!-- 이미지배너 -->
-		<div id="imgBanner">
+		<div id="imgBanner1">
+			<img src="<%=request.getContextPath()%>/image/main1.jpg" id="bannerImg1"/> 
 			<div>
 			<h1><%=pageName%></h1>
 			<h2><%=pageSideName %></h2>
