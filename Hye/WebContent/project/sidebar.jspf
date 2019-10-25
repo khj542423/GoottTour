@@ -6,7 +6,7 @@
 			var sy=window.scrollY;
 			var sbs=$("#sideBar").height();
 			var ss=$("section").height();
-			if(sy>0 && sy<ss-sbs){
+			if(sy>0 && sy<ss-sbs+400){
 				$("#sideBar").css("top",sy+330+"px");
 			}else if(sy<=0 && sy<ss-sbs){
 				$("#sideBar").css("top","330px");
