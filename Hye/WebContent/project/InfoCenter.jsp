@@ -28,6 +28,7 @@
 			#infoTable{border:1px solid #bbb; width:80%;margin:0px auto;margin-bottom:20px}
 			thead{border-bottom:3px double gray}
 			#infoSearch{width:100%; text-align:left; padding-left:120px}
+			#write{position:relative; left:610px}
 			hr{border:0; height: 3px; background:#ccc linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
 		</style>
 		<script>
@@ -152,6 +153,7 @@
 					<select><option>작성자</option><option>제목</option></select>
 					<input type="text"/>
 					<button>검색</button>
+					<button id="write" onclick="location.href='writeForm.jsp'">글쓰기</button>
 					</div>
 				</div>
 			</div>

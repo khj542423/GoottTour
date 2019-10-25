@@ -32,7 +32,7 @@
   	<servlet-class>kr.goott.tour.controller.ControllerAction</servlet-class>
   	<init-param>
   		<param-name>proConfig</param-name>
-  		<param-value>D:\github\GoottTour\Hye\WebContent\WEB-INF\properties\urlMapping.properties</param-value>
+  		<param-value>D:\Git\GoottTour\Hye\WebContent\WEB-INF\properties\urlMapping.properties</param-value>
   	</init-param>
   </servlet>
   
