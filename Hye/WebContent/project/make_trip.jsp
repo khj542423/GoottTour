@@ -30,20 +30,36 @@
 			#routeSelect{border:1px solid #ddd; border-radius:5px; width:800px; height:650px; padding:10px}
 			#lodgingSelect{border:1px solid #ddd; border-radius:5px; width:380px; height:650px; padding:10px}
 			
-			.modal{top:100px}
-			
+			.modal{z-index:10001}
 			#selectLodgingList{margin-top:20px; width:100%}
 			#selectLodgingList tr{width:10%; height:50px; border-bottom:1px solid #ddd}
 			#selectLodgingList tr td:first-child{width:55%}
 			#selectLodgingList tr td:nth-child(2){width:30%}
 			#selectLodgingList tr td:last-child{width:15%}
+			
+			#lodgingModal>div>div,#lodgingDetailModal>div>div{width:800px; height:500px;}
+			#lodgingModal *{text-align:left}
+			/*body.modal-open{overflow:scroll}*/
+			
+			
 		</style>
 		<script>
 			$(function(){
 				//날짜선택
 				$("#depDate").datepicker();
 				$("#delDate").datepicker();
+				
 			})
+			
+			$(document).ready(function(){
+				$("#lodgingSelectDiv").click(function(){
+					$("#lodgingDetailModal").modal();
+				});
+				
+				$("#lodgingSelectBtn").click(function(){
+					$("#lodgingModal").modal();
+				});
+			});
 		</script>
 	</head>
 	<body>
@@ -92,8 +108,7 @@
 							</div>
 							<div style="margin:2%; width: 96%; border:1px solid #ddd; height:300px">지도이미지 나오는 div</div>
 							<h5 style="text-align:left; margin-left:2%">경로</h5>
-							<div style="margin:2%; width:96%; border:1px solid #ddd; height:100px">경로가 글로 나오는 div</div>
-							<button data-toggle="modal" data-target="#routeModal">선택</button> <!-- 누르면  지도 모달 -->
+							<div style="overflow-y:scroll; margin:2%; width:96%; border:1px solid #ddd; height:130px">경로가 글로 나오는 div</div>
 						</div>
 					</td>
 					<td>
@@ -104,44 +119,65 @@
 								<tr>
 									<td>선택된 숙박이 없습니다.</td>
 									<td>[선택날짜]</td>
-									<td><button data-toggle="modal" data-target="#lodgingModal">선택</button> <!-- 누르면 숙소 모달 --></td>
+									<td><button id="lodgingSelectBtn">선택</button> <!-- 누르면 숙소 모달 --></td>
 								</tr>
 							</table>
 						</div>
 					</td>
 				</tr>
-			</table>
-			
-			<div id="routeModal" class="modal">
+			</table>		
+			<div id="lodgingModal" class="modal fade">
 				<div class="modal-dialog" style="background-color:#fff">
-					<div class="modal-header">
-						<h4 class="modal-title">경로설정</h4>
-					</div>
-					<div class="modal-body">
-						<div class="form-group">
-							지역설정
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">숙소</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
-						<div class="form-group">
-							직접 찍는 지도
+						<div class="modal-body">
+							<div class="form-group">
+								유형별
+								<input type="radio" name="restType" checked/>전체보기
+								<input type="radio" name="restType"/>호텔클래식
+								<input type="radio" name="restType"/>호텔캐쥬얼
+								<input type="radio" name="restType"/>리조트클래식
+								<input type="radio" name="restType"/>리조트캐쥬얼
+								<input type="radio" name="restType"/>실속형펜션
+								<input type="radio" name="restType"/>골프텔
+							</div>
+							<div>숙소명<input type="text"/><input type="button" value="검색"/></div>
+							<div class="form-group">
+								<div id="lodgingSelectDiv">숙소 클릭 시 숙소 상세 div</div>
+							</div>
+							<hr/>
+							<input type="submit" value="선택"/>
 						</div>
-						<input type="submit" value="선택"/>
 					</div>
 				</div>
 			</div>
 			
-			<div id="lodgingModal" class="modal">
+			<div id="lodgingDetailModal" class="modal fade">
 				<div class="modal-dialog" style="background-color:#fff">
-					<div class="modal-header">
-						<h4 class="modal-title">숙소</h4>
-					</div>
-					<div class="modal-body">
-						<div class="form-group">
-							<input type="radio"/>전체보기
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">숙소</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
-						<div class="form-group">
-							설정에 따른 이미지
+						<div class="modal-body">
+							<div class="form-group">
+								유형별
+								<input type="radio" name="restType" checked/>전체보기
+								<input type="radio" name="restType"/>호텔클래식
+								<input type="radio" name="restType"/>호텔캐쥬얼
+								<input type="radio" name="restType"/>리조트클래식
+								<input type="radio" name="restType"/>리조트캐쥬얼
+								<input type="radio" name="restType"/>실속형펜션
+								<input type="radio" name="restType"/>골프텔
+							</div>
+							<div>숙소명<input type="text"/><input type="button" value="검색"/></div>
+							<div class="form-group">
+								설정에 따른 이미지
+							</div>
+							<hr/>
+							<input type="submit" value="선택"/>
 						</div>
-						<input type="submit" value="선택"/>
 					</div>
 				</div>
 			</div>

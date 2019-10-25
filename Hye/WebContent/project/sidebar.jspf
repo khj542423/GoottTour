@@ -10,8 +10,6 @@
 				$("#sideBar").css("top",sy+330+"px");
 			}else if(sy<=0 && sy<ss-sbs){
 				$("#sideBar").css("top","330px");
-			}else if(sy>ss/2 && sy<ss-sbs){
-				$("#sideBar").css("top",ss-sbs+"px");
 			}
 		});
 		

@@ -4,13 +4,12 @@
 	#imgBanner{width:1920px; margin-top:-130px; height:80vh; margin-left:-30%; overflow:hidden}
 	#bannerImg{width:1920px; }
 	#imgBanner li{color:white;}
-	#imgBanner>div{top:400px;} 
-	#imgBanner>div{top:350px;} 
+	#imgBanner>div{position:absolute; top:350px;} 
 	#imgBanner>div>input{height:55px}
 	#imgBanner>div>input:first-child{width:850px; text-align:left; padding-left:20px; padding-right:20px}
 	#imgBanner>div>input:last-child{width:60px}
 	section{padding-top:12px}
-	#imgslide{height : 300px; width : 159.3%;margin-left:-30%}
+	#imgslide{height : 300px; width : 160%;margin-left:-30%}
 	.carousel-inner > .carousel-item > img,
 	.carousel-inner > .carousel-item > a > img {display: block; 
 	max-width: 100%; height: 300px !important; margin : 0px auto;}
@@ -32,9 +31,8 @@
 	#mainmenu{position:absolute; }
 	#mainMenu a, #footMenu a{color:white;  }
 	
-	body{overflow-x:hidden; overflow-y:auto;}
 	#mainlogo{font-size: 40px; font-weight: bold; }
-	#mainlogo>img{width:250px; margin-top:-20px;}
+	#mainlogo>img{width:250px}
 	
 	
 	a:link, a:visited, a:hover { text-decoration: none; color:white;}

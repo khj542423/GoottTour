@@ -1,16 +1,15 @@
 @charset "UTF-8";
 *{margin:0px; padding:0px; text-align:center; font-family:'Noto Sans KR',sans-serif;}
+body::-webkit-scrollbar {display: none;}
 header{background:#fff; z-index:10000; }
 footer {height:200px; margin:0px 15%; margin-top:100px}
 ul,li{float:left; list-style-type:none;}
 
 /*섹션 기본으로 아래 설정은 적용 해주세요. {헤더에 의한 잘림방지; 가로사이즈; 가로정렬} 입니다.*/
-section{padding-top:320px; width:1200px; margin:0px auto;}
+section{padding-top:400px; width:1200px; margin:0px auto;}
 
 .navbar{margin:0px; padding:0px 15%; width:100%; }
-#mainLogo, #footLogo{width:280px;}
-#mainLogo{position:relative; top:-20px}
-#footLogo{position:relative; top:-10px;}
+#mainLogo, #footLogo{width:250px;position:relative;}
 #footreview{margin-top:20px}
 #footreview table tr:first-child td img{margin-right:30px}
 
@@ -23,8 +22,8 @@ section{padding-top:320px; width:1200px; margin:0px auto;}
 #mainMenu ul:last-child li:last-child{width:200px;}
 #mainMenu input:first-child{height:40px; width:160px;}
 #mainMenu input:last-child{height:40px; width:40px;font-size:0.8em; line-height:40px}
-#imgBanner>div{position:absolute; top:158px}
 #imgBanner1{margin-top:-130px;  margin-left:-30%; height: 400px; }
+#imgBanner1 div{position:absolute; z-index:100; color:white}
 #bannerImg1{width:1920px; height:60vh; position: absolute; top:0; left:0; z-index:-1; }
 .navbar { background: transparent !important;}	
 
