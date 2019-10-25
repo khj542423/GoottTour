@@ -15,11 +15,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
-		<link rel="stylesheet" href="reviewPageStyle.css" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
-			#sideMenu{width:130px; position:absolute; left:220px; top:304px;}
+			#sideMenu{width:130px; position:absolute; left:220px; top:653px;}
 			#reviewList{width:130px; float:bottom; border:1px solid #00a7f0}
 			#reviewList li{width:130px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
 			#reviewList li:last-child{border-bottom:0px}

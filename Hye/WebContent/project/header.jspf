@@ -58,8 +58,8 @@
 		<!-- 이미지배너 -->
 		<div id="imgBanner1">
 			<div>
-			<h1><%=pageName%></h1>
-			<h2><%=pageSideName %></h2>
+				<h1><%=pageName%></h1>
+				<h2><%=pageSideName %></h2>
 			</div>
 			<img src="<%=request.getContextPath()%>/image/main1.jpg" id="bannerImg1"/>
 		</div>
