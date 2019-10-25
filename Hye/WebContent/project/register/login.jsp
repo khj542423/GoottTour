@@ -55,7 +55,7 @@
 		</script>
 	</head>
 	<body>
-	<%@ include file="header.jspf"%>
+	<%@ include file="../header.jspf"%>
 	<section>
 	<div>
 		<form class="form-signin" action="../index.jsp">
@@ -80,6 +80,6 @@
 		</form>
 	</div>
 </section>
-		<%@ include file="footer.jspf"%>
+		<%@ include file="../footer.jspf"%>
 </body>
 </html>

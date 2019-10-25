@@ -13,8 +13,6 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="project/headerFooterStyle.css" type="text/css"/>
 <link rel="stylesheet" href="project/Main.css" type="text/css"/>
-
-
 </head>
 	<script>
 		function setImage(){
@@ -28,7 +26,6 @@
 				imglist += i;
 			imglist+='.jpg"/></a>'+url[i-1]+'</div>'
 			}
-	
 			document.getElementById('cjimg').innerHTML=imglist;
 		}
 	</script>
@@ -75,7 +72,7 @@
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header"> 
-						<li class="nav-brand"><a href="index.jsp" id='mainlogo' style="font-size:40px;"><img src="image/Mainlogo.png"/></a></li>
+						<li class="nav-brand"><a href="<%=request.getContextPath()%>/index.do" id='mainlogo' style="font-size:40px;"><img src="image/Mainlogo.png"/></a></li>
 						<li class="nav-item"><a href="project/sangfum_list.jsp">수학여행</a></li> 
 						<li class="nav-item"><a href="project/sangfum_list.jsp">현장학습</a></li>
 						<li class="nav-item"><a href="project/sangfum_list.jsp">1박2일</a></li>
@@ -149,8 +146,6 @@
 			 	<h5> 추천여행지로 원하시는 여행을 즐겨보세요. </h5>
 			 	<div id='cjimg' style='margin-top:50px;'></div>
 			 </div>
-	
-		
 
 	</section>
 		<%@ include file="project/footer.jspf" %>

@@ -65,7 +65,7 @@
 </script>
 </head>
 	<body>
-	<%@ include file="header.jspf"%>
+	<%@ include file="../header.jspf"%>
 	<section>
 		<div class="H_40"></div>
 
@@ -420,6 +420,6 @@
 		       }
 		</script>
 	</section>
-	<%@ include file="footer.jspf"%>
+	<%@ include file="../footer.jspf"%>
 </body>
 </html>
