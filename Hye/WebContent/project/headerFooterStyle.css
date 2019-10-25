@@ -12,7 +12,7 @@ section{padding-top:400px; width:1200px; margin:0px auto;}
 #mainLogo, #footLogo{width:250px;position:relative;}
 #footreview{margin-top:20px}
 #footreview table tr:first-child td img{margin-right:30px}
-header a{text-decoration: none; color:white;}
+header a:visited, header a:hover, header a:link{text-decoration: none; color:white;}
 
 
 #mainMenu ul:first-child{float:right; width:100%; margin:0px; font-size:0.9em}

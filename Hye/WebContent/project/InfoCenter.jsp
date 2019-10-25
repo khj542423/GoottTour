@@ -17,7 +17,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
-			#sideMenu{width:130px; position:absolute; left:220px; top:304px;}
+			#sideMenu{width:130px; position:absolute; left:220px; top:653px;}
 			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0}
 			#infoList{width:130px; float:bottom; border:1px solid #00a7f0}
 			#infoList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}

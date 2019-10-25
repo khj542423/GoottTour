@@ -17,8 +17,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
-			#sideMenu{position:absolute; left:220px; top:653px;}
-			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:lightblue}
 			section h1{text-align:left; margin-left:30px; margin-top:40px}
 			.divForm{width:100%; text-align:left; padding-left:120px; padding-right:120px;}
 			section>div:last-child{text-align:center}
@@ -33,8 +31,6 @@
 			#goottMap{margin-left:15%; margin-top:50px}
 			.title{text-align:left;}
 			#goottMap li{margin-left:3px; margin-right:3px}
-			
-			#imgBanner>div{top:118px}
 		</style>
 		<script>
 		
