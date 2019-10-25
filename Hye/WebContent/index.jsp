@@ -73,10 +73,7 @@
 				<!-- 주메뉴 -->
 					<ul class="navbar-header"> 
 						<li class="nav-brand"><a href="<%=request.getContextPath()%>/index.do" id='mainlogo' style="font-size:40px;"><img src="image/Mainlogo.png"/></a></li>
-						<li class="nav-item"><a href="project/sangfum_list.jsp">수학여행</a></li> 
-						<li class="nav-item"><a href="project/sangfum_list.jsp">현장학습</a></li>
-						<li class="nav-item"><a href="project/sangfum_list.jsp">1박2일</a></li>
-						<li class="nav-item"><a href="project/sangfum_list.jsp">기업/단체</a></li>
+						<li class="nav-item"><a href="project/sangfum_list.jsp">구트여행</a></li> 
 						<li class="nav-item"><a href="project/make_trip.jsp">여행만들기</a></li>
 						<li class="nav-item"><a href="project/sangfum_list.jsp">출발지</a></li>
 						<li class="nav-item"><a href="project/reviewPage.jsp">여행후기</a></li>
