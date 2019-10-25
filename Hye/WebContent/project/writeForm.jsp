@@ -19,6 +19,27 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
+			section{margin-bottom:50px}
+			#sideMenu{width:130px; position:absolute; left:220px; top:304px;}
+			#reviewList{width:130px; float:bottom; border:1px solid #00a7f0;}
+			#reviewList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
+			#reviewList li:last-child{border-bottom:0px}
+			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0; color:white;}
+			#reviewList{float:bottom}
+			#reviewPan{width:100%;}
+			#reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
+			#reviewWrite{width:80%; margin:0px auto; margin-bottom:20px; border-top: 1px solid #ddd; border-bottom:1px solid #ddd}
+			#reviewWrite table tr{height:60px}
+			#reviewWrite table tr td:first-child{width:100px; background:#00a7f0; color:white;; border-bottom:1px solid white}
+			#reviewWrite table tr td:last-child{width:90%; padding:20px; border-bottom:1px solid #ddd; text-align:left;}
+			#reviewWrite table tr:last-child td:first-child{border-bottom:0px}
+			#reviewWrite table tr:last-child td:last-child{border-bottom:0px}
+			#button{margin-left:10%; text-align:left}
+			#button button:last-child{position:relative; left:835px}
+			
+			.bora{border:1px solid #ddd; border-radius:3px}
+			#writer{width:200px; text-align:left;}
+			#writeTitle{width:400px; text-align:left}
 		</style>
 		<script>
 		$(function(){

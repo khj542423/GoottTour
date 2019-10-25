@@ -17,7 +17,20 @@
 		<link rel='stylesheet' href='reservation.css' type='text/css'/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
-     	 *{font-family:'Noto Sans KR',sans-serif;} 
+			*{font-family:'Noto Sans KR',sans-serif;}
+			#tbid{width:100%; margin-top:10px; }
+			#trid th{font-size:25px; font-weight:bold; }
+			h1{text-align:left; margin-top:10px;}
+			a:link{color:red; text-decoration:none;}
+			a:visited{color:black; text-decoration:none;}
+			a:hover{color:blue; text-decoration:underline;}
+			#join p{text-align:left; font-weight:bold; font-size: 20px;}
+			#telid{width:20px;}  
+			#btn-rev{text-align:center; marign:50px auto; }
+			#btn-rev button{margin:50px auto; width:100px; height:50px; background:#00a7f0; color:white}
+			#rev-tel, #trv-tel{width:91px; height:34px; text-align:center; } 
+			#email-bar, #email-bar2, #email-bar3, #email-bar4{width:181px; height:34px;text-align:left;}
+			#rev-name, #trv-name{text-align:left;} 
      	</style>
     	
     	<script type="text/javascript">

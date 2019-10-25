@@ -15,11 +15,29 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
-		<link rel="stylesheet" href="clauseInfoStyle.css" type="text/css"/>
 		
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
-		*{font-family:'Noto Sans KR',sans-serif;}
+			*{font-family:'Noto Sans KR',sans-serif;}
+			
+			#navTab{width:100%; margin-top:10px; margin-bottom:10px}
+			#navTab li{width:33%;}
+			#navContent div{text-align:left}
+			h4{text-align:left;}
+			section{margin-bottom:30px}
+			
+			#navContent>div>div{border:1px solid #ddd; border-radius:5px; padding:40px}
+			
+			.nav-tabs .nav-item .nav-link:not(.active) {
+			    background:#fff;
+			    border-bottom:#ddd;
+			    color:black;
+			}
+			
+			.nav-tabs .nav-item .nav-link {
+			    background:#00a7f0;
+			    color:white;
+			}
 		</style>
 		<script>
 

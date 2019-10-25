@@ -18,6 +18,23 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
+			section{margin-bottom:50px}
+			#sideMenu{width:130px; position:absolute; left:220px; top:304px;}
+			#reviewList{width:130px; float:bottom; border:1px solid #00a7f0;}
+			#reviewList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
+			#reviewList li:last-child{border-bottom:0px}
+			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0; color:white}
+			#reviewList{float:bottom}
+			#reviewPan{width:100%;}
+			#reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
+			#posting table{width:80%;margin:0px auto;margin-bottom:20px;}
+			#posting table:first-child{border-top:1px solid #ddd;}
+			#posting table:first-child tr{height:40px;}
+			#posting table:first-child tr:last-child {border-bottom:0px}
+			#posting table:first-child tr td:nth-child(2n+1){width:100px; background:#00a7f0; color:white;border-bottom:1px solid #fff;}
+			#posting table:first-child tr td:nth-child(2n){text-align:left; padding-left:20px;border-bottom:1px solid #ddd;}
+			#posting table:first-child tr:last-child td{border-bottom:1px solid #ddd}
+			#posting table tr td pre{padding-top: 20px}
 		</style>
 		<script>
 

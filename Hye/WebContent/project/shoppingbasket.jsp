@@ -17,7 +17,18 @@
 		<link rel="stylesheet" href="shoppingbasketStyle.css" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
-	   		 *{font-family:'Noto Sans KR',sans-serif;} 
+	   		 *{font-family:'Noto Sans KR',sans-serif;}
+	   		.row{border:1px solid green}
+			.my-h1{border:0px; height:3px; background:gray; text-align:left;}
+			#con td, tr{text-align:center; margin:0 auto;}
+			#body td{height:70px; line-height: 70px;} 
+			#body td a{text-decoration: none;}
+			#bottombt{text-align:right; margin-bottom:10px}
+			#textbox{width:170px; text-align:right;}
+			#count{text-align:right;}
+			#chk1 ~ th{line-height:48px;}
+		
+			.btn{background:#00a7f0; border:0px; color:white}
 	   	 </style>
 		<script>
 			$(function(){

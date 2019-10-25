@@ -17,7 +17,17 @@
 		<link rel="stylesheet" href="reservationchk.css" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
-     	 *{font-family:'Noto Sans KR',sans-serif;} 
+	     	 *{font-family:'Noto Sans KR',sans-serif;}
+			#rev-main>h1{text-align:left; margin-top:15px;}
+			#top-main{border:2px solid gray; margin:10px auto; padding:5px; 
+					  text-align:left; background-color:rgb(247,247,247);}   
+			#top-main h5{text-align:left; margin:30px 20px;}
+			#memo1 ol li{list-style-type: decimal-leading-zero;  list-style-position: inside;
+			   		  	margin:15px 15px; text-align:left; padding-top:5px; font-family:sans-serif;}
+			#rev-main p{text-align:left; font-weight:bold; font-size:20px;}
+			#rev-body td{padding-top:15px; height:40px; text-align:center;}
+			
+			.btn{background:#00a7f0; border:0px; color:white}
      	 </style>
 	</head>
 		<script>

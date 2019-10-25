@@ -18,7 +18,22 @@
 		<link rel="stylesheet" href="reviewPageStyle.css" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
-		*{font-family:'Noto Sans KR',sans-serif;}
+			*{font-family:'Noto Sans KR',sans-serif;}
+			#sideMenu{width:130px; position:absolute; left:220px; top:304px;}
+			#reviewList{width:130px; float:bottom; border:1px solid #00a7f0}
+			#reviewList li{width:130px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
+			#reviewList li:last-child{border-bottom:0px}
+			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0; color:white}
+			#reviewList{float:bottom}
+			#reviewPan{width:100%; height:1000px}
+			#reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
+			#reviewPage{width:100%;}
+			#reviewTable{border:1px solid #bbb; width:80%;margin:0px auto;margin-bottom:20px}
+			thead{border-bottom:3px double gray}
+			#reviewSearch{width:100%; text-align:left; padding-left:120px}
+			#write{position:relative; left:610px}
+			
+			.page-link{color:black;}
 		</style>
 	</head>
 		<script>
