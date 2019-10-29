@@ -42,7 +42,19 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		
 		String sql = "insert into gt_register (num, userid, userpwd, username, "
 				+ " tel, zipcode, addr, detailaddr, email, memtype) "
-				+ " values(gt_memsq.nextVal, ?,?,?,?,?,?,?,?,?)";		
+				+ " values(gt_memsq.nextVal, ?,?,?,?,?,?,?,?,?)";
+		
+		PreparedStatement pstmtPreparedStatement = conn.prepareStatement(sql);
+		pstmt.setString(1, vo.getUserId().trim());
+		pstmt.setString(2, vo.getUserPwd());
+		pstmt.setString(3, vo.getUserName());
+		pstmt.setString(4, vo.getTel());
+		pstmt.setString(5, vo.getZipCode());
+		pstmt.setString(6, vo.getAddr());
+		pstmt.setString(7, vo.getDetailAddr());
+		pstmt.setString(8, vo.getEmail());
+		pstmt.setInt(9, vo.getMemtype());
+		
 		}catch(Exception e) {
 			e.printStackTrace();
 			System.out.println("insertRecord¿¡·¯.."+e.getMessage());
