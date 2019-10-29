@@ -20,10 +20,10 @@
 			#tbid{width:100%; margin-top:10px; }
 			#trid th{font-size:25px; font-weight:bold; }
 			h1{text-align:left; margin-top:10px;}
-			a:link{color:red; text-decoration:none;}
-			a:visited{color:black; text-decoration:none;}
+			a:link, a:visited{color:red; text-decoration:none;}
 			a:hover{color:blue; text-decoration:underline;}
-			#join p{text-align:left; font-weight:bold; font-size: 20px;}
+			#join form, #join p{text-align:left; font-weight:bold; font-size: 20px;}
+			#join input{margin-bottom:10px}
 			#telid{width:20px;}  
 			#btn-rev{text-align:center; marign:50px auto; }
 			#btn-rev button{margin:50px auto; width:100px; height:50px; background:#00a7f0; color:white}
@@ -60,8 +60,8 @@
 				
 			$("#samecheck").change(function(){
 				if(this.checked){
-					for(i=0; i<6; i++){
-						$("#sameFrm input:nth-child("+i+")").val($("#reserFrm input:nth-child("+i+")").val());
+					for(i=1; i<=6; i++){
+						$("#sameFrm input:nth-of-type("+i+")").val($("#reserFrm input:nth-of-type("+i+")").val());
 					}
 					$("#sameFrm input").prop("readonly",true);
 				}else{
@@ -110,31 +110,29 @@
 	<div id='join'>
 	
 	<form id="reserFrm">
-	<p>예약자<br><input type="text" name='rev-name' size='10' maxlength='5' required placeholder="이름" id='rev-name'/></p>  
-	<p>연락처<br><input type='text' name='rev-tel' id='rev-tel' style="margin-right:5px"/>
-				- <input type="text" name='rev-tel2' size='2' value='' maxlength='4' id='rev-tel2' style='margin-left:5px; margin-right:5px;'/>
-				- <input type="text" name='rev-tel3' size='2' value='' id='rev-tel3' maxlength='4' style='margin-left:5px;'/></p>
-	<p>이메일<br><input type='text' name='txt5' size='15' maxlength='15' id=email-bar style='margin-right:5px'/>@
-	<input type='text' name='txt5' size='15' maxlength='15' id=email-bar2 style='margin-right:5px'/>
-		 </p>
+	예약자<br/><input type="text" name='rev-name' size='10' maxlength='5' required placeholder="이름" id='rev-name'/><br/>
+	연락처<br/><input type='text' name='rev-tel' id='rev-tel' style="margin-right:5px"/>
+				- <input type="text" name='rev-tel2' size='2'maxlength='4' id='rev-tel2' style='margin-left:5px; margin-right:5px;'/>
+				- <input type="text" name='rev-tel3' size='2'id='rev-tel3' maxlength='4' style='margin-left:5px;'/><br/>
+	이메일<br/><input type='text' name='txt5' size='15' maxlength='15' id="email-bar" style='margin-right:5px'/>@
+	<input type='text' name='txt5' size='15' maxlength='15' id="email-bar2" style='margin-right:5px'/>
 	</form>		
 		 
 		 
-	<hr style='margin:10px auto;'>
-	<br> 
+	<hr style='margin:10px auto;'/>
+	<br/> 
 	<div id='samecontent'>
 	<p style='margin-top: -15px; font-size:15px'><input type='checkbox' id='samecheck' >실제 여행자와 예약자가 동일하면 체크해주세요.</p>
 	</div>
-	<hr style='margin:10px auto;'>
+	<hr style='margin:10px auto;'/>
 	<form id="sameFrm">
-	<p>여행자<br><input type="text" name='trv-name' size='10' maxlength='5' required placeholder="이름" id='trv-name'/></p>  
-	<p>연락처<br><input type='text' name='trv-tel' id='trv-tel' style='margin-right:5px'/>
-				- <input type="tel" id=trv-tel2 name='trv-tel2' size='2' value='' maxlength='4' style='margin-left:5px; margin-right:5px;'/>
-				- <input type="tel"  id='trv-tel3' name='trv-tel4' size='2' value='' maxlength='4' style='margin-left:5px'/></p>
-	<p>이메일<br><input type='email' name='txt5' size='15' maxlength='15' id=email-bar3 style='margin-right:5px'/>@
-			<input type='text' name='txt5' size='15' maxlength='15' id=email-bar4 style='margin-right:5px'/>
-			</p> 
-	<p>요청사항 & 문의사항<br><textarea name='content' rows='5' cols='50' style='text-align:left' required placeholder="1000자이내로 입력해주세요."></textarea></p>
+	여행자<br/><input type="text" name='trv-name' size='10' maxlength='5' required placeholder="이름" id='trv-name'/><br/>
+	연락처<br/><input type='text' name='trv-tel' id='trv-tel' style='margin-right:5px'/>
+				- <input type="text" id=trv-tel2 name='trv-tel2' size='2' maxlength='4' style='margin-left:5px; margin-right:5px;'/>
+				- <input type="text"  id='trv-tel3' name='trv-tel4' size='2' maxlength='4' style='margin-left:5px'/><br/>
+	이메일<br/><input type='text' name='txt5' size='15' maxlength='15' id=email-bar3 style='margin-right:5px'/>@
+			<input type='text' name='txt5' size='15' maxlength='15' id=email-bar4 style='margin-right:5px'/><br/>
+	요청사항 & 문의사항<br/><textarea name='content' rows='5' cols='50' style='text-align:left' required placeholder="1000자이내로 입력해주세요."></textarea>
 	<div id='btn-rev'>
 	<a href='https://www.naver.com'>
 	<button class='btn active' id='btn1'>예약하기</button>
