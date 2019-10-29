@@ -18,7 +18,7 @@
 <div id="footdiv">
 	<!-- 회사정보 -->
 			<div id="top-image">
-				<a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/image/Mainlogo.png" id="footLogo"/></a>
+				<a href="<%=request.getContextPath()%>/index.do"><img src="<%=request.getContextPath()%>/image/Mainlogo.png" id="footLogo"/></a>
 			</div>
 				<div id="content">
 					<ul>

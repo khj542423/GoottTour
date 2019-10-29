@@ -13,8 +13,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
@@ -27,41 +26,59 @@
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <script>
-	function CheckIt_com(form) {
 
-		if (id.value == "") {
-			alert("아이디를 입력하여 주십시오!");
-			id.focus();
-			return false;
-		}
-
-		if (pwd.value == "") {
-			alert("비밀번호를 입력하여 주십시오!");
-			pwd.focus();
-			return false;
-		}
-
-		document.submit();
-
+$(function(){
+	$("#idCheck").click(function(){
+		if($("#userId").val() == ""){
+		alert("아이디를 입력하세요...");
+		return false;
 	}
-
-	function CheckIt_mem(form) {
-
-		if (id.value == "") {
-			alert("아이디를 입력하여 주십시오!");
-			id.focus();
-			return false;
-		}
-
-		if (pwd.value == "") {
-			alert("비밀번호를 입력하여 주십시오!");
-			pwd.focus();
-			return false;
-		}
-
-		document.submit();
+		
+	if($("#userId").val().length<=7){
+		alert("아이디는 8~15글자 사이어야 합니다.");
+		return false; 
 	}
-	
+	if($("#idChkResult").val()=="N"){
+		alert("아이디 중복검사를 하세요..");
+		return false;
+	}
+	if($("#userPwd").val() ==""){
+		alert("비밀번호를 입력하세요..");
+		return false;
+	}
+	if($("#userPwd").val().length<=7){
+		alert("비밀번호는 8~15글자 사이어야 합니다.");
+		return false;
+	}
+	if($("#chkPwd").val() != ($("#userPwd").val())){ 
+		alert("비밀번호가 같지 않습니다.");
+		return false; 
+	}
+	//이름
+	if($("#userName").val() ==""){
+		alert("이름을 입력하세요..");
+		return false;
+	}
+	 
+	//연락처
+	if( $('#t1').val()=="" || ($('#t2').val())=="" || ($('#t3').val())==""){
+		alert("연락처를 입력하세요.");
+		return false;
+	} 
+	//주소
+	if( $("#zipCode").val()=="" || $("#addr").val()== "" || $("#detailAddr").val()==""){
+		alert("우편주소 및 상세주소를 모두 입력해야합니다.");
+		return false;
+		
+	}
+	//이메일
+	if( $("#emailId").val()=="" || ($("#emailDomain").val())==""){
+		alert("이메일 및 도메인을 모두 입력해야합니다.");
+		return false;
+		
+	}
+ });
+});
 </script>
 </head>
 	<body>
@@ -83,29 +100,26 @@
 						<tr>
 							<td class="stit">아이디</td>
 							<td class="frm"><input type="text" class="ipf" name='id'
-								id='id' onKeyUp="checkLength2();fLoadData_amt2();" maxlength=10><input
-								type="hidden" name="counter" id="counter"> <span
-								id='check_text2'></span> [영문/숫자의 조합으로 4~10자리]</td>
+								id='userId' maxlength='15'><input
+								type="hidden" name="counter" id="counter"><input type="button"  id="idCheck" class="btn btn-secondary" value="중복체크"/> [영문/숫자의 조합으로 8~15자리]</td>
 						</tr>
 						<tr>
 							<td class="stit">비밀번호</td>
 							<td class="frm"><input type="password" class="ipf"
-								name='pwd' id='pwd'
-								onKeyUp="checkLengthp2();fLoadData_pw22(); checkLength2();fLoadData_amt2();">
-								<span id='check_pw22'></span> [영문/숫자의 조합으로 4~10자리]<input
+								name='pwd' id='userPwd' maxlength="15">
+								<span id='check_pw22'></span> [영문/숫자의 조합으로 8~15자리]<input
 								type="hidden" name="counter2" id="counter2"></td>
 						</tr>
 						<tr>
 							<td class="stit">비밀번호 확인</td>
 							<td class="frm"><input type="password" class="ipf"
-								name='pwd2' id='pwd2' onKeyUp="fLoadData_pw2();"><span
+								name='pwd2' id='chkPwd'><span
 								id='check_pw2'></span></td>
 						</tr>
 						<tr>
 							<td class="stit">성명(실명)</td>
 							<td class="frm"><input type="text" class="ipf" name='name'
-								id='name' onKeyUp="document.m.spam_chk_val.value='yes'"
-								onclick="document.m.spam_chk_val.value='yes'"></td>
+								id='name'></td>
 						</tr>
 						<tr>
 							<td class="stit" rowspan="3">주소</td>
@@ -113,7 +127,7 @@
 								<div id="wrap" style="display:none;border:1px solid; width:500px; height:300px; margin:-10px 0px 5px -10px;position:absolute">
 									<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
 								</div>
-								<input type="text" class="ipf" name='zipcode' id='zipcode'><input type="button" class="btn btn-secondary" onclick="sample3_execDaumPostcode()" value="검색"/>
+								<input type="text" class="ipf" name='zipcode' id='zipcode'><input type="button" class="btn btn-secondary" value="검색"/>
 							</td>
 						</tr>
 						<tr>
@@ -323,39 +337,15 @@
 								<div id="txt2">
 
 									[ 개인정보 수집, 이용에 관한사항 ]<br /> <br /> 회사는 회원제 서비스 제공을 위해 귀하의
-									개인정보를 아래와 같이 수집하고자 합니다.&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br /> 1.
-									수집하는개인정보항목 : 이름,아이디,비밀번호,생년월일,휴대폰번호,이메일&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;<br /> &nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;<br /> 2.수집및이용목적 : 회원제 가입 서비스제공,
-									계약이행을 위한 연락, 민원 및 고충처리&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br /> 3. 보유및 이용기간
-									: 회원탈퇴 후 5일까지&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
-									&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br /> ※서비스 제공을 위해
-									필요한 최소한의 개인정보이므로 동의를 해 주셔야 서비스를 이용하실 수 있습니다.&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;<br /> &nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-									&nbsp;&nbsp;&nbsp; &nbsp;<br /> 개인정보의 수집,이용에 관한 사항에
-									동의하십니까?&nbsp;&nbsp; &nbsp;
+									개인정보를 아래와 같이 수집하고자 합니다.<br><br /> 
+									1.수집하는개인정보항목 : 이름,아이디,비밀번호,생년월일,휴대폰번호,이메일
+									<br><br /> 
+									2.수집및이용목적 : 회원제 가입 서비스제공,
+									계약이행을 위한 연락, 민원 및 고충처리<br><br />
+									3. 보유및 이용기간
+									: 회원탈퇴 후 5일까지<br><br /> ※서비스 제공을 위해
+									필요한 최소한의 개인정보이므로 동의를 해 주셔야 서비스를 이용하실 수 있습니다.<br><br /> 개인정보의 수집,이용에 관한 사항에
+									동의하십니까?
 								</div> <br> <input type="radio" name="muni2"> <span>개인정보
 									수집에 동의합니다.</span><input type="radio" name="muni2" checked> <span>개인정보
 									수집에 동의하지 않습니다</span><br> <br>
