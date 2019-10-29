@@ -3,6 +3,8 @@ package kr.goott.tour.register;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.sun.xml.internal.ws.api.pipe.NextAction;
+
 import kr.goott.tour.home.DBConn;
 
 public class RegisterDAO extends DBConn implements RegisterInterface {
@@ -61,7 +63,46 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		}finally {
 			dbClose();
 		}
+		return cnt;
+	}
+
+	@Override
+	public void login(RegisterVO vo) {
+		try {
+			dbConn();
+			String sql = "select username, userid from gt_register "
+					+ " where userid=? and userpwd=? ";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getUserId());
+			pstmt.setString(2, vo.getUserPwd());
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				vo.setUserId(rs.getString(1));
+				vo.setUserPwd(rs.getString(2));
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("loginDAO 에러발생.."+e.getMessage());
+		}finally {
+			dbClose();
+		}
+		
+	}
+
+	@Override
+	public int updateRecord(RegisterVO vo) {
+		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public void selectRegister(RegisterVO vo) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

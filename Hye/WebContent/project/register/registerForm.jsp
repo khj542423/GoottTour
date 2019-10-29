@@ -19,8 +19,8 @@
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<link rel="stylesheet" href="new.css" type="text/css" />
-<link rel="stylesheet" href="headerFooterStyle.css" type="text/css" />
+<link rel="stylesheet" href="registerForm.css" type="text/css" />
+
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
 *{font-family:'Noto Sans KR',sans-serif;}
@@ -29,10 +29,11 @@
 
 $(function(){
 	$("#idCheck").click(function(){
-		if($("#userId").val() == ""){
+		if($("#userId").val()==""){
 		alert("아이디를 입력하세요...");
 		return false;
 	}
+	});
 		
 	if($("#userId").val().length<=7){
 		alert("아이디는 8~15글자 사이어야 합니다.");
@@ -77,7 +78,19 @@ $(function(){
 		return false;
 		
 	}
- });
+	
+	
+	$('#idChk').click(function(){									//html은 px사용안함 javascript임
+		window.open('/Hye/project/register/idCheck.do?userId='+$('#userId').val(), 'idChk', 'width=400, height=150');
+		
+	});
+	//중복검사해제 키보드누르면 바로 Y에서 N로바뀜
+	$("#userId").keyup(function(){
+		$("#idChkResult").val("N");
+		
+	});
+	
+
 });
 </script>
 </head>
@@ -87,7 +100,7 @@ $(function(){
 		<div class="H_40"></div>
 
 		<div class='container' style="text-align:left; margin-bottom:20px">
-			<img src='img1/mo.png' id="mo"> <span
+			<img src='../img1/mo.png' id="mo"> <span
 				class="tit" name="new" id="new">회원가입</span> <span class="tit_s">회원가입을
 				하시면 더 많은 혜택을 받으실 수 있습니다.</span>
 		</div>
@@ -100,8 +113,8 @@ $(function(){
 						<tr>
 							<td class="stit">아이디</td>
 							<td class="frm"><input type="text" class="ipf" name='id'
-								id='userId' maxlength='15'><input
-								type="hidden" name="counter" id="counter"><input type="button"  id="idCheck" class="btn btn-secondary" value="중복체크"/> [영문/숫자의 조합으로 8~15자리]</td>
+								id='userid' maxlength='15'><input
+								type="hidden" name="counter" id="counter"><input type="button"  id="idChk" class="btn btn-secondary" value="중복체크"/> [영문/숫자의 조합으로 8~15자리]</td>
 						</tr>
 						<tr>
 							<td class="stit">비밀번호</td>

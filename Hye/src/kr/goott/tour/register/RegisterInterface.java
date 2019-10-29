@@ -6,4 +6,12 @@ public interface RegisterInterface {
 	
 	public int insertRecord(RegisterVO vo);
 	
+	public void login(RegisterVO vo);
+	
+	public void selectRegister(RegisterVO vo);
+	
+	public int updateRecord(RegisterVO vo);
+	
+	
+	
 }
