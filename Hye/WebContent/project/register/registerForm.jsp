@@ -20,6 +20,7 @@
 	crossorigin="anonymous"></script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <link rel="stylesheet" href="registerForm.css" type="text/css" />
+<link rel="stylesheet" href="../headerFooterStyle.css" type="text/css" />
 
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
@@ -100,7 +101,7 @@ $(function(){
 		<div class="H_40"></div>
 
 		<div class='container' style="text-align:left; margin-bottom:20px">
-			<img src='../img1/mo.png' id="mo"> <span
+			<img src='<%=request.getContextPath()%>/image/mo.png' id="mo"> <span
 				class="tit" name="new" id="new">회원가입</span> <span class="tit_s">회원가입을
 				하시면 더 많은 혜택을 받으실 수 있습니다.</span>
 		</div>

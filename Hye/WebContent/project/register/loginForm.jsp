@@ -55,9 +55,9 @@
 	<%@ include file="../header.jspf"%>
 	<section>
 	<div>
-		<form class="form-signin" action="../index.jsp">
+		<form class="form-signin" action="<%=request.getContextPath()%>/index.jsp">
 			<div class="text-center">
-				<img src="../img1/key.png">
+				<img src="<%=request.getContextPath()%>/image/key.png">
 				<h1 class="h3 mb-3 font-weight-bold">로그인</h1>
 	
 			</div>
@@ -72,7 +72,7 @@
 				<label for="userpwd">패스워드</label>
 			</div>
 			<button class="btn btn-lg btn-secondary btn-block" type="submit" id="log" onClick="return CheckIt_com(this.form)">로그인</button>
-			<a target="_blank" id="idinquiry" href="new.jsp">회원가입</a><a id="pwinquiry" href="#" onclick="popup();">아이디/비밀번호
+			<a target="_blank" id="idinquiry" href="registerForm.jsp">회원가입</a><a id="pwinquiry" href="#" onclick="popup();">아이디/비밀번호
 				찾기</a>
 		</form>
 	</div>

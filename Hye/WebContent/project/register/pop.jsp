@@ -103,7 +103,7 @@
 		<div class="popidpw">
 			<table class="title">
 				<tr>
-					<td><img src="img1/tit_idpw.png" id="pop"></td>
+					<td><img src="<%=request.getContextPath()%>/image/tit_idpw.png" id="pop"></td>
 				</tr>
 			</table>
 			<div id="layerPOP">
