@@ -9,7 +9,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class DBConn {
-	public Connection conn= null;
+	public Connection conn = null;
 	public PreparedStatement pstmt = null;
 	public ResultSet rs = null;
 	

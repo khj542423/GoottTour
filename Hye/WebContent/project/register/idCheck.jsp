@@ -21,7 +21,6 @@
 		})
 	})
 </script>
-
 </head>
 <body>
 <div>
@@ -34,6 +33,7 @@
 			<%-- <input type="hidden" id="searchId" value="<%=userId %>"/> --%>
 			<input type='button' value='아이디사용하기' id="idSet"/>
 </c:if>	
+
 <c:if test="${result}">	
 		<!-- 사용불가능 -->
 			아이디 ${userId}는 사용불가능한 아이디입니다.
@@ -41,11 +41,9 @@
 
 
 	<hr>
-	<form method="post"	action="/WebMVC/register/idCheck.do">
+	<form method="post"	action="/Hye/project/register/idCheck.do">
 		아이디입력: <input type="text" name="userId"/>
 		<input type="submit" value="아이디중복검사 "/>
-		
-	
 	</form>
 	
 	

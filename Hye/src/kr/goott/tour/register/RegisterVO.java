@@ -19,7 +19,11 @@ public class RegisterVO {
 	private String email;
 	private String emailDomain;
 	private String emailId;
-	private int memtype;
+	
+	private String memType;
+	
+	
+
 	public int getNum() {
 		return num;
 	}
@@ -113,12 +117,13 @@ public class RegisterVO {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	public int getMemtype() {
-		return memtype;
-	}
-	public void setMemtype(int memtype) {
-		this.memtype = memtype;
-	}
 	
+	public String getMemType() {
+		return memType;
+	}
+	public void setMemType(String memType) {
+		this.memType = memType;
+	}
+
 	
 }
