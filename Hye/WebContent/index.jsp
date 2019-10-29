@@ -68,7 +68,7 @@
 						<li class="nav-item"><a href="project/InfoCenter.jsp">고객센터</a></li>
 						<li class="nav-item"><a href="project/shoppingbasket.jsp">여행바구니</a></li>
 						<li class="nav-item"><a href="project/new.jsp">회원가입</a></li>
-						<li class="nav-item"><a href="project/login.jsp">로그인</a></li>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/loginForm.do">로그인</a></li>
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header"> 
