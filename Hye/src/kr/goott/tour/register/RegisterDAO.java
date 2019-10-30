@@ -70,22 +70,21 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		try {
 			dbConn();
 			String sql = "select username, userid from gt_register "
-					+ " where userid=? and userpwd=? ";
+					+ "where userid=? and userpwd=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getUserId());
 			pstmt.setString(2, vo.getUserPwd());
-			
-		   rs = pstmt.executeQuery();
+		    rs = pstmt.executeQuery();	
 			
 			if(rs.next()) {
-				vo.setUserId(rs.getString(1));
-				vo.setUserPwd(rs.getString(2));
+				vo.setUserName(rs.getString(1));
+				vo.setUserId(rs.getString(2));
 			}
 			
 			
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("loginDAO 에러발생.."+e.getMessage());
+			System.out.println("login메소드 DAO 에러발생.."+e.getMessage());
 		}finally {
 			dbClose();
 		}

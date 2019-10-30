@@ -67,8 +67,14 @@
 					<ul id="miniMenu" class="navbar-header">
 					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/board/InfoCenter.jsp">고객센터</a></li>
 					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/shoppingbasket.jsp">여행바구니</a></li>
+					<c:if test="${userName==null }">
 					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/registerForm.jsp">회원가입</a></li>
-					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/loginForm.do">로그인</a></li>
+					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/login.do">로그인</a></li>
+					</c:if>
+					<c:if test="${userName!=null }">
+					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/registerForm.jsp">회원정보수정</a></li>
+					<li class="nav-item">${userName }님 <a href="<%=request.getContextPath()%>/project/register/logout.do">로그아웃</a></li>
+					</c:if>
 					</ul>
 				<!-- 주메뉴 -->
 					<ul class="navbar-header"> 

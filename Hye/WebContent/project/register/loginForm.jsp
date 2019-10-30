@@ -28,10 +28,10 @@
 	
 	
 	
-				if (inputID.value == "") { alert("아이디를 입력하여 주십시오!"); inputID.focus(); return false; }
+				if (userId.value == "") { alert("아이디를 입력하여 주십시오!"); inputID.focus(); return false; }
 	
 	
-				if (inputPassword.value == "") { alert("비밀번호를 입력하여 주십시오!"); inputPassword.focus(); return false; }
+				if (userPwd.value == "") { alert("비밀번호를 입력하여 주십시오!"); inputPassword.focus(); return false; }
 	
 				document.submit();
 	
@@ -40,10 +40,10 @@
 	
 			function CheckIt_mem(form) {
 	
-				if (inputID.value == "") { alert("아이디를 입력하여 주십시오!"); inputID.focus(); return false; }
+				if (userId.value == "") { alert("아이디를 입력하여 주십시오!"); inputID.focus(); return false; }
 	
 	
-				if (inputPassword.value == "") { alert("비밀번호를 입력하여 주십시오!"); inputPassword.focus(); return false; }
+				if (userPwd.value == "") { alert("비밀번호를 입력하여 주십시오!"); inputPassword.focus(); return false; }
 	
 				document.submit();
 			}
@@ -55,7 +55,7 @@
 	<%@ include file="../header.jspf"%>
 	<section>
 	<div>
-		<form class="form-signin" action="<%=request.getContextPath()%>/index.jsp">
+		<form method="post" class="form-signin" action="<%=request.getContextPath()%>/project/register/loginOk.do">
 			<div class="text-center">
 				<img src="<%=request.getContextPath()%>/image/key.png">
 				<h1 class="h3 mb-3 font-weight-bold">로그인</h1>
@@ -63,17 +63,18 @@
 			</div>
 	
 			<div class="form-label-group">
-				<input type="text" id="inputID" class="form-control" required autofocus>
-				<label for="userid">아이디</label>
+				<input type="text" id="userId" name="userId" class="form-control" required autofocus>
+				<label for="userId">아이디</label>
 			</div>
 	
 			<div class="form-label-group">
-				<input type="password" id="inputPassword" class="form-control">
-				<label for="userpwd">패스워드</label>
+				<input type="password" id="userPwd" name="userPwd" class="form-control">
+				<label for="userPwd">패스워드</label>
 			</div>
-			<button class="btn btn-lg btn-secondary btn-block" type="submit" id="log" onClick="return CheckIt_com(this.form)">로그인</button>
+			<input class="btn btn-lg btn-secondary btn-block" type="submit" id='log' value="로그인"/>
 			<a target="_blank" id="idinquiry" href="registerForm.jsp">회원가입</a><a id="pwinquiry" href="#" onclick="popup();">아이디/비밀번호
 				찾기</a>
+				
 		</form>
 	</div>
 </section>
