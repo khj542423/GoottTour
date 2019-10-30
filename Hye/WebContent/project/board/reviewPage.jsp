@@ -28,17 +28,19 @@
 			#reviewPan{width:100%; height:1000px}
 			#reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
 			#reviewPage{width:100%;}
-			#reviewTable{border:1px solid #bbb; width:80%;margin:0px auto;margin-bottom:20px}
+			#reviewTable{border:1px solid #bbb; width:90%;margin:0px auto;margin-bottom:20px; table-layout: fixed;}
 			thead{border-bottom:3px double gray}
-			#reviewSearch{width:100%; text-align:left; padding-left:120px}
-			#write{position:relative; left:610px}
+			#searchNwrite{width:90%; margin:0px auto;}
+			#reviewSearch{float:left; text-align:left; width:95%;}
+			#write{text-align:right; }
+			
+			#reviewTable tr th:nth-child(1),#reviewTable tr th:nth-child(5){width:8%;} 
+			#reviewTable tr th:nth-child(2){width:50%;}
+			#reviewTable td{white-space:nowrap; text-overflow:ellipsis; overflow:hidden;} 
 			
 			.page-link{color:black;}
 		</style>
 	</head>
-		<script>
-
-		</script>
 	<body>
 		<%@ include file="../header.jspf"%>
 		<section>
@@ -64,7 +66,7 @@
 							<tbody>
 							<c:forEach var="v" items="${lst}">
 								<tr>
-				  					<td>${v.no}</td>
+				  					<td>${v.no}<input type="hidden" id="realNum${v.no}" value="${v.num}"/></td>
 				  					<td><a href="<%=request.getContextPath()%>/project/board/post.do?num=${v.num}&pageNum=${vo.pageNum}">${v.subject}</a></td>
 				  					<td>${v.userId}</td>
 				  					<td>${v.regDate}</td>
@@ -89,12 +91,14 @@
 							<a href="<%=request.getContextPath()%>/project/board/list.do?commuPage=${vo.commuPage}&pageNum=${vo.pageNum+1}" class="page-link">▶</a></li>
 						</ul>
 					</div>
+				<div id="searchNwrite">
 					<div id="reviewSearch">
-					<select><option>작성자</option><option>제목</option></select>
-					<input type="text"/>
-					<button>검색</button>
-					<button id="write" onclick="location.href='writeForm.jsp'">글쓰기</button>
+						<select><option>작성자</option><option>제목</option></select>
+						<input type="text"/>
+						<button>검색</button>
 					</div>
+					<button id="write" onclick="location.href='writeForm.jsp'">글쓰기</button>
+				</div>
 				</div>
 			</div>
 		</section>
