@@ -24,7 +24,7 @@ public class CommandLoginOk implements CommandService {
 		dao.login(vo);
 		
 		
-		String viewFile = "/index.jsp";
+		String viewFile = "/index.do";
 		
 		if(vo.getUserName()==null || vo.getUserName()=="") {
 			

@@ -11,8 +11,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="project/headerFooterStyle.css" type="text/css"/>
-<link rel="stylesheet" href="project/Main.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/project/headerFooterStyle.css" type="text/css"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/project/Main.css" type="text/css"/>
 </head>
 	<script>
 		function setImage(){
@@ -21,7 +21,7 @@
 			var url = ['project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp',
 						'project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp']
 			for(i=1; i<=9; i++){
-				imglist += '<div><a href="'+url[i-1]+'"><img src="image/main_img_banner_';
+				imglist += '<div><a href="'+url[i-1]+'"><img src="<%=request.getContextPath()%>/image/main_img_banner_';
 				if(i<=9)
 				imglist += i;
 			imglist+='.jpg"/></a>'+url[i-1]+'</div>'
@@ -43,7 +43,7 @@
 			
 			//배너 이미지 변경
 			$("#bannerImg").click(function(){
-				$("#bannerImg").attr("src","image/main"+imgNum+".jpg");
+				$("#bannerImg").attr("src","<%=request.getContextPath()%>/image/main"+imgNum+".jpg");
 				imgNum++;
 				if(imgNum>7)imgNum=1;
 			});
@@ -83,7 +83,7 @@
 						<li class="nav-item"><a href="<%=request.getContextPath()%>/project/make_trip.jsp">여행만들기</a></li>
 						<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">출발지</a></li>
 						<li class="nav-item"><a href="<%=request.getContextPath()%>/project/board/list.do?commuPage=reviewPage">여행후기</a></li>
-						<li class="nav-item"><div><input type="text" style="border:none; border-radius: 15px 0 0 15px"><input type="submit"  style="background-image:url('image/magno.png'); color:transparent; background-size: 20px 20px;vertical-align: 2px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0;"></div></li>
+						<li class="nav-item"><div><input type="text" style="border:none; border-radius: 15px 0 0 15px"><input type="submit"  style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); color:transparent; background-size: 20px 20px;vertical-align: 2px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0;"></div></li>
 					</ul>
 				</div>
 			</div>
@@ -91,11 +91,11 @@
 	<section>
 		<!-- 이미지배너 --> 
 		<div id="imgBanner">
-			<img src="image/main1.jpg" id="bannerImg"/>
+			<img src="<%=request.getContextPath()%>/image/main1.jpg" id="bannerImg"/>
 			
 			<div> 
 																														<!-- 이동만 보려고 임시로 클릭이벤트로 해놓음. -->
-			<input type="text" style="border:none; border-radius: 15px 0 0 15px; font-size:150%"><input type="submit" onclick="location.href='project/search.jsp'" style="background-image:url('image/magno.png'); color:transparent; background-size: 40px 40px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0; vertical-align: 3px;">
+			<input type="text" style="border:none; border-radius: 15px 0 0 15px; font-size:150%"><input type="submit" onclick="location.href='project/search.jsp'" style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); color:transparent; background-size: 40px 40px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0; vertical-align: 3px;">
 			 
 			</div>
 		</div>
@@ -103,13 +103,13 @@
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
-			      <img class="d-block w-100" src="image/event_01.jpg" alt="First slide">
+			      <img class="d-block w-100" src="<%=request.getContextPath()%>/image/event_01.jpg" alt="First slide">
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="image/event_01.jpg" alt="Second slide">
+			      <img class="d-block w-100" src="<%=request.getContextPath()%>/image/event_01.jpg" alt="Second slide">
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="image/event_01.jpg" alt="Third slide">
+			      <img class="d-block w-100" src="<%=request.getContextPath()%>/image/event_01.jpg" alt="Third slide">
 			    </div>
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -128,15 +128,15 @@
 	
 		<div style="margin-bottom:50px;">
 			<div class='row' id='rowdiv'>
-				<div id='hot1' style='background-image:url(image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
+				<div id='hot1' style='background-image:url(<%=request.getContextPath()%>/image/jeju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
 					<h1 style="color:white"><a href="#">경주(Gyeongju)</a></h1>
 				</div>
 				
-				<div id='hot2' style='background-image:url(image/gyeongju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
+				<div id='hot2' style='background-image:url(<%=request.getContextPath()%>/image/gyeongju.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
 					<h1 style="color:white"><a href="#">제주(Jeju)</a></h1>
 				</div>
 				
-				<div id='hot3' style='background-image:url(image/seoul.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
+				<div id='hot3' style='background-image:url(<%=request.getContextPath()%>/image/seoul.jpg); background-size:100%;  height:250px; background-repeat: no-repeat; '>
 					<h1 style="color:white"><a href="#">서울(Seoul)</a></h1>
 				</div>
 			</div> 

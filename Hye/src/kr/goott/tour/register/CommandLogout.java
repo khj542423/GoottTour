@@ -18,7 +18,7 @@ public class CommandLogout implements CommandService {
 		HttpSession sess = request.getSession();
 		sess.invalidate();
 		
-		return "/index.jsp";
+		return "/index.do";
 	}
 
 }
