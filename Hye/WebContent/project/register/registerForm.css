@@ -105,10 +105,10 @@
 	margin-left: -100px;
 	margin-top: 10px
 }
-#loginFrm input{text-align:left}
+#regForm input{text-align:left}
 
-#loginFrm tr>td:nth-child(2){text-align:left;}
-#loginFrm tr:nth-child(6)>td,#loginFrm tr:nth-child(7)>td{text-align:left}
+#regForm tr>td:nth-child(2){text-align:left;}
+#regForm tr:nth-child(6)>td,#regForm tr:nth-child(7)>td{text-align:left}
 
 #addr,#detailAddr{
 	width:600px;

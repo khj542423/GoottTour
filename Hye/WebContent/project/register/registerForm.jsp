@@ -78,6 +78,12 @@ $(function(){
 		alert("이메일 및 도메인을 모두 입력해야합니다.");
 		return false;
 	}
+	
+	//약관 동의
+	if($("#muni12").prop("checked") || $("#muni22").prop("checked")){
+		alert("약관에 동의해주셔야합니다.");
+		return false;
+	}
 });
 	
 	
@@ -140,10 +146,10 @@ $(function(){
 						<tr>
 							<td class="stit" rowspan="3">주소</td>
 							<td class="frm">
-								<div id="wrap" style="display:none;border:1px solid; width:500px; height:300px; margin:-10px 0px 5px -10px;position:absolute">
-									<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+								<div id="wrap" style="display:none; border:1px solid; width:500px; height:300px; margin:-10px 0px 5px -10px; position:absolute">
+									<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px; z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
 								</div>
-								<input type="text" class="ipf" name='zipCode' id='zipCode'><input type="button" class="btn btn-secondary" value="검색"/>
+								<input type="text" class="ipf" name='zipCode' id='zipCode'><input type="button" class="btn btn-secondary" onclick="sample3_execDaumPostcode()" value="검색"/>
 							</td>
 						</tr>
 						<tr>
@@ -166,8 +172,7 @@ $(function(){
 								name='t3' maxlength="4">&nbsp;&nbsp;연락가능한 휴대폰번호를 입력하세요</td>
 						</tr>
 						<tr>
-							<td class='frm'>
-							<input type="hidden" id="memType" name="memType" value="일반">
+							<td><input type="hidden" id="memType" name="memType" value="일반"></td>
 						</tr>
 
 						<tr>
@@ -344,8 +349,8 @@ $(function(){
 									약관에 명시되지 않은 사항은 전자거래기본법, 전자서명법,전자상거래등에서의 소비자보호에 관한 법률 기타 관련법령의
 									규정 및 국내외 여행표준약관등에 의합니다.<br /> <br /> ● 부 칙<br /> 본 약관은 2008년
 									6월 1일 부터 시행됩니다<br />
-								</div> <br> <input type="radio" name="muni"> <span>이용약관에
-									동의합니다.</span><input type="radio" name="muni" checked> <span>이용약관에
+								</div> <br> <input type="radio" name="muni" id="muni11"> <span>이용약관에
+									동의합니다.</span><input type="radio" name="muni" id="muni12" checked> <span>이용약관에
 									동의하지 않습니다.</span><br> <br>
 							</td>
 						</tr>
@@ -366,8 +371,8 @@ $(function(){
 									: 회원탈퇴 후 5일까지<br><br /> ※서비스 제공을 위해
 									필요한 최소한의 개인정보이므로 동의를 해 주셔야 서비스를 이용하실 수 있습니다.<br><br /> 개인정보의 수집,이용에 관한 사항에
 									동의하십니까?
-								</div> <br> <input type="radio" name="muni2"> <span>개인정보
-									수집에 동의합니다.</span><input type="radio" name="muni2" checked> <span>개인정보
+								</div> <br> <input type="radio" name="muni2" id="muni21"> <span>개인정보
+									수집에 동의합니다.</span><input type="radio" name="muni2" id="muni22" checked> <span>개인정보
 									수집에 동의하지 않습니다</span><br> <br>
 							</td>
 						</tr>
@@ -376,7 +381,58 @@ $(function(){
 				</form>
 			</div>
 		</div>
-
+		<script>
+		   	 // 우편번호 찾기 찾기 화면을 넣을 element
+		       var element_wrap = document.getElementById('wrap');
+		
+		       function foldDaumPostcode() {
+		           // iframe을 넣은 element를 안보이게 한다.
+		           element_wrap.style.display = 'none';
+		       }
+		
+		       function sample3_execDaumPostcode() {
+		           // 현재 scroll 위치를 저장해놓는다.
+		           var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+		           new daum.Postcode({
+		               oncomplete: function(data) {
+		                   // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+		
+		                   // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+		                   // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+		                   var addr = ''; // 주소 변수
+		                   var extraAddr = ''; // 참고항목 변수
+		
+		                   //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+		                   if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+		                       addr = data.roadAddress;
+		                   } else { // 사용자가 지번 주소를 선택했을 경우(J)
+		                       addr = data.jibunAddress;
+		                   }
+		                   // 우편번호와 주소 정보를 해당 필드에 넣는다.
+		                   document.getElementById('zipCode').value = data.zonecode;
+		                   document.getElementById("addr").value = addr;
+		                   // 커서를 상세주소 필드로 이동한다.
+		                   document.getElementById("detailAddr").focus();
+		
+		                   // iframe을 넣은 element를 안보이게 한다.
+		                   // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+		                   element_wrap.style.display = 'none';
+		
+		                   // 우편번호 찾기 화면이 보이기 이전으로 scroll 위치를 되돌린다.
+		                   document.body.scrollTop = currentScroll;
+		               },
+		               // 우편번호 찾기 화면 크기가 조정되었을때 실행할 코드를 작성하는 부분. iframe을 넣은 element의 높이값을 조정한다.
+		               onresize : function(size) {
+		                   element_wrap.style.height = size.height+'px';
+		               },
+		               width : '100%',
+		               height : '100%'
+		           }).embed(element_wrap);
+		
+		           // iframe을 넣은 element를 보이게 한다.
+		           element_wrap.style.display = 'block';
+		       }
+		</script>
 	</section>
 	<%@ include file="../footer.jspf"%>
 </body>

@@ -52,7 +52,7 @@
 					<hr/>
 					<div>
 						<h5>나의 등급</h5>
-						<h3><a href="<%=request.getContextPath()%>/project/membership.jsp">Diamond</a></h3>
+						<h3 style="font-weight:bold"><a href="<%=request.getContextPath()%>/project/membership.jsp">Diamond</a></h3>
 					</div>
 					<select><option>사용가능한 쿠폰</option></select>
 					<h6>쿠폰내역</h6>
