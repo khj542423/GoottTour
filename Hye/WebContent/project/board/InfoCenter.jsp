@@ -77,7 +77,7 @@
 				  				</tr>
 				  				<tr>
 				  					<td>8</td>
-				  					<td><a href="../myPaged.jsp">마이페이지</a></td>
+				  					<td><a href="../myPage.jsp">마이페이지</a></td>
 				  					<td>네..</td>
 				  					<td>2019-09-21</td>
 				  					<td>100</td>
