@@ -3,6 +3,7 @@
 <%
 	String pageName = "회원등급";
 	String pageSideName = "구트투어 회원등급과 혜택";
+	String pageImage = "main_img_banner_6.jpg";
 %>
 <!DOCTYPE html>
 <html>

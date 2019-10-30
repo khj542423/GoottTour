@@ -3,6 +3,7 @@
 <%
 	String pageName = "예약페이지";
 	String pageSideName = "여행 예약페이지";
+	String pageImage = "main_img_banner_6.jpg";
 %>
 <!DOCTYPE html>
 <html>

@@ -3,6 +3,7 @@
 <%
 	String pageName = "구트투어 이용약관";
 	String pageSideName = "구트투어 이용약관";
+	String pageImage = "main_img_banner_6.jpg";
 	int cip = Integer.parseInt((String)request.getParameter("cip"));
 %>
 <!DOCTYPE html>
