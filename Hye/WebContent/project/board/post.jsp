@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+		<link rel="stylesheet" href="../headerFooterStyle.css" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
@@ -36,13 +36,14 @@
 			#posting table tr td pre{padding-top: 20px}
 		</style>
 		<script>
-
+			function backPage(){
+				history.back();
+			}
 		</script>
 	</head>
 	<body>
-		<%@ include file="header.jspf"%>
+		<%@ include file="../header.jspf"%>
 		<section>
-			<%@ include file="sidebar.jspf"%>
 			<div id="sideMenu">
 				<div>커뮤니티</div>
 				<ul id="reviewList">
@@ -86,10 +87,10 @@
 						</table>
 					</div>
 					<hr/>
-					<button>목록보기</button>
+					<input type="button" value="목록보기" onclick="backPage()"></input>
 				</div>
 			</div>
 		</section>
-		<%@ include file="footer.jspf"%>
+		<%@ include file="../footer.jspf"%>
 	</body>
 </html>

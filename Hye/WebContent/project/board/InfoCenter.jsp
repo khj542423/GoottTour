@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+		<link rel="stylesheet" href="../headerFooterStyle.css" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
@@ -36,7 +36,7 @@
 		</script>
 	</head>
 	<body>
-		<%@ include file="header.jspf"%>
+		<%@ include file="../header.jspf"%>
 		<section>
 			<div id="sideMenu">
 				<div style="color:white">고객센터</div>
@@ -63,21 +63,21 @@
 							<tbody>
 								<tr>
 				  					<td>10</td>
-				  					<td><a href="membership.jsp">회원등급..마이페이지 버튼이 없어서..</a></td>
+				  					<td><a href="../membership.jsp">회원등급..마이페이지 버튼이 없어서..</a></td>
 				  					<td>구트투어</td>
 				  					<td>2019-09-22</td>
 				  					<td>1000</td>
 				  				</tr>
 				  				<tr>
 				  					<td>9</td>
-				  					<td><a href="reservationchk.jsp">예약확인.. 버튼이 없어서..</a></td>
+				  					<td><a href="../reservationchk.jsp">예약확인.. 버튼이 없어서..</a></td>
 				  					<td>구트투어</td>
 				  					<td>2019-09-22</td>
 				  					<td>10</td>
 				  				</tr>
 				  				<tr>
 				  					<td>8</td>
-				  					<td><a href="payment.jsp">제대로적겠습니다</a></td>
+				  					<td><a href="../myPaged.jsp">마이페이지</a></td>
 				  					<td>네..</td>
 				  					<td>2019-09-21</td>
 				  					<td>100</td>
@@ -158,6 +158,6 @@
 				</div>
 			</div>
 		</section>
-		<%@ include file="footer.jspf"%>
+		<%@ include file="../footer.jspf"%>
 	</body>
 </html>
