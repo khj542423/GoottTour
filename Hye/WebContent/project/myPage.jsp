@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
-	String pageName = "헤더풋터";
-	String pageSideName = "그리고 사이드";
+	String pageName = "안녕요안녕하세요";
+	String pageSideName = "사이드사이이드사이드";
+	String pageImage = "main_img_banner_6.jpg";
 %>
 <!DOCTYPE html>
 <html>
@@ -15,7 +16,7 @@
 		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
 	</head>
 	<style>
-		#myProfile{height:300px; margin-top:30px}
+		#myProfile{height:300px;}
 		#myProfile>div{border:1px solid #ddd; border-radius:5px; width:48.5%; float:left; height:280px;}
 		#profileDiv{margin-right:30px; }
 		#myProfile h4{margin-top:10px}

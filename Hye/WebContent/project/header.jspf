@@ -7,30 +7,10 @@
 </style>
 <script>
 	$(function(){
- 		var imgBannerTextWidth = $("#imgBanner>div").width();
-		$("#imgBanner>div").css("left",(1920-imgBannerTextWidth)/2+"px");
+ 		var imgBannerTextWidth = $("#imgBannerText").width();
+ 		var headerWidth = $("#imgBanner1").width();
+		$("#imgBannerText").css("left",(headerWidth-imgBannerTextWidth)/2+100+"px");
 		
-	});
-	
-	$(window).scroll(function(){
-		//bar 이동
-		var mainban = $('#mainbanner').css('display')
-		var scrollTop = $(window).scrollTop();//스크롤 정보
-		var topSpace = 0;
-	
-		if(mainban =='block'){
-			topSpace = 100;
-		}
-		
-		//console.log(h1+','+scrollTop);
-		if(scrollTop==topSpace){
-			$('#bar').css('top',scrollTop-topSpace+'px');
-			$('#bannerLeft').css('top',scrollTop-topSpace+'px');
-			$('#bannerRight').css('top',scrollTop-topSpace+'px');
-		}else{
-			//bar , bannerleft, bannerright
-			$('#mainbanner').css('top','-100');
-		}
 	});
 	
 </script>
@@ -56,11 +36,11 @@
 		</div>
 		<!-- 이미지배너 -->
 		<div id="imgBanner1">
-			<div>
+			<div id="imgBannerText">
 				<h1><%=pageName%></h1>
 				<h2><%=pageSideName %></h2>
 			</div>
-			<img src="<%=request.getContextPath()%>/image/main1.jpg" id="bannerImg1"/>
+			<img src="<%=request.getContextPath()%>/image/<%=pageImage %>" id="bannerImg1"/>
 		</div>
 	</div>
 </header>
