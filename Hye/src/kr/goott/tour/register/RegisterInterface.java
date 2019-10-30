@@ -12,6 +12,8 @@ public interface RegisterInterface {
 	
 	public int updateRecord(RegisterVO vo);
 	
+	public void getRegister(RegisterVO vo);
+	
 	
 	
 }

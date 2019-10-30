@@ -8,25 +8,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.goott.tour.controller.CommandService;
 
-public class CommandIdCheck implements CommandService {
+public class CommandRegisterEdit implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String userId = request.getParameter("userId");
 		
-		System.out.println("userId="+userId);
+		RegisterVO vo = new RegisterVO();
+		vo.setUserId((String)request.getSession().getAttribute("userId"));
 		
 		RegisterDAO dao = new RegisterDAO();
-		boolean result = dao.idCheck(userId);
+		dao.getRegister(vo);
 		
-		//뷰에 데이터 보내기 
-		request.setAttribute("result", result);
-		request.setAttribute("userId", userId);
+		request.setAttribute("vo", vo);
 		
-		return "idCheck.jsp";
-		
-		
+		return "registerEditForm.jsp";
 	}
-   
+
 }
