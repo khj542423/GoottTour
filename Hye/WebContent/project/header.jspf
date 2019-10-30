@@ -39,7 +39,7 @@
 		<div id="mainMenu">
 			<!-- 작은메뉴 -->
 			<ul id="miniMenu" class="navbar-header">
-				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/board/InfoCenter.jsp">고객센터</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/board/list.do?commuPage=InfoCenter">고객센터</a></li>
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/shoppingbasket.jsp">여행바구니</a></li>
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/registerForm.jsp">회원가입</a></li>
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/loginForm.do">로그인</a></li>
@@ -50,7 +50,7 @@
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">구트여행</a></li>
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/make_trip.jsp">여행만들기</a></li>
 				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">출발지</a></li>
-				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/board/reviewPage.jsp">여행후기</a></li>
+				<li class="nav-item"><a href="<%=request.getContextPath()%>/project/board/list.do?commuPage=reviewPage">여행후기</a></li>
 				<li class="nav-item"><div><input type="text" style="border:none; border-radius: 15px 0 0 15px"><input type="submit"  style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); color:transparent; background-size: 20px 20px;vertical-align: 2px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0;"></div></li>
 			</ul>
 		</div>
