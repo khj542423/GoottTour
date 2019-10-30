@@ -20,10 +20,13 @@
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
 			section{margin-bottom:50px}
-			#sideMenu{width:130px; position:absolute; left:220px; top:304px;}
+			#sideMenu{width:130px; position:absolute; left:220px; top:653px;}
 			#reviewList{width:130px; float:bottom; border:1px solid #00a7f0;}
 			#reviewList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
 			#reviewList li:last-child{border-bottom:0px}
+			#infoList{width:130px; float:bottom; border:1px solid #00a7f0}
+			#infoList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
+			#infoList li:last-child{border-bottom:0px}
 			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0; color:white;}
 			#reviewList{float:bottom}
 			#reviewPan{width:100%;}
@@ -34,16 +37,15 @@
 			#reviewWrite table tr td:last-child{width:90%; padding:20px; border-bottom:1px solid #ddd; text-align:left;}
 			#reviewWrite table tr:last-child td:first-child{border-bottom:0px}
 			#reviewWrite table tr:last-child td:last-child{border-bottom:0px}
-			#button{margin-left:10%; text-align:left}
-			#button button:last-child{position:relative; left:835px}
+			#button{width:98%}
+			#button input:nth-child(1){margin-top:20px; float:left}
+			#button input:nth-child(2){margin-top:20px; float:right}
 			
-			.bora{border:1px solid #ddd; border-radius:3px}
-			#writer{width:200px; text-align:left;}
-			#writeTitle{width:400px; text-align:left}
+			#subject{width:400px; text-align:left; border:1px solid #ddd; border-radius:3px}
 		</style>
 		<script>
 		$(function(){
-			CKEDITOR.replace( 'writeText' );
+			CKEDITOR.replace( 'content' );
 
 		});
 		
@@ -56,33 +58,45 @@
 		<%@ include file="../header.jspf" %>
 		<section>
 			<div id="sideMenu">
-				<div>커뮤니티</div>
-				<ul id="reviewList">
-					<li><a>여행후기</a></li>
-				</ul>
+				<c:if test="${commuPage=='reviewPage'}">
+					<div>커뮤니티</div>
+					<ul id="reviewList">
+						<li><a>여행후기</a></li>
+					</ul>
+				</c:if>
+				<c:if test="${commuPage=='InfoCenter'}">
+					<div>고객센터</div>
+					<ul id="infoList">
+						<li><a>공지사항</a></li>
+						<li><a>여행문의</a></li>
+						<li><a>환불규정</a></li>
+						<li><a>자주묻는질문</a></li>
+					</ul>
+				</c:if>
 			</div>
 			<div id="reviewPan">
-				<div id="reviewTab1"><h4>여행후기</h4><hr class="hrStyle">
-					<div id="reviewWrite">
+				<div id="reviewTab1"><h4><c:if test="${commuPage=='reviewPage'}">여행후기</c:if><c:if test="${commuPage=='InfoCenter'}">공지사항</c:if></h4><hr class="hrStyle">
+					<form id="reviewWrite" method="post" action="<%=request.getContextPath()%>/project/board/writeOk.do">
 						<table>
 							<tr>
 								<td>이름</td>
-								<td><input type="text" class="bora" id="writer"/></td>
+								<td><input type="hidden" id="userId" name="userId" value="user1234"/>유저아이디</td>
 							</tr>
 							<tr>
 								<td>제목</td>
-								<td><input type="text" class="bora" id="writeTitle"/></td>
+								<td><input type="text" class="bora" id="subject" name="subject"/></td>
 							</tr>
 							<tr>
 								<td>내용</td>
-								<td><textarea id="writeText" name="writeText"></textarea></td>
+								<td><textarea id="content" name="content"></textarea></td>
 							</tr>
 						</table>
-					</div>
-					<div id="button">
-						<input type="button" value="돌아가기" onclick="backPage()"></input>
-						<button>글작성</button>
-					</div>
+						<input type="hidden" id="commuPage" name="commuPage" value="${commuPage}">
+						<div id="button">
+							<input type="button" value="돌아가기" onclick="backPage()"></input>
+							<input type="submit" value="글저장"></input>
+						</div>
+					</form>
 				</div>
 			</div>
 		</section>

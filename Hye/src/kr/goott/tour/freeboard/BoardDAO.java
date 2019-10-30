@@ -52,8 +52,24 @@ public class BoardDAO extends DBConn implements BoardInterface{
 
 	@Override
 	public int boardInsert(BoardVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		int cnt = 0;
+		try {
+			dbConn();
+			String sql = "insert into gt_freeboard(num, subject, content, userid, hit, regdate, commuPage) values(gtboard_sq.nextval, ?, ?, ?, 0, sysdate, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getSubject());
+			pstmt.setString(2, vo.getContent());
+			pstmt.setString(3, vo.getUserId());
+			pstmt.setString(4, vo.getCommuPage());
+
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("레코드 추가 에러");
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return cnt;
 	}
 
 	@Override

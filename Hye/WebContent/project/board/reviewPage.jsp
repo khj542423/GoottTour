@@ -97,7 +97,7 @@
 						<input type="text"/>
 						<button>검색</button>
 					</div>
-					<button id="write" onclick="location.href='writeForm.jsp'">글쓰기</button>
+					<button id="write" onclick="location.href='<%=request.getContextPath()%>/project/board/write.do?commuPage=${vo.commuPage}'">글쓰기</button>
 				</div>
 				</div>
 			</div>
