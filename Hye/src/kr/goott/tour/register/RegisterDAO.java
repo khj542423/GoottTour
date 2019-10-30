@@ -103,12 +103,5 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
-	
-	
-
-	
 
 }
