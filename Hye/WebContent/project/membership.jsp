@@ -18,7 +18,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 	     	 *{font-family:'Noto Sans KR',sans-serif;}
-	     	 #row-span{ text-align:center; padding-top:30px; width:100px; font-size:25px;}
+	     	 #row-span{ text-align:center; padding-top:30px; width:100px; font-size:25px; line-height:170px;}
 			#diamond ~ th{width:200px; }
 			#top-table{margin-bottom:50px; }
 			h1{text-align:left; margin-bottom:0; margin-top:15px;}
@@ -51,16 +51,19 @@
 					<th>플레티넘</th>
 					<th>골드</th> 
 					<th>실버</th>
-					<th>브론즈</th>
+					<th>브론즈</th> 
+					<th>일반</th>
 				</tr>
+				
 				<tr>
 					<td rowspan='2' id='row-span'>조건</td>
 					<td>예약건수</td>
 					<td>6</td>
 					<td>4</td>
-					<td>2</td>
+					<td>3</td>
 					<td>2</td>
 					<td>1</td>
+					<td>-</td>
 				</tr>
 				<tr>
 					<td>이용금액</td>
@@ -69,34 +72,38 @@
 					<td>500,000원</td>
 					<td>-</td>
 					<td>-</td>
+					<td>-</td>
 				</tr>				
 				<tr>
 					<td colspan='2' id='last-row'>혜택</td>
-					<td>20%할인 쿠폰X2장</td>
-					<td>20%할인 쿠폰</td>
-					<td>10%할인 쿠폰</td>
+					<td>50,000원 할인 쿠폰</td>
+					<td>30,000원 할인 쿠폰</td>
+					<td>20,000원 할인 쿠폰</td>
 					<td>10,000원 할인 쿠폰</td>
 					<td>5,000원 할인 쿠폰</td>
+					<td>-</td> 
 				</tr>
 			</table>
 				<p id='bot-p'>자유여행고객</p>
 				<table class='table table-bordered table-md'>
 				<tr>
 					<th colspan='2' style='width:20px;'id='diamond'>등급</th>
-					<th style=''>다이아몬드</th>
+					<th>다이아몬드</th>
 					<th>플레티넘</th>
 					<th>골드</th> 
 					<th>실버</th>
 					<th>브론즈</th>
+					<th>일반</th>
 				</tr>
 				<tr>
 					<td rowspan='2' id='row-span'>조건</td>
 					<td>예약건수</td>
-					<td>3</td>
-					<td>4</td>
+					<td>6</td>
+					<td>6</td>
 					<td>5</td>
-					<td>6</td>
-					<td>6</td>
+					<td>3</td>
+					<td>1</td>
+					<td>-</td>
 				</tr>
 				<tr>
 					<td>이용금액</td>
@@ -105,14 +112,16 @@
 					<td>50,000</td>
 					<td>30,000</td>
 					<td>10,000</td>
+					<td>-</td>
 				</tr>	
 				<tr>
 					<td colspan='2' id='last-row'>혜택</td>
-					<td>20%할인 쿠폰X2장</td>
-					<td>20%할인 쿠폰</td>
-					<td>10%할인 쿠폰</td>
+					<td>30,000원 할인 쿠폰</td>
+					<td>15,000원 할인 쿠폰</td>
+					<td>10,000원 할인 쿠폰</td>
 					<td>10,000원 할인 쿠폰</td>
 					<td>5,000원 할인 쿠폰</td>
+					<td>-</td>
 				</tr>
 			</table>
 		</section>

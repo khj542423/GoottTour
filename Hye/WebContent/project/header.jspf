@@ -47,6 +47,7 @@
 				<h2><%=pageSideName %></h2>
 			</div>
 			<img src="<%=request.getContextPath()%>/image/<%=pageImage %>" id="bannerImg1"/>
+			<div class="overlay"></div>
 		</div>
 	</div>
 </header>

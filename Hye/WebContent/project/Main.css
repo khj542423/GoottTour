@@ -20,6 +20,8 @@
 	#top-h1{ margin-top:100px; margin-bottom:30px;}
 	#cjtop{ width:1200px; height:300px;}
 	#cjtop>div>img{width:100%;}
+	.overlay{ height: 80vh;}
+	
 	#hot1, #hot2, #hot3{
 		width:380px; height:250px;  margin:0 10px;  border-radius:25px; cursor:pointer;}
 	#rowdiv div h1{line-height:250px;}
