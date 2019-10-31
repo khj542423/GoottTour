@@ -20,11 +20,12 @@
 		*{font-family:'Noto Sans KR',sans-serif;}
 		</style>
 		<style>
-			#tabmenu{margin-left : 30%; width : 603px; height : 50px; margin : 0px auto; border:1px solid #ddd;}
-			#tabmenu>div{float : left; width : 50%; height : 50px; text-align : center; line-height:50px; font-size:1.1em}
+			#tabmenu{ position: absolute; margin-left: 30%; top: 700px;  left: 100px;  width: 105px;  height: 100px; margin: 0px auto; border: 1px solid #ddd;}
+			#tabmenu>div{float : left; width : 100px; height : 50px; text-align : center; line-height:50px; font-size:1.1em}
 			#tabmenu>div:nth-child(1){background : #00a7f0; color:white}
 			#list1, #list2{width : 100%; height : 1500px; margin : 0px auto; margin-top:20px; border:1px solid #ddd}
 			#list2{display : none;}
+			#full-div{width:1200px;}
 		</style>
 		<script>
 			$(function(){
@@ -51,16 +52,19 @@
 		<section>
 		<%@ include file="sidebar.jspf"%>
 			<!-- 탭메뉴 인기상품 특가상품 -->
-			<div>
+			<div id="full-div">
 				<div id = "tabmenu">
-					<div>인기상품</div>
-					<div>특가상품</div>
+						<div>구트여행목록</div>
+						<div>수학여행</div>
+						<div>1박2일</div>
 				</div>
-				<div id = "list1">
-				<!-- 인기상품 -->인기인기
-				</div>
-				<div id = "list2">
-				<!-- 특가상품 -->특가특가
+				<div>
+					<div id = "list1">
+					<!-- 인기상품 -->인기인기
+					</div>
+					<div id = "list2">
+					<!-- 특가상품 -->특가특가
+					</div>
 				</div>
 			</div>
 		</section>
