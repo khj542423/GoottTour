@@ -53,7 +53,7 @@
 			$(".overlay").click(function(){
 				$("#bannerImg").attr("src","<%=request.getContextPath()%>/image/main"+imgNum+".jpg");
 				imgNum++;
-				if(imgNum>7)imgNum=1;
+				if(imgNum>=7)imgNum=1;
 			});
 			
 			
@@ -104,7 +104,6 @@
 			<img src="<%=request.getContextPath()%>/image/main1.jpg" id="bannerImg"/>
 			<div>				<!-- 이동만 보려고 임시로 클릭이벤트로 해놓음. -->
 			<input type="text" style="border:none; position:relative; z-index:200;  border-radius: 15px 0 0 15px; font-size:150%"><input type="submit" onclick="location.href='project/search.jsp'" style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); position:relative; z-index:200; color:transparent; background-size: 40px 40px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0; vertical-align: 3px;">
-			 
 			</div>
 		</div>
 		<div class="overlay"></div>
