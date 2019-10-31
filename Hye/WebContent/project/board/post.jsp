@@ -37,6 +37,10 @@
 			#posting table tr td pre{padding-top: 20px}
 			#postContent {overflow:hidden;}
 			#postContent *{text-align:left}
+			
+			#button{width:80%; margin:0px auto; }
+			#button input{float:right; margin-right:10px}
+			#button input:last-child{float:left}
 		</style>
 		<script>
 			function backPage(){
@@ -77,12 +81,16 @@
 						</table>
 						<table>
 							<tr>
-								<td colspan="4" id="postContent">${vo.content}</td>
+								<td colspan="4" id="postContent">${vo.content}</td> 
 							</tr>
 						</table>
 					</div>
 					<hr/>
-					<input type="button" value="목록보기" onclick="backPage()"></input>
+					<div id= "button">
+						<input type="button" class="btn btn-secondary" value="삭제" onclick="del()"></input>
+						<input type="button" class="btn btn-secondary" value="수정" onclick="edit()"></input>
+						<input type="button" class="btn btn-secondary" value="목록보기" onclick="backPage()"></input>
+					</div>
 				</div>
 			</div>
 		</section>
