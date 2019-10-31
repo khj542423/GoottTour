@@ -25,7 +25,7 @@ public class CommandRegisterEditOk implements CommandService {
 		vo.setZipCode(request.getParameter("zipCode"));
 		vo.setAddr(request.getParameter("addr"));
 		vo.setDetailAddr(request.getParameter("detailAddr"));
-		vo.setEmail(request.getParameter("emailId"));
+		vo.setEmailId(request.getParameter("emailId"));
 		vo.setEmailDomain(request.getParameter("emailDomain"));
 		
 		HttpSession sess = request.getSession();

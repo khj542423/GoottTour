@@ -100,6 +100,7 @@ public class RegisterVO {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+		
 		String mail[] = email.split("@");
 		emailId = mail[0];
 		emailDomain = mail[1];
