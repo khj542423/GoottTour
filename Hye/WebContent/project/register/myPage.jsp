@@ -13,8 +13,18 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+		<link rel="stylesheet" href="../headerFooterStyle.css" type="text/css"/>
 	</head>
+	<script>
+	
+		$(function(){
+			$("#edit-btn").click(function(){
+				location.href= "/Hye/project/register/registerEdit.do";
+			})
+		})
+		
+	
+	</script>
 	<style>
 		#myProfile{height:300px;}
 		#myProfile>div{border:1px solid #ddd; border-radius:5px; width:48.5%; float:left; height:280px;}
@@ -36,7 +46,7 @@
 		#revData tr>td:nth-child(8){width:9%}
 	</style>
 	<body>
-		<%@ include file="header.jspf"%>
+		<%@ include file="../header.jspf"%>
 		<section>
 			<h2>마이페이지</h2>
 			<hr class="hrStyle"/>
@@ -45,15 +55,16 @@
 					<h4>내 프로필</h4>
 					<hr/>
 					<div><img src="<%=request.getContextPath()%>/image/myPageProfile.png"/></div>
-					<h5>사용자 님</h5>
-					<input type="button" class="btn btn-secondary" value="수정"/>
+					<h5>${vo.userName }님</h5>
+					
+					<input type="button" id ="edit-btn" class="btn btn-secondary" value="회원정보수정"/>
 				</div>
 				<div id="membershipDiv">
 					<h4>회원등급</h4>
 					<hr/>
 					<div>
 						<h5>나의 등급</h5>
-						<h3 style="font-weight:bold"><a href="<%=request.getContextPath()%>/project/membership.jsp">Diamond</a></h3>
+						<h3 style="font-weight:bold"><a href="<%=request.getContextPath()%>/project/membership.jsp">${vo.memType }</a></h3>
 					</div>
 					<select><option>사용가능한 쿠폰</option></select>
 					<h6>쿠폰내역</h6>
@@ -85,6 +96,6 @@
 				</table>
 			</div>
 		</section>
-		<%@ include file="footer.jspf"%>
+		<%@ include file="../footer.jspf"%>
 	</body>
 </html>

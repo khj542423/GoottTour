@@ -123,17 +123,11 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 	}
 
 	@Override
-	public void selectRegister(RegisterVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void getRegister(RegisterVO vo) {
 		try {
 			dbConn();
 			String sql = "select username, tel, zipcode, addr, detailaddr, "
-					+ " email from gt_register where userid=?";
+					+ " email , memtype from gt_register where userid=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getUserId());
 			rs= pstmt.executeQuery();
@@ -145,6 +139,7 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 				vo.setAddr(rs.getString(4));
 				vo.setDetailAddr(rs.getString(5));
 				vo.setEmail(rs.getString(6));
+				vo.setMemType(rs.getString(7));
 			}
 			
 		}catch(Exception e) {
