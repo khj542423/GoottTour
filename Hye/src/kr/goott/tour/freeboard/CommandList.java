@@ -23,7 +23,6 @@ public class CommandList implements CommandService {
 		BoardDAO dao = new BoardDAO();
 		
 		//페이지구분
-		System.out.println(request.getParameter("commuPage"));
 		vo.setCommuPage(request.getParameter("commuPage"));
 		
 		//총 레코드 수

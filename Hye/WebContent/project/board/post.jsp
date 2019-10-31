@@ -57,33 +57,25 @@
 						<table>
 							<tr>
 								<td colspan="4">
-									여행후기제목
+									${vo.subject}
 								</td>
 							</tr>
 							<tr>
+								<td>번  호</td>
+								<td>${vo.no}</td>
 								<td>글쓴이</td>
-								<td>구트투어</td>
-								<td>이메일</td>
-								<td>aaaa@aaaa.aaa</td>
+								<td>${vo.userId}</td>
 							</tr>
 							<tr>
 								<td>날  짜</td>
-								<td>2019-09-22</td>
+								<td>${vo.regDate}</td>
 								<td>조회수</td>
-								<td>1001</td>
+								<td>${vo.hit}</td>
 							</tr>
 						</table>
 						<table>
 							<tr>
-								<td colspan="4">
-<pre>
-여행가고싶다 보내주세요
-여행가고싶다
-돈이없다
-로또1등당첨되고싶다
-로또1등당첨되면 여행간다
-</pre>
-								</td>
+								<td colspan="4" style="text-align:">${vo.content}</td>
 							</tr>
 						</table>
 					</div>

@@ -86,8 +86,18 @@ public class BoardDAO extends DBConn implements BoardInterface{
 
 	@Override
 	public void boardHit(int num) {
-		// TODO Auto-generated method stub
-		
+		try {
+			dbConn();
+			String sql = "update gt_freeboard set hit=hit+1 where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("조회수증가 에러");
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
 	}
 
 	@Override
@@ -112,8 +122,30 @@ public class BoardDAO extends DBConn implements BoardInterface{
 
 	@Override
 	public void boardSelect(BoardVO vo, boolean a) {
-		// TODO Auto-generated method stub
-		
+		try {
+			if (a) {
+				boardHit(vo.getNum());
+			}
+			dbConn();
+			String sql = "select subject, userid, regdate, hit, content from gt_freeboard where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, vo.getNum());
+
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				vo.setSubject(rs.getString(1));
+				vo.setUserId(rs.getString(2));
+				vo.setRegDate(rs.getString(3));
+				vo.setHit(rs.getInt(4));
+				vo.setContent(rs.getString(5));
+			}
+		} catch (Exception e) {
+			System.out.println("레코드 선택 에러");
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+
 	}
 
 }

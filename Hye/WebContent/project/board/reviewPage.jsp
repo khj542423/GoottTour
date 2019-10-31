@@ -67,7 +67,7 @@
 							<c:forEach var="v" items="${lst}">
 								<tr>
 				  					<td>${v.no}</td>
-				  					<td><a href="<%=request.getContextPath()%>/project/board/post.do?num=${v.num}&pageNum=${vo.pageNum}">${v.subject}</a></td>
+				  					<td><a href="<%=request.getContextPath()%>/project/board/post.do?num=${v.num}&pageNum=${vo.pageNum}&commuPage=${vo.commuPage}&no=${v.no}">${v.subject}</a></td>
 				  					<td>${v.userId}</td>
 				  					<td>${v.regDate}</td>
 				  					<td>${v.hit}</td>
