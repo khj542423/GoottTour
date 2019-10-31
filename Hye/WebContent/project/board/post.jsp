@@ -35,6 +35,8 @@
 			#posting table:first-child tr td:nth-child(2n){text-align:left; padding-left:20px;border-bottom:1px solid #ddd;}
 			#posting table:first-child tr:last-child td{border-bottom:1px solid #ddd}
 			#posting table tr td pre{padding-top: 20px}
+			#postContent {overflow:hidden;}
+			#postContent *{text-align:left}
 		</style>
 		<script>
 			function backPage(){
@@ -75,7 +77,7 @@
 						</table>
 						<table>
 							<tr>
-								<td colspan="4" style="text-align:">${vo.content}</td>
+								<td colspan="4" id="postContent">${vo.content}</td>
 							</tr>
 						</table>
 					</div>

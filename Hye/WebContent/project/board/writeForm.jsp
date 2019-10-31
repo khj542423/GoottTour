@@ -45,8 +45,7 @@
 		</style>
 		<script>
 		$(function(){
-			CKEDITOR.replace( 'content' );
-
+			CKEDITOR.replace('content');
 		});
 		
 		function backPage(){

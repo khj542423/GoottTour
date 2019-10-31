@@ -7,7 +7,14 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here.
 	// For complete reference see:
 	// https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
-
+	
+	// 입력창 높이
+	config.height = 400;
+	config.width = '100%';
+	
+	// 한글폰트 사용 가능
+	config.font_names='맑은 고딕/Malgun Gothic;굴림/Gulim;돋움/Dotum;바탕/Batang;궁서/Gungsuh;'+ config.font_names; config.filebrowserUploadUrl = '/editor/upload.php';
+	
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
@@ -25,10 +32,6 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'colors' },
 		{ name: 'about' }
 	];
-
-	// Remove some buttons provided by the standard plugins, which are
-	// not needed in the Standard(s) toolbar.
-	config.removeButtons = 'Underline,Subscript,Superscript';
 
 	// Set the most common block elements.
 	config.format_tags = 'p;h1;h2;h3;pre';
