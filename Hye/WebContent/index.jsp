@@ -45,15 +45,15 @@
 			
 			//배너 이미지 변경
 			$("#bannerImg").click(function(){
-				$("#bannerImg").attr("src","<%=request.getContextPath()%>/image/main"+imgNum+".jpg");
+				$("#bannerImg").attr("src","<%=request.getContextPath()%>/image/mainimg"+imgNum+".jpg");
 				imgNum++;
-				if(imgNum>7)imgNum=1;
+				if(imgNum>5)imgNum=1;
 			});
 			
 			$(".overlay").click(function(){
-				$("#bannerImg").attr("src","<%=request.getContextPath()%>/image/main"+imgNum+".jpg");
+				$("#bannerImg").attr("src","<%=request.getContextPath()%>/image/mainimg"+imgNum+".jpg");
 				imgNum++;
-				if(imgNum>=7)imgNum=1;
+				if(imgNum>5)imgNum=1;
 			});
 			
 			
@@ -61,7 +61,7 @@
 			setInterval(function(){
 					//						이벤트.
 					$("#bannerImg").trigger("click");
-			}, 4000);
+			}, 8000);
 			
 		});
 		
@@ -92,8 +92,8 @@
 						<li class="nav-item"><a href="<%=request.getContextPath()%>/project/make_trip.jsp">여행만들기</a></li>
 						<li class="nav-item"><a href="<%=request.getContextPath()%>/project/sangfum_list.jsp">출발지</a></li>
 						<li class="nav-item"><a href="<%=request.getContextPath()%>/project/board/list.do?commuPage=reviewPage">여행후기</a></li>
-						<li class="nav-item"><div><input type="text" style="border:none; border-radius: 15px 0 0 15px"><input type="submit"  style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); color:transparent; background-size: 20px 20px;vertical-align: 2px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0;"></div></li>
-					</ul>
+						<li class="nav-item"><div><input type="text" placeholder='검색어를 입력해보세요!' style="border:none; border-radius: 15px 0 0 15px; font-size:30%; text-align: left; padding-left:20px;"><input type="submit"  style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); color:transparent; background-size: 20px 20px;background-position:center;  vertical-align: -4px; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0;"></div></li>
+					</ul><!--  돋보기 높이 설정 : vertical-align: 2px;  -->
 				</div>
 				
 			</div>
@@ -101,9 +101,9 @@
 	<section>
 		<!-- 이미지배너 --> 
 		<div id="imgBanner">
-			<img src="<%=request.getContextPath()%>/image/main1.jpg" id="bannerImg"/>
+			<img src="<%=request.getContextPath()%>/image/mainimg1.jpg" id="bannerImg"/>
 			<div>				<!-- 이동만 보려고 임시로 클릭이벤트로 해놓음. -->
-			<input type="text" style="border:none; position:relative; z-index:200;  border-radius: 15px 0 0 15px; font-size:150%"><input type="submit" onclick="location.href='project/search.jsp'" style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); position:relative; z-index:200; color:transparent; background-size: 40px 40px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0; vertical-align: 3px;">
+			<input type="text" placeholder="가고 싶은 여행지를 검색해보세요!" style="border:none; position:relative; z-index:200;  border-radius: 15px 0 0 15px; font-size:150%; font-style:italic ;  "/><input type="submit" onclick="location.href='project/search.jsp'" style="background-image:url('<%=request.getContextPath()%>/image/magno.png'); position:relative; z-index:200; color:transparent; background-size: 40px 40px; background-position:center; background-color:white; border:none; background-repeat:no-repeat; border-radius:0 15px 15px 0; vertical-align: 3px;">
 			</div>
 		</div>
 		<div class="overlay"></div>

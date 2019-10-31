@@ -2,7 +2,7 @@
 
 	*{font-family:'Noto Sans KR',sans-serif;}
 	#imgBanner{width:1920px; margin-top:-130px; height:80vh; margin-left:-30%; overflow:hidden}
-	#bannerImg{width:1920px; height:100vh;}
+	#bannerImg{width:1920px; height:85vh;}
 	#imgBanner li{color:white;}
 	#imgBanner>div{position:absolute; top:350px;} 
 	#imgBanner>div>input{height:55px}
