@@ -22,9 +22,11 @@
 						'project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp']
 			for(i=1; i<=9; i++){
 				imglist += '<div><a href="'+url[i-1]+'"><img src="<%=request.getContextPath()%>/image/main_img_banner_';
+				
 				if(i<=9)
 				imglist += i;
-			imglist+='.jpg"/></a>'+url[i-1]+'</div>'
+				imglist +='.jpg"/></a>'+i+'번째 이미지 </div>';
+		
 			}
 			document.getElementById('cjimg').innerHTML=imglist;
 		}
@@ -72,7 +74,7 @@
 					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/login.do">로그인</a></li>
 					</c:if>
 					<c:if test="${userName!=null }">
-					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/registerEdit.do">회원정보수정</a></li>
+					<li class="nav-item"><a href="<%=request.getContextPath()%>/project/register/myPage.do">마이페이지</a></li>
 					<li class="nav-item">${userName }님 <a href="<%=request.getContextPath()%>/project/register/logout.do">로그아웃</a></li>
 					</c:if>
 					</ul>
