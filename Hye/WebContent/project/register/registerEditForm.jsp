@@ -138,7 +138,7 @@ $(function(){
 								name='pwd2' id='chkPwd'><span
 								id='check_pw2'></span></td>
 						</tr>
-						<tr>
+						<tr> 
 							<td class="stit">이름</td>
 							<td class="frm"><input type="text" class="ipf" name='userName' value="${vo.userName }"
 								id='userName'></td>
