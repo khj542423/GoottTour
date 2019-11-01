@@ -3,7 +3,7 @@
 <%
 	String pageName = "여행리스트";
 	String pageSideName = "구트투어 여행";
-	String pageImage = "main_img_banner_6.jpg";
+	String pageImage = "mainimg4.jpg";
 %>
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,18 @@
 			#tabmenu>div:nth-child(1){background : #00a7f0; color:white}
 			#list1, #list2{width : 100%; height : 1500px; margin : 0px auto; margin-top:20px; border:1px solid #ddd}
 			#list2{display : none;}
-			#full-div{width:1200px;}
+			.container {margin-top:200px; max-width: 1400px;}
+			.col-lg-3{max-width: 200px;}
+			.img-fluid{width:1225px;}
+			a:link, a:hover, a:visited{text-decoration: none;}
+			#sidebar-wrapper{width:200px;}
+			#sidebar-top{text-align: left;  height: 50px;  line-height: 40px; font-size: 30px;}
+			#sidebar-content a{text-align: left;}
+			.col-lg-9  {flex: 0 0 90%; max-width: 75%; min-width: 992px;  margin: 22px 5px;} 
+			section{width:1400px; margin: 0; padding:0;}
+}
+			
+			
 		</style>
 		<script>
 			$(function(){
@@ -49,25 +60,179 @@
 	</head>
 	<body>
 		<%@ include file="header.jspf"%>
-		<section>
-		<%@ include file="sidebar.jspf"%>
-			<!-- 탭메뉴 인기상품 특가상품 -->
-			<div id="full-div">
-				<div id = "tabmenu">
-						<div>구트여행목록</div>
-						<div>수학여행</div>
-						<div>1박2일</div>
-				</div>
-				<div>
-					<div id = "list1">
-					<!-- 인기상품 -->인기인기
-					</div>
-					<div id = "list2">
-					<!-- 특가상품 -->특가특가
-					</div>
-				</div>
-			</div>
-		</section>
+		
+		
+  <!-- Page Content -->
+  <div id="listAll" class="container">
+  		<%@ include file="sf_list_sidebar.jspf"%>
+
+    <div class="row">
+
+<!--       <div class="col-lg-3">
+
+       	 <b class="list-group-item">여행목록</b>
+        <div class="list-group">
+          <a href="#" class="list-group-item">구트여행</a>
+          <a href="#" class="list-group-item">Category 2</a>
+          <a href="#" class="list-group-item">Category 3</a> 
+        </div>
+
+      </div> -->
+      
+       		<!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <div id="sidebar-top" class="sidebar-heading">TOUR LIST </div>
+      <div id="sidebar-content" class="list-group list-group-flush">
+      	<a href="#" class="list-group-item list-group-item-action">수학여행</a>
+      	<a href="#" class="list-group-item list-group-item-action">현장학습</a>
+        <a href="#" class="list-group-item list-group-item-action">가족여행</a>
+        <a href="#" class="list-group-item list-group-item-action">기업/일반 단체</a>
+      </div>
+    </div>
+    
+    	
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item One</a>
+                </h4>
+                <h5>30,000원</h5>
+                <p class="card-text">남한산성과 수원화성 - 성남시, 수원시</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Two</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Three</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Four</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Five</a>
+                </h4>
+                <h5>$-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9825;</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Six</a>
+                </h4>
+                <h5>$-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
 		<%@ include file="footer.jspf"%>
+		
+		
 	</body>
 </html>
