@@ -34,15 +34,19 @@
 			#posting table:first-child tr td:nth-child(2n+1){width:100px; background:#00a7f0; color:white;border-bottom:1px solid #fff;}
 			#posting table:first-child tr td:nth-child(2n){text-align:left; padding-left:20px;border-bottom:1px solid #ddd;}
 			#posting table:first-child tr:last-child td{border-bottom:1px solid #ddd}
-			#posting table tr td pre{padding-top: 20px}
 			#postContent {overflow:hidden;}
 			#postContent *{text-align:left}
-			
 			#button{width:80%; margin:0px auto; }
 			#button input{float:right; margin-right:10px}
 			#button input:last-child{float:left}
 		</style>
 		<script>
+			function delChk(){
+				if(confirm("삭제하시겠습니까?")){
+					location.href="<%=request.getContextPath()%>/project/board/delOk.do?pageNum=${vo.pageNum}&num=${vo.num}";
+				};
+			}
+			
 			function backPage(){
 				history.back();
 			}
@@ -87,8 +91,10 @@
 					</div>
 					<hr/>
 					<div id= "button">
-						<input type="button" class="btn btn-secondary" value="삭제" onclick="del()"></input>
-						<input type="button" class="btn btn-secondary" value="수정" onclick="edit()"></input>
+						<c:if test="${userId == vo.userId}">
+							<input type="button" class="btn btn-secondary" value="삭제" onclick="delChk()"></input>
+							<input type="button" class="btn btn-secondary" value="수정" onclick="location.href='<%=request.getContextPath()%>/project/board/edit.do?pageNum=${vo.pageNum}&num=${vo.num}'"></input>
+						</c:if>
 						<input type="button" class="btn btn-secondary" value="목록보기" onclick="backPage()"></input>
 					</div>
 				</div>

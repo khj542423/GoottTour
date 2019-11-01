@@ -17,7 +17,7 @@ public class CommandWriteOk implements CommandService {
 		BoardVO vo = new BoardVO();
 		vo.setSubject(request.getParameter("subject"));
 		vo.setContent(request.getParameter("content"));
-		vo.setUserId(request.getParameter("userId"));
+		vo.setUserId((String)request.getSession().getAttribute("userId"));
 		vo.setCommuPage(request.getParameter("commuPage"));
 		
 		BoardDAO dao = new BoardDAO();

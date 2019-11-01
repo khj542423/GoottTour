@@ -41,7 +41,7 @@
 			#button input:nth-child(1){margin-top:20px; float:left}
 			#button input:nth-child(2){margin-top:20px; float:right}
 			
-			#subject{width:400px; text-align:left; border:1px solid #ddd; border-radius:3px}
+			#subject{width:400px; text-align:left; border:1px solid #ddd; border-radius:3px;}
 		</style>
 		<script>
 		$(function(){
@@ -78,8 +78,8 @@
 					<form id="reviewWrite" method="post" action="<%=request.getContextPath()%>/project/board/writeOk.do">
 						<table>
 							<tr>
-								<td>이름</td>
-								<td><input type="hidden" id="userId" name="userId" value="user1234"/>유저아이디</td>
+								<td>작성자</td>
+								<td><input type="hidden" id="userId" name="userId" value="${userId}"/>${userId}</td>
 							</tr>
 							<tr>
 								<td>제목</td>
