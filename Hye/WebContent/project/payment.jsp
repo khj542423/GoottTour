@@ -94,7 +94,7 @@
 				<table class="table table-bordered">
 					<tr>
 						<td>카드구분</td>
-						<td><input type="radio" checked/>개인 <input type="radio" checked/>법인</td>
+						<td><input type="radio" name="card" checked/>개인 <input type="radio" name="card"/>법인</td>
 						<td>카드종류</td>
 						<td><select><option>카드종류</option></select></td>
 					</tr>
@@ -123,9 +123,9 @@
 					</tr>
 					<tr>
 						<td>카드비밀번호</td>
-						<td><input type="text" placeholder="앞2자" style="width:50px"/>**</td>
+						<td><input type="text" placeholder="앞2자" maxlength="2" style="width:50px"/>**</td>
 						<td>CSV</td>
-						<td><input type="text"/></td>
+						<td><input type="text" maxlength="3"/></td>
 					</tr>
 				</table>
 				<input type="checkbox"/>결제 동의합니다.<hr/>
