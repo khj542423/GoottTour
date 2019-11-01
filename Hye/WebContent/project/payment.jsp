@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String pageName = "결제페이지";
-	String pageSideName = "여행 결제페이지";
+	String pageSideName = "여행 결제페이지 인데 지금 연결이 안되어 있어서 여기 연결함.";
 	String pageImage = "main_img_banner_6.jpg";
 %>
 <!DOCTYPE html>

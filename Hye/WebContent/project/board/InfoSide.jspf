@@ -14,7 +14,7 @@
 	<ul id="infoList">
 		<li><a href="<%=request.getContextPath()%>/project/board/list.do?commuPage=InfoCenter">공지사항</a></li>
 		<li><a href="<%=request.getContextPath()%>/project/board/list.do?commuPage=travelQ">여행문의</a></li>
-		<li><a>환불규정</a></li>
+		<li><a href="<%=request.getContextPath()%>/project/payment.jsp">환불규정</a></li>
 		<li><a>자주묻는질문</a></li>
 	</ul>
 </div>
