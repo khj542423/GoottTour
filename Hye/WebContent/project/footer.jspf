@@ -26,7 +26,7 @@
 						<li><a href="<%=request.getContextPath()%>/project/clauseInfo.jsp?cip=1">표준약관  ｜</a></li><!-- 나중에 do로 고쳐야 함. -->
 						<li><a href="<%=request.getContextPath()%>/project/clauseInfo.jsp?cip=2">취급방침  ｜</a></li>
 						<li><a href="<%=request.getContextPath()%>/project/clauseInfo.jsp?cip=3">이용약관  ｜</a></li>
-						<li><a href="<%=request.getContextPath()%>/project/InfoCenter.jsp">고객센터</a></li>
+						<li><a href="<%=request.getContextPath()%>/project/board/list.do?commuPage=InfoCenter">고객센터</a></li>
 						
 					</ul>
 				</div>
