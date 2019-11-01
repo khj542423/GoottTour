@@ -4,7 +4,7 @@
 <%
 	String pageName = "커뮤니티";
 	String pageSideName = "여행 후기";
-	String pageImage = "main_img_banner_6.jpg";
+	String pageImage = "mainimg3.jpg";
 %>
 <!DOCTYPE html>
 <html>
