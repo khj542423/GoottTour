@@ -12,6 +12,7 @@ public class CommandFindRegister implements CommandService {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String idsName = request.getParameter("idsName");
 		String pwsId = request.getParameter("pwsId");
 		
@@ -23,8 +24,8 @@ public class CommandFindRegister implements CommandService {
 		if(idsName!=null && !idsName.equals("")) {
 			vo.setUserName(idsName);
 			vo.setT1(request.getParameter("idsT1"));
-			vo.setT1(request.getParameter("idsT2"));
-			vo.setT1(request.getParameter("idsT3"));
+			vo.setT2(request.getParameter("idsT2"));
+			vo.setT3(request.getParameter("idsT3"));
 			
 			dao.findId(vo);
 			
@@ -35,8 +36,8 @@ public class CommandFindRegister implements CommandService {
 			vo.setUserId(pwsId);
 			vo.setUserName(request.getParameter("pwsName"));
 			vo.setT1(request.getParameter("pwsT1"));
-			vo.setT1(request.getParameter("pwsT2"));
-			vo.setT1(request.getParameter("pwsT3"));
+			vo.setT2(request.getParameter("pwsT2"));
+			vo.setT3(request.getParameter("pwsT3"));
 			
 			dao.findPwd(vo);
 			request.setAttribute("userPwd", vo.getUserPwd());

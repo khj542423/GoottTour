@@ -74,7 +74,7 @@
 					<input type="radio" name="searchChk" id="pws" value="pw">
 					<label for="pws" style="cursor: pointer;">비밀번호찾기</label>
 				</div>
-				<form method="post" name="cm" action="<%=request.getContextPath()%>/project/register/findRegister.do">
+				<form method="get" name="cm" action="<%=request.getContextPath()%>/project/register/findRegister.do">
 					<table class="box_join" id="idst">
 						<tr id="findIdName">
 							<td class="stit">성명(실명)</td>
