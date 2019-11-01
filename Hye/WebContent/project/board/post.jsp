@@ -19,12 +19,6 @@
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
 			section{margin-bottom:50px}
-			#sideMenu{width:130px; position:absolute; left:220px; top:304px;}
-			#reviewList{width:130px; float:bottom; border:1px solid #00a7f0;}
-			#reviewList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
-			#reviewList li:last-child{border-bottom:0px}
-			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0; color:white}
-			#reviewList{float:bottom}
 			#reviewPan{width:100%;}
 			#reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
 			#posting table{width:80%;margin:0px auto;margin-bottom:20px;}
@@ -43,7 +37,7 @@
 		<script>
 			function delChk(){
 				if(confirm("삭제하시겠습니까?")){
-					location.href="<%=request.getContextPath()%>/project/board/delOk.do?pageNum=${vo.pageNum}&num=${vo.num}";
+					location.href="<%=request.getContextPath()%>/project/board/delOk.do?pageNum=${vo.pageNum}&num=${vo.num}&commuPage=${vo.commuPage}";
 				};
 			}
 			
@@ -55,14 +49,14 @@
 	<body>
 		<%@ include file="../header.jspf"%>
 		<section>
-			<div id="sideMenu">
-				<div>커뮤니티</div>
-				<ul id="reviewList">
-					<li><a>여행후기</a></li>
-				</ul>
-			</div>
+			<c:if test="${vo.commuPage=='reviewPage'}">
+				<%@ include file="reviewSide.jspf" %>
+			</c:if>
+			<c:if test="${vo.commuPage=='InfoCenter' || vo.commuPage=='travelQ'}">
+				<%@ include file="InfoSide.jspf" %>
+			</c:if>
 			<div id="reviewPan">
-				<div id="reviewTab1"><h4>여행후기</h4><hr class="hrStyle"/>
+				<div id="reviewTab1"><h4><c:if test="${vo.commuPage=='reviewPage'}">여행후기</c:if><c:if test="${vo.commuPage=='InfoCenter'}">공지사항</c:if><c:if test="${vo.commuPage=='travelQ'}">여행문의</c:if></h4><hr class="hrStyle">
 					<div id="posting">
 						<table>
 							<tr>
@@ -93,7 +87,7 @@
 					<div id= "button">
 						<c:if test="${userId == vo.userId}">
 							<input type="button" class="btn btn-secondary" value="삭제" onclick="delChk()"></input>
-							<input type="button" class="btn btn-secondary" value="수정" onclick="location.href='<%=request.getContextPath()%>/project/board/edit.do?pageNum=${vo.pageNum}&num=${vo.num}'"></input>
+							<input type="button" class="btn btn-secondary" value="수정" onclick="location.href='<%=request.getContextPath()%>/project/board/edit.do?pageNum=${vo.pageNum}&num=${vo.num}&commuPage=${vo.commuPage}'"></input>
 						</c:if>
 						<input type="button" class="btn btn-secondary" value="목록보기" onclick="backPage()"></input>
 					</div>

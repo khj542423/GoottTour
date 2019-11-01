@@ -19,12 +19,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
-			#sideMenu{width:130px; position:absolute; left:220px; top:653px;}
-			#reviewList{width:130px; float:bottom; border:1px solid #00a7f0}
-			#reviewList li{width:130px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
-			#reviewList li:last-child{border-bottom:0px}
-			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0; color:white}
-			#reviewList{float:bottom}
 			#reviewPan{width:100%; height:1000px}
 			#reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
 			#reviewPage{width:100%;}
@@ -32,6 +26,7 @@
 			thead{border-bottom:3px double gray}
 			#searchNwrite{width:90%; margin:0px auto;}
 			#reviewSearch{float:left; text-align:left; width:95%;}
+			#reviewSearch input{text-align:left}
 			#write{text-align:right; }
 			
 			#reviewTable tr th:nth-child(1),#reviewTable tr th:nth-child(5){width:8%;} 
@@ -44,12 +39,7 @@
 	<body>
 		<%@ include file="../header.jspf"%>
 		<section>
-			<div id="sideMenu">
-				<div>커뮤니티</div>
-				<ul id="reviewList">
-					<li><a>여행후기</a></li>
-				</ul>
-			</div>
+			<%@ include file="reviewSide.jspf" %>
 			<div id="reviewPan">
 				<div id="reviewTab1"><h4>여행후기</h4><hr class="hrStyle"/>
 					<div id="reviewTab">
@@ -92,11 +82,16 @@
 						</ul>
 					</div>
 				<div id="searchNwrite">
-					<div id="reviewSearch">
-						<select><option>작성자</option><option>제목</option></select>
-						<input type="text"/>
-						<button>검색</button>
-					</div>
+					<form id="reviewSearch">
+						<select name ="searchKey">
+							<option value="userId">작성자</option>
+							<option value="subject">제목</option>
+							<option value="content">글내용</option>
+						</select>
+						<input type="text" name="searchWord"/>
+						<input type="hidden" name="commuPage" value="${vo.commuPage}"/>
+						<input type="submit" value="검색" onclick="location.href='<%=request.getContextPath()%>/project/board/list.do?'"/>
+					</form>
 					<button id="write" onclick="location.href='<%=request.getContextPath()%>/project/board/write.do?commuPage=${vo.commuPage}'">글쓰기</button>
 				</div>
 				</div>

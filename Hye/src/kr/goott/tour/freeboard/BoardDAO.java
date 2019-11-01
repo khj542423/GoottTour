@@ -8,13 +8,17 @@ import kr.goott.tour.home.DBConn;
 public class BoardDAO extends DBConn implements BoardInterface{
 
 	@Override
-	public List<BoardVO> getAllRecord(int pageNum, int onePageRecord, String commuPage, int totalRecord, int totalPage) {
+	public List<BoardVO> getAllRecord(int pageNum, int onePageRecord, String commuPage, int totalRecord, int totalPage, String searchKey, String searchWord) {
 		List<BoardVO> lst = new ArrayList<BoardVO>();
 		try {
 			dbConn();
 			String sql = "select * from (select * from"
 					+ " (select*from(select num, rownum no, userid, subject, to_char(regdate,'YYYY-MM-DD'),"
-					+ " hit from gt_freeboard where commuPage=? order by num asc) order by no desc)"
+					+ " hit from gt_freeboard where commuPage=?";
+					if(searchWord!=null) {//검색어가 있을때
+						sql+=" and "+searchKey+" like '%"+searchWord+"%'";
+					};
+					sql+= "order by num asc) order by no desc)"
 					+ " where rownum<=? order by no asc)"
 					+ " where rownum<=? order by no desc";
 
@@ -74,14 +78,41 @@ public class BoardDAO extends DBConn implements BoardInterface{
 
 	@Override
 	public int boardUpdate(BoardVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		int cnt = 0;
+		try {
+			dbConn();
+			String sql = "update gt_freeboard set subject=?, content=? where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getSubject());
+			pstmt.setString(2, vo.getContent());
+			pstmt.setInt(3, vo.getNum());
+			
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("레코드 수정 에러");
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return cnt;
 	}
 
 	@Override
 	public int boardDelete(int num) {
-		// TODO Auto-generated method stub
-		return 0;
+		int cnt = 0;
+		try {
+			dbConn();
+			String sql = "delete from gt_freeboard where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("레코드 삭제 에러");
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return cnt;
 	}
 
 	@Override
@@ -101,11 +132,14 @@ public class BoardDAO extends DBConn implements BoardInterface{
 	}
 
 	@Override
-	public int boardTotalRecord(String commuPage) {//총레코드
+	public int boardTotalRecord(String commuPage, String searchKey, String searchWord) {//총레코드
 		int cnt = 0;
 		try {
 			dbConn();
 			String sql = "select count(num) from gt_freeboard where commuPage=?";
+					if(searchWord!=null) {//검색어가 있을때
+						sql+=" and "+searchKey+" like '%"+searchWord+"%'";
+					};
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, commuPage);
 			rs = pstmt.executeQuery();

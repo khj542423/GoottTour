@@ -12,6 +12,8 @@ public interface RegisterInterface {
 	
 	public void getRegister(RegisterVO vo);
 	
+	public void findId(RegisterVO vo);
 	
+	public void findPwd(RegisterVO vo);
 	
 }

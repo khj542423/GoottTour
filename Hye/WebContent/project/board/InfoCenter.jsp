@@ -18,11 +18,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
-			#sideMenu{width:130px; position:absolute; left:220px; top:653px;}
-			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0}
-			#infoList{width:130px; float:bottom; border:1px solid #00a7f0}
-			#infoList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
-			#infoList li:last-child{border-bottom:0px}
 			#infoPan{width:100%; height:1000px}
 			#infoPan h4{text-align:left; margin-left:30px; margin-top:20px}
 			#infoPage{width:100%;}
@@ -30,6 +25,7 @@
 			thead{border-bottom:3px double gray}
 			#searchNwrite{width:90%; margin:0px auto;}
 			#infoSearch{float:left; text-align:left; width:95%; }
+			#infoSearch input{text-align:left}
 			#write{text-align:right; }
 			hr{border:0; height: 3px; background:#ccc linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
 			
@@ -44,17 +40,9 @@
 	<body>
 		<%@ include file="../header.jspf"%>
 		<section>
-			<div id="sideMenu">
-				<div style="color:white">고객센터</div>
-				<ul id="infoList">
-					<li><a>공지사항</a></li>
-					<li><a>여행문의</a></li>
-					<li><a>환불규정</a></li>
-					<li><a>자주묻는질문</a></li>
-				</ul>
-			</div>
+			<%@ include file="InfoSide.jspf" %>
 			<div id="infoPan">
-				<div id="infoTab1"><h4>공지사항</h4><hr/>
+				<div id="infoTab1"><h4><c:if test="${vo.commuPage=='InfoCenter'}">공지사항</c:if><c:if test="${vo.commuPage=='travelQ'}">여행문의</c:if></h4><hr/>
 					<div id="infoTab">
 						<table id="infoTable" class="table table-striped">
 							<thead class="table table-secondary">
@@ -96,11 +84,16 @@
 					</div>
 				</div>
 				<div id="searchNwrite">
-					<div id="infoSearch">
-						<select><option>작성자</option><option>제목</option></select>
-						<input type="text"/>
-						<button>검색</button>
-					</div>
+					<form id="infoSearch">
+						<select name ="searchKey">
+							<option value="userId">작성자</option>
+							<option value="subject">제목</option>
+							<option value="content">글내용</option>
+						</select>
+						<input type="text" name="searchWord"/>
+						<input type="hidden" name="commuPage" value="${vo.commuPage}"/>
+						<input type="submit" value="검색" onclick="location.href='<%=request.getContextPath()%>/project/board/list.do?'"/>
+					</form>
 					<button id="write" onclick="location.href='<%=request.getContextPath()%>/project/board/write.do?commuPage=${vo.commuPage}'">글쓰기</button>
 				</div>
 			</div>

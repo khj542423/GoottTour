@@ -152,4 +152,52 @@ public class RegisterDAO extends DBConn implements RegisterInterface {
 		
 	}
 
+	@Override
+	public void findId(RegisterVO vo) {
+		try {
+			dbConn();
+			String sql = "select userid from gt_register where username=? and tel=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getUserName());
+			pstmt.setString(2, vo.getTel());
+			rs= pstmt.executeQuery();
+			
+			if(rs.next()) {
+			vo.setUserId(rs.getString(1));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("아이디찾기 에러"+e.getMessage());
+			
+		}finally {
+			dbClose();
+		}
+		
+	}
+
+	@Override
+	public void findPwd(RegisterVO vo) {
+		try {
+			dbConn();
+			String sql = "select userpwd from gt_register where userid=? and username=? and tel=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getUserId());
+			pstmt.setString(2, vo.getUserName());
+			pstmt.setString(3, vo.getTel());
+			rs= pstmt.executeQuery();
+			
+			if(rs.next()) {
+			vo.setUserPwd(rs.getString(1));
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("비밀번호찾기 에러"+e.getMessage());
+			
+		}finally {
+			dbClose();
+		}
+		
+	}
+
 }

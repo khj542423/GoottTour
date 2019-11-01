@@ -20,15 +20,6 @@
 		<style>
 			*{font-family:'Noto Sans KR',sans-serif;}
 			section{margin-bottom:50px}
-			#sideMenu{width:130px; position:absolute; left:220px; top:653px;}
-			#reviewList{width:130px; float:bottom; border:1px solid #00a7f0;}
-			#reviewList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
-			#reviewList li:last-child{border-bottom:0px}
-			#infoList{width:130px; float:bottom; border:1px solid #00a7f0}
-			#infoList li{margin-left:20px; height:50px; line-height:50px; border-bottom:1px dotted #ddd;}
-			#infoList li:last-child{border-bottom:0px}
-			#sideMenu div:first-child{height:80px; font-size:1.2em; font-weight:bold; text-align:center; line-height:80px; background:#00a7f0; color:white;}
-			#reviewList{float:bottom}
 			#reviewPan{width:100%;}
 			#reviewPan h4{text-align:left; margin-left:30px; margin-top:20px}
 			#reviewWrite{width:80%; margin:0px auto; margin-bottom:20px; border-top: 1px solid #ddd; border-bottom:1px solid #ddd}
@@ -56,25 +47,14 @@
 	<body>
 		<%@ include file="../header.jspf" %>
 		<section>
-			<div id="sideMenu">
-				<c:if test="${commuPage=='reviewPage'}">
-					<div>커뮤니티</div>
-					<ul id="reviewList">
-						<li><a>여행후기</a></li>
-					</ul>
-				</c:if>
-				<c:if test="${commuPage=='InfoCenter'}">
-					<div>고객센터</div>
-					<ul id="infoList">
-						<li><a>공지사항</a></li>
-						<li><a>여행문의</a></li>
-						<li><a>환불규정</a></li>
-						<li><a>자주묻는질문</a></li>
-					</ul>
-				</c:if>
-			</div>
+			<c:if test="${commuPage=='reviewPage'}">
+				<%@ include file="reviewSide.jspf" %>
+			</c:if>
+			<c:if test="${commuPage=='InfoCenter' || commuPage=='travelQ'}">
+				<%@ include file="InfoSide.jspf" %>
+			</c:if>
 			<div id="reviewPan">
-				<div id="reviewTab1"><h4><c:if test="${commuPage=='reviewPage'}">여행후기</c:if><c:if test="${commuPage=='InfoCenter'}">공지사항</c:if></h4><hr class="hrStyle">
+				<div id="reviewTab1"><h4><c:if test="${commuPage=='reviewPage'}">여행후기</c:if><c:if test="${commuPage=='InfoCenter'}">공지사항</c:if><c:if test="${commuPage=='travelQ'}">여행문의</c:if></h4><hr class="hrStyle">
 					<form id="reviewWrite" method="post" action="<%=request.getContextPath()%>/project/board/writeOk.do">
 						<table>
 							<tr>

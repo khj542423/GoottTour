@@ -25,8 +25,12 @@ public class CommandList implements CommandService {
 		//페이지구분
 		vo.setCommuPage(request.getParameter("commuPage"));
 		
+		//서치키랑 서치워드
+		String searchKey = request.getParameter("searchKey");
+		String searchWord = request.getParameter("searchWord");
+		
 		//총 레코드 수
-		vo.setTotalRecord(dao.boardTotalRecord(vo.getCommuPage()));
+		vo.setTotalRecord(dao.boardTotalRecord(vo.getCommuPage(), searchKey, searchWord));
 		
 		//총 페이지 수
 		if(vo.getTotalRecord() % vo.getOnePageRecord()==0) {
@@ -39,13 +43,14 @@ public class CommandList implements CommandService {
 		vo.setStartPage((vo.getPageNum()-1)/vo.getOnePageMax()*vo.getOnePageMax()+1);
 		
 		//해당페이지 레코드 선택
-		List<BoardVO> lst = dao.getAllRecord(vo.getPageNum(), vo.getOnePageRecord(), vo.getCommuPage(), vo.getTotalRecord(), vo.getTotalPage());
+		List<BoardVO> lst = dao.getAllRecord(vo.getPageNum(), vo.getOnePageRecord(), vo.getCommuPage(), vo.getTotalRecord(), vo.getTotalPage(), searchKey, searchWord);
 		
 		//뷰페이지로 가져갈 데이터
 		request.setAttribute("vo", vo);
 		request.setAttribute("lst", lst);
 		
 		String commuPage = vo.getCommuPage()+".jsp";
+		if(vo.getCommuPage()=="travelQ"||vo.getCommuPage().equals("travelQ")) {commuPage = "InfoCenter.jsp";}
 		
 		return commuPage;
 	}

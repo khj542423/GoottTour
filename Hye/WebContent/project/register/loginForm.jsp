@@ -21,7 +21,7 @@
 			function popup() {
 				var url = "pop.jsp";
 				var name = "popup test";
-				var option = "width=530, height=340, top=200, left=200 resizable=no"
+				var option = "width=530, height=360, top=200, left=200 resizable=no"
 				window.open(url,name,option);
 			}
 	

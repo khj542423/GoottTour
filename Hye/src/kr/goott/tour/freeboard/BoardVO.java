@@ -18,7 +18,23 @@ public class BoardVO {
 	private int startPage;//페이지 넘버 시작값
 	private int onePageMax=10;//한번에 출력할 페이징번호 수
 	
+	//검색
+	private String searchKey;//검색키
+	private String searchWord;//검색어
 	
+	
+	public String getSearchKey() {
+		return searchKey;
+	}
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+	}
+	public String getSearchWord() {
+		return searchWord;
+	}
+	public void setSearchWord(String searchWord) {
+		this.searchWord = searchWord;
+	}
 	public int getNo() {
 		return no;
 	}
