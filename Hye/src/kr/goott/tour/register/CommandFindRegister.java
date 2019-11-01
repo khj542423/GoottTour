@@ -16,7 +16,6 @@ public class CommandFindRegister implements CommandService {
 		String idsName = request.getParameter("idsName");
 		String pwsId = request.getParameter("pwsId");
 		
-		System.out.println(idsName+pwsId);
 		RegisterVO vo = new RegisterVO();
 		
 		RegisterDAO dao = new RegisterDAO();
@@ -30,7 +29,6 @@ public class CommandFindRegister implements CommandService {
 			dao.findId(vo);
 			
 			request.setAttribute("userId", vo.getUserId());
-			System.out.println(vo.getUserId());
 		}
 		if(pwsId!=null && !pwsId.equals("")) {
 			vo.setUserId(pwsId);
@@ -41,7 +39,6 @@ public class CommandFindRegister implements CommandService {
 			
 			dao.findPwd(vo);
 			request.setAttribute("userPwd", vo.getUserPwd());
-			System.out.println(vo.getUserPwd());
 		}
 		
 		
