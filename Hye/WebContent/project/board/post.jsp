@@ -49,12 +49,7 @@
 	<body>
 		<%@ include file="../header.jspf"%>
 		<section>
-			<c:if test="${vo.commuPage=='reviewPage'}">
-				<%@ include file="reviewSide.jspf" %>
-			</c:if>
-			<c:if test="${vo.commuPage=='InfoCenter' || vo.commuPage=='travelQ'}">
-				<%@ include file="InfoSide.jspf" %>
-			</c:if>
+			<%@ include file="boardSide.jspf" %>
 			<div id="reviewPan">
 				<div id="reviewTab1"><h4><c:if test="${vo.commuPage=='reviewPage'}">여행후기</c:if><c:if test="${vo.commuPage=='InfoCenter'}">공지사항</c:if><c:if test="${vo.commuPage=='travelQ'}">여행문의</c:if></h4><hr class="hrStyle">
 					<div id="posting">

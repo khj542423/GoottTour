@@ -3,7 +3,7 @@
 <%
 	String pageName = "고객센터";
 	String pageSideName = "구트투어 고객센터";
-	String pageImage = "main_img_banner_6.jpg"; 
+	String pageImage = "main_img_banner_6.jpg";
 %>
 <!DOCTYPE html>
 <html>
@@ -40,7 +40,7 @@
 	<body>
 		<%@ include file="../header.jspf"%>
 		<section>
-			<%@ include file="InfoSide.jspf" %>
+			<%@ include file="boardSide.jspf" %>
 			<div id="infoPan">
 				<div id="infoTab1"><h4><c:if test="${vo.commuPage=='InfoCenter'}">공지사항</c:if><c:if test="${vo.commuPage=='travelQ'}">여행문의</c:if></h4><hr/>
 					<div id="infoTab">

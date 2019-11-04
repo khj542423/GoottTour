@@ -39,7 +39,7 @@
 	<body>
 		<%@ include file="../header.jspf"%>
 		<section>
-			<%@ include file="reviewSide.jspf" %>
+			<%@ include file="boardSide.jspf" %>
 			<div id="reviewPan">
 				<div id="reviewTab1"><h4>여행후기</h4><hr class="hrStyle"/>
 					<div id="reviewTab">
