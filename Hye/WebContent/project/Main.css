@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+	section{width:1200px;}
 	*{font-family:'Noto Sans KR',sans-serif;}
 	#imgBanner{width:1920px; margin-top:-130px; height:80vh; margin-left:-30%; overflow:hidden}
 	#bannerImg{width:1920px; height:85vh;}
