@@ -83,14 +83,14 @@
 		<table class="table table-bordered" style="table-layout:fixed">
 			<thead>
 			  <tr>
-				<th style='width:150px;'>예약날짜</th> 
-				<th style='width:140px;'>상품코드</th>
-				<th style='width:240px;'>상품명</th>
+				<th style='width:145px;'>예약날짜</th> 
+				<th style='width:130px;'>상품코드</th>
+				<th style='width:200px;'>상품명</th>
 				<th style='width:100px;'>결제금액</th>
 				<th style='width:60px;'>인원</th>
-			    <th style='width:150px;'>출발일</th>
+			    <th style='width:145px;'>출발일</th>
 			    <th>여행도우미</th>
-			    <th>예약상태</th>
+			    <th style="width:90px">예약상태</th>
 			    <th>상품평</th>
 			  </tr>
 			</thead>
@@ -104,7 +104,7 @@
 			    <td>2019년10월20일</td>
 			    <td>man</td>
 			    <td>Yes</td>
-			    <td><button class='btn'>작성하기 </button></td>
+			    <td><button class='btn btn-secondary'>작성하기 </button></td>
 			  </tr>
 			</tbody>
 		</table>

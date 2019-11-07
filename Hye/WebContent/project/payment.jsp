@@ -17,12 +17,12 @@
 	</head>
 	<style>
 		#pay{float:left; width:100%; margin-top:-16px;}
-		#pay>div{float:left; text-align:center; width:228px; height:120px; padding:33px 0px;}
-		#pay>div:nth-child(3){width:501px; padding: 43px 0px;}
+		#pay>div{float:left; text-align:center; width:200px; height:120px; padding:33px 0px;}
+		#pay>div:nth-child(3){width:457px; padding: 43px 0px; }
 		#pay>div:last-child{border-left:1px dashed gray; margin-right:0px; width:243px; background-color:#ddd;}
 		#pay img{width:20px; height:20px; position:relative}
-		#pay>div:first-child>img{left:75px; top:-12px}
-		#pay img:last-child{left:37px; }
+		#pay>div:first-child>img{left:70px; top:-12px}
+		#pay img:last-child{left:33px; }
 		
 		#payFrm *{text-align:left}
 		#payFrm>table tr td:nth-child(2n+1){width:15%; text-align:center}
@@ -31,10 +31,12 @@
 		.hrStyle{margin-bottom:30px; }
 		
 		#revData{table-layout:fixed}
-		#revData tr>td{width:12%}
+		#revData tr>td{width:12%; font-size:0.9em}
 		#revData tr>td:nth-child(2){width:10%}
 		#revData tr>td:nth-child(3){width:34%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 		#revData tr>td:nth-child(6){width:6%}
+		
+		#cardNum input{width:20%}
 	</style>
 	<body>
 		<%@ include file="header.jspf"%>
@@ -87,7 +89,7 @@
 			<div id="pay">
 				<div><span>총요금</span><br/><span>123,000원</span><img src="../image/icon_minus.png"/></div>
 				<div><span>할인금액</span><br/><span>0원</span></div>
-				<div><select style="width:400px; margin-left:30px"><option>사용가능한 쿠폰이 없습니다.</option></select><img src="../image/icon_equals.png"/></div>
+				<div><select style="width:360px; margin-left:30px"><option>사용가능한 쿠폰이 없습니다.</option></select><img src="../image/icon_equals.png"/></div>
 				<div><span>최종결제금액</span><br/><span>123,000원</span></div>
 			</div>
 			<form id="payFrm">
@@ -100,7 +102,7 @@
 					</tr>
 					<tr>
 						<td>카드번호</td>
-						<td><input type="text" size="3">
+						<td id="cardNum"><input type="text" size="3">
 						- <input type="text" size="3">
 						- <input type="text" size="3">
 						- <input type="text" size="3">
