@@ -35,12 +35,23 @@
 			#sidebar-content a{text-align: left;}
 			.col-lg-9  {flex: 0 0 90%; max-width: 75%; min-width: 992px;  margin: 22px 5px;} 
 			section{width:1400px; margin: 0; padding:0;}
+			.tabcontent{ display: none;  color:#fff}
+			.tabcontent.current{display:block;}
 }
 			
 			
 		</style>
 		<script>
-			$(function(){
+			$(function() {
+				$('ul.tab li').click(function() {
+					var activeTab = $(this).attr('data-tab');
+					$('ul.tab li').removeClass('current');
+					$('.tabcontent').removeClass('current');
+					$(this).addClass('current');
+					$('#' + activeTab).addClass('current');
+				})
+			});
+/* 			$(function(){
 				$("#tabmenu>div").on("click",function(){
 					if(($(this).index() == 1)){
 						$(this).css("background","#00a7f0").css("color","white")
@@ -56,7 +67,10 @@
 					}
 				})
 
-			})
+			}) */
+			
+			
+			
 		</script>
 	</head>
 	<body>
@@ -68,34 +82,22 @@
   		<%@ include file="sf_list_sidebar.jspf"%>
 
     <div class="row">
-
-<!--       <div class="col-lg-3">
-
-       	 <b class="list-group-item">여행목록</b>
-        <div class="list-group">
-          <a href="#" class="list-group-item">구트여행</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a> 
-        </div>
-
-      </div> -->
-      
        		<!-- Sidebar -->
-    <ul id="sidebar-wrapper" class="tabs">
-      <li id="sidebar-top" class="sidebar-heading">TOUR LIST
-	      <ul id="sidebar-content" class="list-group list-group-flush">
-		      	<li><a href="#" class="list-group-item list-group-item-action">수학여행</a></li>
-		      	<li><a href="#" class="list-group-item list-group-item-action">현장학습</a></li>
-		        <li><a href="#" class="list-group-item list-group-item-action">가족여행</a></li>
-		        <li><a href="#" class="list-group-item list-group-item-action">기업/일반단체</a></li>
-	      </ul>
-      </li>
-    </ul>
+    	<ul id="sidebar-wrapper" class="tabs">
+	      	<li id="sidebar-top" class="sidebar-heading">TOUR LIST
+		      	<ul id="sidebar-content" class="tab list-group list-group-flush"> <!-- class tab -->
+			      	<li class="current" data-tab="tab1"><a href="#" class="list-group-item list-group-item-action">수학여행</a></li>
+			      	<li data-tab="tab2"><a href="#" class="list-group-item list-group-item-action">현장학습</a></li>
+			        <li data-tab="tab3"><a href="#" class="list-group-item list-group-item-action">가족여행</a></li>
+			        <li data-tab="tab4"><a href="#" class="list-group-item list-group-item-action">기업/일반단체</a></li>
+		      	</ul>
+	      	</li>
+   		 </ul>
     
     	
       <!-- /.col-lg-9  tab1-->
 
-      <div id=tab1 class="col-lg-9">
+      <div id="tab1" class="col-lg-9 tabcontent current">
 		
 		
 		<!-- 슬라이드 div  -->
@@ -134,7 +136,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item One</a>
+                  <a href="#">1111</a>
                 </h4>
                 <h5>30,000원</h5>
                 <p class="card-text">남한산성과 수원화성 - 성남시, 수원시</p>
@@ -150,7 +152,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Two</a>
+                  <a href="#">22222</a>
                 </h4>
                 <h5>-</h5>
                 <p class="card-text">없음</p>
@@ -166,7 +168,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Three</a>
+                  <a href="#">33333</a>
                 </h4>
                 <h5>-</h5>
                 <p class="card-text">없음</p>
@@ -233,7 +235,7 @@
 	
 	  <!-- /.col-lg-9  tab2-->
 
-      <div id=tab2 class="col-lg-9">
+      <div id="tab2" class="col-lg-9 tabcontent">
 		
 		
 		<!-- 슬라이드 div  -->
@@ -272,7 +274,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item One</a>
+                  <a href="#">하나하나하나</a>
                 </h4>
                 <h5>30,000원</h5>
                 <p class="card-text">남한산성과 수원화성 - 성남시, 수원시</p>
@@ -288,7 +290,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Two</a>
+                  <a href="#">둘둘둘둘</a>
                 </h4>
                 <h5>-</h5>
                 <p class="card-text">없음</p>
@@ -304,7 +306,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item Three</a>
+                  <a href="#">셋셋셋셋</a>
                 </h4>
                 <h5>-</h5>
                 <p class="card-text">없음</p>
@@ -367,7 +369,287 @@
         <!-- /.row -->
 
       </div>
+      
       <!-- /.col-lg-9 id= tab2 끝 -->
+      
+      
+      
+      <!--  tab3 시작 -->
+          <div id="tab3" class="col-lg-9 tabcontent current">
+		
+		
+		<!-- 슬라이드 div  -->
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="row">
+			<!-- 1번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">1111</a>
+                </h4>
+                <h5>30,000원</h5>
+                <p class="card-text">남한산성과 수원화성 - 성남시, 수원시</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+			<!-- 2번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">22222</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+			<!-- 3번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">33333</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+			<!-- 4번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Four</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+			<!-- 5번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Five</a>
+                </h4>
+                <h5>$-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9825;</small>
+              </div>
+            </div>
+          </div>
+			<!-- 6번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Six</a>
+                </h4>
+                <h5>$-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 id=tab3  끝-->
+      
+      
+      
+      <!--  tab4 시작  -->
+      
+        <div id="tab4" class="col-lg-9 tabcontent current">
+		
+		
+		<!-- 슬라이드 div  -->
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="row">
+			<!-- 1번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">1111</a>
+                </h4>
+                <h5>30,000원</h5>
+                <p class="card-text">남한산성과 수원화성 - 성남시, 수원시</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+			<!-- 2번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">22222</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+			<!-- 3번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">33333</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+               <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+			<!-- 4번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Four</a>
+                </h4>
+                <h5>-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+			<!-- 5번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Five</a>
+                </h4>
+                <h5>$-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9825;</small>
+              </div>
+            </div>
+          </div>
+			<!-- 6번째 소메뉴  -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Six</a>
+                </h4>
+                <h5>$-</h5>
+                <p class="card-text">없음</p>
+              </div>
+              <div class="card-footer">
+                <a href="#"><small class="text-muted">&#9825;</small></a> 
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 id=tab4  끝-->
 		
 		
     </div>
