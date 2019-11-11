@@ -28,7 +28,7 @@
 			#startingDay{width:100%}
 			
 			#rlSelect{margin-top:20px; width:100%}
-			#routeSelect{border:1px solid #ddd; border-radius:5px; width:800px; height:650px; padding:10px}
+			#routeSelect{border:1px solid #ddd; border-radius:5px; width:700px; height:650px; padding:10px}
 			#lodgingSelect{border:1px solid #ddd; border-radius:5px; width:380px; height:650px; padding:10px}
 			
 			.modal{z-index:10001}
@@ -42,6 +42,11 @@
 			#lodgingModal *{text-align:left}
 			/*body.modal-open{overflow:scroll}*/
 			
+			#lodgingSelectDiv{height:300px; overflow-y:scroll;}
+			#lodgingSelectDiv>div{width:175px; height:150px; border:1px solid #ddd; margin-bottom:10px; float:left; margin-right:10px; text-align:center; border-radius:5px; overflow:hi}
+			#lodgingSelectDiv>div:nth-child(4n){margin-right:0px}
+			#lodgingSelectDiv img{width:173px; height:100px; overflow:hidden;}
+			
 			
 		</style>
 		<script>
@@ -53,12 +58,17 @@
 			})
 			
 			$(document).ready(function(){
-				$("#lodgingSelectDiv").click(function(){
+				$("#lodgingSelectDiv div").click(function(){
 					$("#lodgingDetailModal").modal();
 				});
 				
 				$("#lodgingSelectBtn").click(function(){
 					$("#lodgingModal").modal();
+				});
+				
+				$("#revSel").click(function(){
+					$("#lodgingDetailModal").modal("hide");
+					$("#lodgingModal").modal("hide");
 				});
 			});
 		</script>
@@ -134,22 +144,25 @@
 							<h4 class="modal-title">숙소</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<div class="modal-body">
-							<div class="form-group">
-								유형별
-								<input type="radio" name="restType" checked/>전체보기
-								<input type="radio" name="restType"/>호텔클래식
-								<input type="radio" name="restType"/>호텔캐쥬얼
-								<input type="radio" name="restType"/>리조트클래식
-								<input type="radio" name="restType"/>리조트캐쥬얼
-								<input type="radio" name="restType"/>실속형펜션
-								<input type="radio" name="restType"/>골프텔
-							</div>
-							<div>숙소명<input type="text"/><input type="button" value="검색"/></div>
-							<div class="form-group">
-								<div id="lodgingSelectDiv">숙소 클릭 시 숙소 상세 div</div>
-							</div>
+								<a style="background:#00a7f0; border-radius:0px 50px 50px 0px; color:white;">&nbsp;유형별&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+								<input type="radio" name="restType1" checked/>전체보기
+								<input type="radio" name="restType1"/>호텔클래식
+								<input type="radio" name="restType1"/>호텔캐쥬얼
+								<input type="radio" name="restType1"/>리조트클래식
+								<input type="radio" name="restType1"/>리조트캐쥬얼
+								<input type="radio" name="restType1"/>실속형펜션
+								<input type="radio" name="restType1"/>골프텔
+							<div style="margin-top:10px"><a style="background:#00a7f0; border-radius:0px 50px 50px 0px; color:white">&nbsp;숙소명&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+							<input type="text"/><input type="button" value="검색"/></div>
 							<hr/>
-							<input type="submit" value="선택"/>
+							<div id="lodgingSelectDiv"">
+								<c:forEach var="a" begin="1" end="12">
+									<div>
+										<img src="../image/busan.jpg"/><hr style="margin:0px; padding:0px; margin-bottom:10px; "/>
+										숙소이미지${a}번
+									</div>
+								</c:forEach>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -161,27 +174,13 @@
 						<div class="modal-header">
 							<h4 class="modal-title">숙소</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
-						<div class="modal-body">
-							<div class="form-group">
-								유형별
-								<input type="radio" name="restType" checked/>전체보기
-								<input type="radio" name="restType"/>호텔클래식
-								<input type="radio" name="restType"/>호텔캐쥬얼
-								<input type="radio" name="restType"/>리조트클래식
-								<input type="radio" name="restType"/>리조트캐쥬얼
-								<input type="radio" name="restType"/>실속형펜션
-								<input type="radio" name="restType"/>골프텔
-							</div>
-							<div>숙소명<input type="text"/><input type="button" value="검색"/></div>
-							<div class="form-group">
-								설정에 따른 이미지
-							</div>
-							<hr/>
-							<input type="submit" value="선택"/>
-						</div>
+						<img src="../image/busan.jpg" style="height:200px; overflow:hidden"/><hr style="margin:0px; padding:0px; margin-bottom:10px; "/>
+						이 곳 아주 맘에 듭니다. 선택합시다.
+						<hr/>
+						<input type="button" id="revSel" value="선택"/>
+					</div>
 					</div>
 				</div>
-			</div>
 		</section>
 		<%@ include file="footer.jspf"%>
 </body>
