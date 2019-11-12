@@ -69,6 +69,9 @@
 				$("#revSel").click(function(){
 					$("#lodgingDetailModal").modal("hide");
 					$("#lodgingModal").modal("hide");
+					
+					var txt = "<tr><td>"+$("#lodgName").text()+"</td><td colspan='2'>"+$("#lodgDate").text()+"</td></tr>"
+					$("#selectLodgingList").prepend(txt); 
 				});
 			});
 		</script>
@@ -175,6 +178,8 @@
 							<h4 class="modal-title">숙소</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<img src="../image/busan.jpg" style="height:200px; overflow:hidden"/><hr style="margin:0px; padding:0px; margin-bottom:10px; "/>
+						<a id="lodgName">숙소이름</a>
+						<a id="lodgDate">숙소날짜</a>
 						이 곳 아주 맘에 듭니다. 선택합시다.
 						<hr/>
 						<input type="button" id="revSel" value="선택"/>
