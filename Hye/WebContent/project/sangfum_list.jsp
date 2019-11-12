@@ -37,6 +37,7 @@
 			section{width:1400px; margin: 0; padding:0;}
 			.tabcontent{ display: none;  color:#fff}
 			.tabcontent.current{display:block;}
+			
 }
 			
 			
@@ -229,7 +230,6 @@
 
         </div>
         <!-- /.row -->
-
       </div>
       <!-- /.col-lg-9 id=tab1  끝-->
 	
@@ -375,7 +375,7 @@
       
       
       <!--  tab3 시작 -->
-          <div id="tab3" class="col-lg-9 tabcontent current">
+          <div id="tab3" class="col-lg-9 tabcontent">
 		
 		
 		<!-- 슬라이드 div  -->
@@ -515,7 +515,7 @@
       
       <!--  tab4 시작  -->
       
-        <div id="tab4" class="col-lg-9 tabcontent current">
+        <div id="tab4" class="col-lg-9 tabcontent">
 		
 		
 		<!-- 슬라이드 div  -->
