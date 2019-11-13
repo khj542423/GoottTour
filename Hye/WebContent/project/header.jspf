@@ -6,12 +6,7 @@
 *{font-family:'Noto Sans KR',sans-serif;}
 </style>
 <script>
-	$(function(){
- 		var imgBannerTextWidth = $("#imgBannerText").width();
- 		var headerWidth = $("#imgBanner1").width();
-		$("#imgBannerText").css("left",(headerWidth-imgBannerTextWidth)/2+100+"px");
-		
-	});
+
 	
 </script>
 <header class="navbar navbar-expand-lg">
