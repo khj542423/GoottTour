@@ -7,7 +7,7 @@ section>div {
 	border-radius:5px;
 }
 
-.form-signin {
+#form-signin {
 	width: 100%;
 	max-width: 420px;
 	padding: 15px;
@@ -17,12 +17,13 @@ section>div {
 .form-label-group {
 	position: relative;
 	margin-bottom: 1rem;
+	
 }
 
 .form-label-group>input,
 .form-label-group>label {
 	height: 3.125rem;
-	padding: .75rem;
+	text-align:left;
 }
 
 .form-label-group>label {
@@ -40,7 +41,7 @@ section>div {
 
 
 .form-label-group input:not(:placeholder-shown) {
-	padding-top: 1.25rem;
+	
 	padding-bottom: .25rem;
 }
 
