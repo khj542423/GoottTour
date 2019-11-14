@@ -25,8 +25,8 @@ header>div{width:100%}
 #mainMenu ul:last-child li:last-child{width:250px; float:right; margin-right:10px;}
 #mainMenu input:first-child{height:40px; width:200px;}
 #mainMenu input:last-child{height:40px; width:40px;font-size:0.8em; line-height:40px}
-#imgBanner1{margin-top:-130px;  margin-left:-30%; height:300px; overflow:hidden}
-#imgBannerText{z-index:10000; position:absolute; top:250px; color:white}
+#imgBanner1{ height:43vh; width:100%;  overflow:hidden}
+#imgBannerText{ z-index: 10000; position: relative; top: 119px; color: white;}
 #bannerImg1{width:1920px; height:55vh; position: absolute; top:0; left:0; z-index:-1; }
 .overlay{background-color: rgba(0, 0, 0, 0.22); position: absolute; top:0; left:0; width: 1920px; height: 55vh;}
 .navbar { background: transparent !important;}	

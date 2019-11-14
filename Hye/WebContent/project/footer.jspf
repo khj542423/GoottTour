@@ -7,7 +7,7 @@
 #top-image img{margin-top:30px; margin-left:-20px;}
 #content{width:900px; height:50px; color:gray;} 
 #content>ul>li{width:110px; height:30px; text-align: left; padding:5px; color:gray;}
-#footdiv{background-color: rgb(34,34,34); width:146.4%; margin-left:-25%; height:320px;}
+#footdiv{background-color: rgb(34,34,34); width:146.4%; margin-left:-25%;}
 #content a:hover, #content a:link, #content a:visited{color:gray; font-size:20px; text-decoration: none;}
 #content-text{width:900px; height:100px; text-align:left; color:gray;} 
 #footdiv>div {margin-left:300px;} 
