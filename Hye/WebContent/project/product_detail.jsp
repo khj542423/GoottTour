@@ -26,8 +26,6 @@
 <%@ include file="header.jspf"%>
 
 <div class="container">
-
-	<div >
 		<div id="detail-content"> 	
 			<div class="page_location">
 				<a href="<%=request.getContextPath()%>/index.jsp">홈></a><a href="#">1박2일</a>
@@ -35,37 +33,67 @@
 			<div class="sec_div">
 				<div class="gall_big">
 					<div class="w3-content w3-section" style="max-width:500px">
-					  <img class="mySlides w3-animate-fading" src="../image/mainimg1.jpg" style="width:100%">
-					  <img class="mySlides w3-animate-fading" src="../image/mainimg2.jpg" style="width:100%">
-					  <img class="mySlides w3-animate-fading" src="../image/mainimg3.jpg" style="width:100%">
-					  <img class="mySlides w3-animate-fading" src="../image/mainimg4.jpg" style="width:100%">
+					  <img class="mySlides w3-animate-fading" src="<%=request.getContextPath()%>/image/mainimg1.jpg" style="width:100%">
+					  <img class="mySlides w3-animate-fading" src="<%=request.getContextPath()%>/image/mainimg2.jpg" style="width:100%">
+					  <img class="mySlides w3-animate-fading" src="<%=request.getContextPath()%>/image/mainimg3.jpg" style="width:100%">
+					  <img class="mySlides w3-animate-fading" src="<%=request.getContextPath()%>/image/mainimg4.jpg" style="width:100%">
 					</div>
 				</div>
-				<div class="title_text"><h1>남쪽 나라의 명소! 남해+여수+순천 (1박2일)</h1>
+				<div class="title_text" style="text-align: left">
+					<div class="circle_heart"><a href="">&#9825;</a></div>
+					<div class="title_name"><h1 style="text-align: left; padding-right: 40px; font-size:30px; font-weight: 600;">남쪽 나라의 명소! 남해+여수+순천 (1박2일)</h1></div>
+					<div class='code' style="text-align: left"> ( 상품코드: AAPP33 )</div>
+					<div class="product_list">
+						<ul class="product_menu">
+							<li><span>출발일자</span>2019.11.29일</li>
+							<li><span>상품가격</span>200,000,000원</li>
+							<li><span>여행지역</span>경주</li>
+							<li><span>여행기간</span>2019.11.29~2019.11.30</li>
+						</ul>
+					</div>
+					<div class="btn_menu">
+						<button class="btn-1" >장바구니</button>
+						<button class="btn-2" >예약하기</button>
+					</div>
 				</div>
-			
 			</div>
 		</div>
+
+	<div class="tb_1">
+		<table class="table_01">
+		    <tr>
+		        <th scope="row">항목명</th>
+		        <td>내용이 들어갑니다.</td>
+		    </tr>
+		    <tr>
+		        <th scope="row">항목명</th>
+		        <td>내용이 들어갑니다.</td>
+		    </tr>
+		    <tr>
+		        <th scope="row">항목명</th>
+		        <td>내용이 들어갑니다.</td>
+		    </tr>
+		</table>
 	</div>
 </div>
 
 	<script>
-					var myIndex = 0;
-					carousel();
-					
-					function carousel() {
-					  var i;
-					  var x = document.getElementsByClassName("mySlides");
-					  
-					  for (i = 0; i < x.length; i++) {
-					    x[i].style.display = "none";  
-					  }
-					  myIndex++;
-					  if (myIndex > x.length) {myIndex = 1}    
-					  x[myIndex-1].style.display = "block";  
-					  setTimeout(carousel, 9000);    
-					}
-					</script>
+		var myIndex = 0;
+		carousel();
+		
+		function carousel() {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  
+		  for (i = 0; i < x.length; i++) {
+		    x[i].style.display = "none";  
+		  }
+		  myIndex++;
+		  if (myIndex > x.length) {myIndex = 1}    
+		  x[myIndex-1].style.display = "block";  
+		  setTimeout(carousel, 9000);    
+		}
+	</script>
 <%@ include file="footer.jspf"%>
 </body>
 </html>
