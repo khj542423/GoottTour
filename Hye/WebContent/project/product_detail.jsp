@@ -59,22 +59,66 @@
 			</div>
 		</div>
 
-	<div class="tb_1">
+	<div class="tb_alldiv">
 		<table class="table_01">
 		    <tr>
-		        <th scope="row">항목명</th>
-		        <td>내용이 들어갑니다.</td>
+		        <th class="tb1" scope="row">일정</th>
+		        <td><span>1박 2일 </span> <span><button class="btn-3">다르 출발일 보기</button></span>
+		        <br>
+		        <ul>
+		        	<li>11월 19일 (화) 00:00 남쪽나라 출발 - 11월 19일 (화) 00:00 도착</li>
+		        	<li>11월 20일 (수) 00:00 KTX 출발 - 11월 20일 (수) 00:00 도착</li>
+		        </ul>
+		        </td>
 		    </tr>
 		    <tr>
-		        <th scope="row">항목명</th>
-		        <td>내용이 들어갑니다.</td>
+		        <th class="tb2" scope="row">방문도시</th>
+		        <td>포항, 울산, 경주</td>
 		    </tr>
 		    <tr>
-		        <th scope="row">항목명</th>
-		        <td>내용이 들어갑니다.</td>
+		        <th class="tb3" scope="row">예약인원</th>
+		        <td>현재 8명 (여유 좌석 0 / 최소 출발 인원 4명)</td>
 		    </tr>
 		</table>
 	</div>
+	
+	<div class="tb_alldiv2">
+		<h3 style="text-align:left; font-weight: 600;">상품 체크 포인트</h3> 
+				<table class="table_02">
+		    <tr>
+		        <th scope="row">(아이콘)<br>보험</th>
+		        <td class="row1">
+		        	<ul>
+		        		<li>[여행자보험] 미가입</li>
+		        		<li>[영업보증보험] 가입</li>
+		        		<li>[기획여행 보증보험] 가입</li>
+		        	</ul>
+			    </td>
+		    </tr>
+		    <tr>
+		        <th scope="row">(아이콘)<br>인솔자</th>
+		        <td class="row2">[인솔자] 0명이 넘으면 인솔자가 배정될 예정입니다.</td>
+		    </tr>
+		    <tr>
+		        <th scope="row">(아이콘)<br>투어마일리지</th>
+		        <td class="row3">
+					<ul>
+						<li>여행자 성인1인 기준 2,570 마일 적립 예정<br>
+						(모두멤버스회원 한정, 출발 전 여행자 개별 가입 필수, 출발일 + 10일 후 적립)</li>
+						<li>예상 적립 마일리지 금액은 프로모션 적용 및 결제방법에 따라 변동될 수 있음</li>
+						<li>투어마일리지 제휴카드 : 1,000원당 최대 30마일 추가 적립 예정</li>
+					</ul>
+						
+				</td>
+		    </tr>
+		</table>
+	</div>
+	
+	<div> 
+		
+	
+	</div>
+	
 </div>
 
 	<script>
