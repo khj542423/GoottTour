@@ -181,5 +181,5 @@ public class BoardDAO extends DBConn implements BoardInterface{
 		}
 
 	}
-
+	
 }
