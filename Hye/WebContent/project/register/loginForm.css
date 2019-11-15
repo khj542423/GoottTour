@@ -14,19 +14,19 @@ section>div {
 	margin: auto;
 }
 
-.form-label-group {
+.form-group {
 	position: relative;
 	margin-bottom: 1rem;
 	
 }
 
-.form-label-group>input,
-.form-label-group>label {
+
+.form-group>input{
 	height: 3.125rem;
 	text-align:left;
 }
 
-.form-label-group>label {
+.form-group>label {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -40,12 +40,12 @@ section>div {
 }
 
 
-.form-label-group input:not(:placeholder-shown) {
+.form-group input:not(:placeholder-shown) {
 	
 	padding-bottom: .25rem;
 }
 
-.form-label-group input:not(:placeholder-shown)~label {
+.form-group input:not(:placeholder-shown)~label {
 	padding-top: .25rem;
 	padding-bottom: .25rem;
 	font-size: 12px;
@@ -63,3 +63,4 @@ section>div {
 #pwinquiry {
 	margin-left: 25%;
 }
+#userId div{display:none;}

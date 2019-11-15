@@ -15,30 +15,18 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="loginForm.css" type="text/css" />
 <link rel="stylesheet" href="../headerFooterStyle.css" type="text/css" />
+<link rel="stylesheet" href="main.css" type="text/css"/>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script>
 	function chk(){
-		var id = document.getElementById("userId").value;
-		if(id==""){//아이디를 입력 안했을 경우
-			alert("아이디를 입력하세요.");
-			return false;
-		}
-		if(id.length<7){//글자수 확인
-			alert("아이디는 확인해주세요.");
-			return false;
-		}
-		//대소문자, 숫자만 허용한다.
-		var cnt=0;
-		for(idx=0; idx<id.length;idx++){
-			ch = id.charAt(idx);
-			if(!(ch>='A' && ch<='Z' || ch>='a' && ch<='z' || ch>='0' && ch<='9'))
-				cnt++;
-		}
-		if(cnt>0){
+		//아이디 8~12까지 허용 반드시 첫번째 영문자
+		var reg = /^[a-zA-Z]{1}[a-zA-Z0-9]{6,14}$/;
+		if(!reg.test($("#userId").val())){
 			alert("아이디를 확인해주세요.");
 			return false;
-		}
+		} 
+
 		//비밀번호 검사  영어, 숫자, 특수문자 ($,%,#,!)
 		var pwd = document.getElementById("userPwd").value;
 		
@@ -70,20 +58,21 @@
 	}
 
 </script>
+
 </head>
 <body>
 	<%@ include file="../header.jspf"%>
 	<section>
-		<div>
-			<form method="post" onsubmit="return chk()" id="form-signin" class="was-validated" action="<%=request.getContextPath()%>/project/register/loginOk.do">
+		<div class="container mt-2">
+			<form method="post" onsubmit="return chk()" id="form-signin" action="<%=request.getContextPath()%>/project/register/loginOk.do">
 				<div class="text-center">
 					<img src="<%=request.getContextPath()%>/image/key.png">
 					<h1 class="h3 mb-3 font-weight-bold">로그인</h1>
 				</div>
-				<div class="form-label-group">
-					<input type="text" id="userId" name="userId" class="form-control" maxlength="15" placeholder="아이디를 입력해주세요." required autofocus>				
+				<div class="form-group">
+					<input id="userId" name="userId" class="form-control" maxlength="15" placeholder="아이디를 입력해주세요." required autofocus>				
 				</div>
-				<div class="form-label-group">
+				<div class="form-group">
 					<input type="password" id="userPwd" name="userPwd" class="form-control" maxlength="15" placeholder="비밀번호를 입력해주세요." required autofocus>				
 				</div>
 				<input class="btn btn-lg btn-secondary btn-block" type="submit" id="log" value="로그인" />
@@ -92,10 +81,11 @@
 			</form>
 		</div>
 
-<script src="bootstrap-validate.js"></script>
-<script>
-	bootstrapValidate('#userId', 'min:7:Enter at least 5 charackters!')
-</script>
+	<script src="bootstrap-validate.js"></script>
+	<script>
+		bootstrapValidate('#userId','min:7:')
+		bootstrapValidate('#userPwd','min:8:')
+	</script>
 	</section>
 	<%@ include file="../footer.jspf"%>
 </body>
