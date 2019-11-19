@@ -25,7 +25,7 @@
 			#tabmenu>div:nth-child(1){background : #00a7f0; color:white}
 			#list1, #list2{width : 100%; height : 1500px; margin : 0px auto; margin-top:20px; border:1px solid #ddd}
 			#list2{display : none;}
-			.container {margin-top:200px; max-width: 1400px;}
+			.container {margin-top:50px; max-width: 1400px;}
 			.col-lg-3{max-width: 200px;}
 			.img-fluid{width:1225px;}
 			a:link, a:hover, a:visited{text-decoration: none;}

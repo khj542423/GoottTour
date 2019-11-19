@@ -9,8 +9,8 @@
 
 	
 </script>
-<header class="navbar navbar-expand-lg">
-	<div>
+<header>
+	<div class="navbar navbar-expand-lg">
 		<div id="mainMenu">
 			<!-- 작은메뉴 -->
 			<ul id="miniMenu" class="navbar-header">
