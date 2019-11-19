@@ -107,7 +107,11 @@ button::before, button::after {
 .row3 { height:150px;}
 
 .table_02 tr td li{clear: left; width: 700px; text-align: left; font-size: 18px;}
-	
+.rev_div p, .rev_div h3{text-align: left;}
+.rev_div{background: #efefef; padding: 40px 40px;}
+.rev_div h3{font-weight: 500;}
+.rev_div p{color: gray;}
+.mt-3{}
 
 
 

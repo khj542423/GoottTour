@@ -1,9 +1,9 @@
-<%@page import="org.json.simple.JSONArray"%>
+<%-- <%@page import="org.json.simple.JSONArray"%> --%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="org.json.simple.*" %>
+<%-- <%@page import="org.json.simple.*" %> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
