@@ -182,7 +182,8 @@
 						<tr>
 							<td class="stit">아이디</td>
 							<td class="frm" style="position: relative;" class="form-group">
-								<input type="text" class="ipf form-control" name='userId' id='userId' maxlength='15' placeholder="* 7~15자리 영대소문자, 숫자">
+								<input type="text" class="ipf form-control" name='userId' id='userId' maxlength='15'
+									 placeholder="* 7~15 문자, 숫자">
 								<input type="button" id="idChk" class="btn btn-secondary" value="중복체크" />
 								<input type="hidden" name="idChkResult"	id="idChkResult" value="N" />
 							</td>
@@ -192,7 +193,7 @@
 							<td class="frm"><input type="password"
 								class="ipf form-control" style="position: relative;"
 								name='userPwd' id='userPwd' maxlength="15"
-								placeholder="* 특수문자 포함 8자리 문자"> <span id='check_pw22'></span><input
+								placeholder="* 8~14 자리 문자,숫자,특수문자"> <span id='check_pw22'></span><input
 								type="hidden" name="counter2" id="counter2"></td>
 						</tr>
 						<tr>

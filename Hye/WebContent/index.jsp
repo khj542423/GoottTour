@@ -151,8 +151,6 @@
 			</div> 
 		</div> 
 			<hr class="hrStyle"/>
-			
-			
 			 <div style="margin-top:50px">
 				<h1 style="font-family: fantasy; font-size: 50px;"> <span style='color:red; font-family: fantasy;'>HOT</span> Recommend</h1><br>
 			 	<h5> 추천여행지로 원하시는 여행을 즐겨보세요. </h5>
