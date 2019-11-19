@@ -17,15 +17,12 @@
 			opener.document.getElementById("idChkResult").value = "Y";
 			
 			self.close(); //window.close(); opner.close();  창닫기
-			
-		})
-	})
+		});
+	});
 </script>
 </head>
 <body>
 <div>
-	
-
 <!-- true 아이디가 있을때, false 아이디가 없을때 -->
 <!-- 사용가능.. -->
 <c:if test="${!result}">
@@ -38,16 +35,11 @@
 		<!-- 사용불가능 -->
 			아이디 ${userId}는 사용불가능한 아이디입니다.
 </c:if>
-
-
 	<hr>
 	<form method="post"	action="/Hye/project/register/idCheck.do">
 		아이디입력: <input type="text" name="userId"/>
 		<input type="submit" value="아이디중복검사 "/>
 	</form>
-	
-	
 </div>
-
 </body>
 </html>
