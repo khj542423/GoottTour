@@ -1,4 +1,4 @@
-index.jsp<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -151,8 +151,6 @@ index.jsp<%@ page language="java" contentType="text/html; charset=UTF-8" pageEnc
 			</div> 
 		</div> 
 			<hr class="hrStyle"/>
-			
-			
 			 <div style="margin-top:50px">
 				<h1 style="font-family: fantasy; font-size: 50px;"> <span style='color:red; font-family: fantasy;'>HOT</span> Recommend</h1><br>
 			 	<h5> 추천여행지로 원하시는 여행을 즐겨보세요. </h5>

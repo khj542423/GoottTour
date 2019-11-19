@@ -15,8 +15,6 @@ public class CommandIdCheck implements CommandService {
 			throws ServletException, IOException {
 		String userId = request.getParameter("userId");
 		
-		System.out.println("userId="+userId);
-		
 		RegisterDAO dao = new RegisterDAO();
 		boolean result = dao.idCheck(userId);
 		
