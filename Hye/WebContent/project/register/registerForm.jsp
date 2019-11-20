@@ -11,19 +11,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="registerForm.css" type="text/css"/>
-<link rel="stylesheet" href="../headerFooterStyle.css" type="text/css"/>
-<link rel="stylesheet" href="main.css" type="text/css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="registerForm.css" type="text/css" />
+<link rel="stylesheet" href="../headerFooterStyle.css" type="text/css" />
+<link rel="stylesheet" href="main.css" type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
-<script	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
-<script	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
 
 
 
@@ -41,17 +49,25 @@
 <script>
 	$(function(){
 		$("#regForm").submit(function(){
+			if($("#userId").val()==''){
+				alert("아이디를 입력해주세요!")
+				return false;
+			}
 			//아이디 8~12까지 허용 반드시 첫번째 영문자
 			var reg = /^[a-zA-Z]{1}[a-zA-Z0-9]{6,14}$/;
 			
 			if(!reg.test($("#userId").val())){
-				alert("아이디는 첫번째문자가 영문자이고 7~15글자 사이여야 합니다.");
+				alert("아이디는 첫번째문자가 영문자이고 7~15글자 사이여야 합니다!");
 				return false;
 			}
 			if($("#idCheckResult").val()=="N"){
-				alert("아이디를 중복확인하세요..");
+				alert("아이디를 중복확인하세요!");
 				return false;
 			} 
+			if($("#userPwd").val()==''){
+				alert("비밀번호를 입력해주세요!");
+				return false;
+			}
 			//비밀번호 8~14까지 첫번째영문자 특수문자포함 \w:영대소문자, _ 문자
 			//  ?= : 전방탐색, .:모든 문자와 일치합니다.,
 			//  *  : 앞에 존재하는 문자가 0번 혹은 그 이상 반복되는 문자를 찾을 때 사용합니다.
@@ -59,81 +75,92 @@
 			//  i  : 문자열의 대소문자를 구별하지 않는다.
 			reg = /^[a-zA-Z]{1}(?=.*[a-zA-Z0-9])(?=.*[!@#$%^*+=-]).{7,13}/;
 			if(!reg.test($("#userPwd").val())){
-				alert("비밀번호는 특수문자를 1문자이상포함하여야 합니다...");
+				alert("비밀번호는 특수문자를 1문자이상포함한 8~14글자여야 합니다!");
 				return false;
 			} 
 			
 			if(!reg.test($("#userPwd").val())){
-				alert("비밀번호를 잘못입력하였습니다...");
+				alert("비밀번호를 잘못입력하였습니다!");
 				return false;
 			} 
 			
 			if($("#userPwd").val() != $("#chkPwd").val()){
-				alert("비밀번호가 다릅니다.");
+				alert("비밀번호가 다릅니다!");
 				return false;
 			}			
 			
 			reg = /^[가-힣]{2,6}$/;
 			if(!reg.test($("#userName").val())){
-				alert("이름을 입력하세요....");
+				alert("이름을 입력하세요!");
 				return false;
 			}
-			/* //생년월일
+			//생년월일
 			reg = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
 			var birth = $("#birthYear").val()+"-"+$("#birthMonth").val()+"-"+$("#birthDate").val();
 			if(!reg.test(birth)){
-				alert("생년월일 잘못입력하였습니다.");
-				return false; */
-			
-			//연락처
-			reg = /(010|02|031|32)[-][0-9]{3,4}[-][0-9]{4}/;
-			var tel = $("#t1").val()+"-"+$("#t2").val()+"-"+$("#t3").val();
-			if(!reg.test(tel)){
-				alert("연락처를 잘못입력하였습니다...");
-				return false;
-			}
-			//이메일
-			reg = /\w{4,12}[@][a-z]{2,10}[.][a-z]{2,3}[.]?[a-z]{0,2}/
-			var email = $("#emailId").val() +"@"+ $("#emailDomain").val();
-			if(!reg.test(email)){
-				alert("이메일을 잘못입력하였습니다..");
+				alert("생년월일 잘못입력하였습니다!");
 				return false;
 			}
 			///////////////////////////
 			if($("#zipcode").val()=="" || $("#addr").val()==""){
-				alert("주소를 검색하세요..");
+				alert("주소를 입력하세요!");
 				return false;
 			}
-			if($("#addrdetail").val()==""){
-				alert("상세주소를 입력하세요...");
+			if($("#detailAddr").val()==''){
+				alert("상세주소를 입력하세요!");
+				return false;
+			}
+			//이메일
+			if($("#emailId").val()==''){
+				alert("이메일을 입력해주세요!");
+				return false;
+			}
+			reg = /\w{4,12}[@][a-z]{2,10}[.][a-z]{2,3}[.]?[a-z]{0,2}/
+			var email = $("#emailId").val() +"@"+ $("#emailDomain").val();
+			if(!reg.test(email)){
+				alert("이메일을 잘못입력하였습니다!");
+				return false;
+			}
+			//연락처
+			if($("#t3").val()==''){
+				alert("연락처를 입력해주세요!");
+				return false;
+			}
+			reg = /(010|02|031|32)[-][0-9]{3,4}[-][0-9]{4}/;
+			var tel = $("#t1").val()+"-"+$("#t2").val()+"-"+$("#t3").val();
+			if(!reg.test(tel)){
+				alert("연락처를 잘못입력하였습니다!");
 				return false;
 			}
 			//약관 동의
 			if($("#muni12").prop("checked") || $("#muni22").prop("checked")){
-				alert("약관에 동의해주셔야합니다.");
+				alert("약관에 동의해주셔야합니다!");
 				return false;
 			}
 		});
-	
-	//중복체크
-	$('#idChk').click(function(){									//html은 px사용안함 javascript임
-		var reg = /^[a-zA-Z]{1}[a-zA-Z0-9]{6,14}$/;
-		
-		if(!reg.test($("#userId").val())){
-			alert("아이디는 첫번째문자가 영문자이고 7~15글자 사이여야 합니다.");
-			return false;
-		}
+		//중복검사
+		$("#idChk").click(function(){
+			reg = /^[a-zA-Z]{1}[a-zA-Z0-9]{6,14}$/;
+			if($("#userId").val()==''){
+				alert("아이디를 입력해주세요.");
+				return false;	
+			}else if(!reg.test($("#userId").val())){
+					alert("아이디는 첫번째문자가 영문자이고 7~15글자 사이여야 합니다!");
+					return false;
+			}else{
+				window.open("<%=request.getContextPath()%>/project/register/idCheck.do?userId="+$("#userId").val(),"idChk","width=500, height=200");			
+			}
+		});
+		//중복해제
+		$("#userId").keyup(function(){
+			$("#idChkResult").val("N");
+		});
+		//주소검색
+		$("#zipSearch").click(function(){
+			window.open("<%=request.getContextPath()%>/register/zipSearch.do","z","width=530, height=700");
+		});
 
-	
-	//중복해제
-	$("#userId").keyup(function(){
-		$("#idChkResult").val("N");
 	});
-	$("#zipSearch").click(function(){
-		window.open("<%=request.getContextPath()%>/register/zipSearch.do","z", "width=530, height=700");
-	});	
-});
-	
 </script>
 
 </head>
@@ -147,69 +174,76 @@
 				하시면 더 많은 혜택을 받으실 수 있습니다.</span>
 		</div>
 		<div class="container">
-			<div class="container mt-2" id="layerPOP2" >
-				<form method="post" name='m' id='regForm' action="<%=request.getContextPath()%>/project/register/registerOk.do">
+			<div class="container mt-2" id="layerPOP2">
+				<form method="post" name='m' id='regForm'
+					action="<%=request.getContextPath()%>/project/register/registerOk.do">
 					<input type='hidden' name='spam_chk_val' value=''>
 					<table class="member">
 						<tr>
 							<td class="stit">아이디</td>
-							<td class="frm" style="position:relative;" class="form-group">
+							<td class="frm" style="position: relative;" class="form-group">
 								<input type="text" class="ipf form-control" name='userId' id='userId' maxlength='15'
-								placeholder="* 7~15자리 영대소문자, 숫자">
+									 placeholder="* 7~15 문자, 숫자">
 								<input type="button" id="idChk" class="btn btn-secondary" value="중복체크" />
 								<input type="hidden" name="idChkResult"	id="idChkResult" value="N" />
 							</td>
 						</tr>
 						<tr>
 							<td class="stit">비밀번호</td>
-							<td class="frm"><input type="password" class="ipf form-control" style="position:relative;"
-								name='userPwd' id='userPwd' maxlength="15" placeholder="* 특수문자 포함 8자리 문자"> <span
-								id='check_pw22'></span><input type="hidden"
-								name="counter2" id="counter2"></td>
+							<td class="frm"><input type="password"
+								class="ipf form-control" style="position: relative;"
+								name='userPwd' id='userPwd' maxlength="15"
+								placeholder="* 8~14 자리 문자,숫자,특수문자"> <span id='check_pw22'></span><input
+								type="hidden" name="counter2" id="counter2"></td>
 						</tr>
 						<tr>
 							<td class="stit">비밀번호 확인</td>
-							<td class="frm"><input type="password" class="ipf form-control" 
-								name='pwd2' id='chkPwd' placeholder="* 비밀번호 재확인"><span id='check_pw2'></span></td>
+							<td class="frm"><input type="password"
+								class="ipf form-control" name='chkPwd' id='chkPwd'
+								placeholder="* 비밀번호 재확인"><span id='check_pw2'></span></td>
 						</tr>
 						<tr>
 							<td class="stit">성명(실명)</td>
-							<td class="frm"><input type="text" class="ipf form-control" 
+							<td class="frm"><input type="text" class="ipf form-control"
 								name='userName' id='userName'></td>
 						</tr>
 						<tr>
 							<td class="stit">생년월일</td>
-							<td class="frm"><input type="text" class="ipf form-control" 
-								name='birthYear' id='birthYear' style="width:100px;" maxlength="4" placeholder="ex)2019">
-								<select name="birthMonth" id="birthMonth">
+							<td class="frm"><input type="text" class="ipf form-control"
+								name='birthYear' id='birthYear' style="width: 100px;"
+								maxlength="4" placeholder="ex)2019"> <select
+								name="birthMonth" id="birthMonth">
 									<%
-										for(int i=1; i<=12 ;i++){
-											%>
-											<option value="<% if(i<10){out.print("0"+i);}else{out.print(i);}%>"><%=i%></option>
-											<%						
+										for (int i = 1; i <= 12; i++) {
+									%>
+									<option
+										value="<%if (i < 10) {
+					out.print("0" + i);
+				} else {
+					out.print(i);
+				}%>"><%=i%></option>
+									<%
 										}
 									%>
-								</select>월
-								<select name="birthDate" id="birthDate">
+							</select>월 <select name="birthDate" id="birthDate">
 									<script>
-										for(d=1;d<=31;d++){
+										for (d = 1; d <= 31; d++) {
 											var tag = "<option value='";
-											if(d<10){
-												tag+= "0"+d;
-											}else{
-												tag+=d;
+											if (d < 10) {
+												tag += "0" + d;
+											} else {
+												tag += d;
 											}
-											tag += "'>"+d+"</option>";
+											tag += "'>" + d + "</option>";
 											document.write(tag);
 										}
 									</script>
-								</select>일
-							</td>
+							</select>일</td>
 						</tr>
-			
+
 						<tr>
-							<td class="stit" rowspan="3" style="text-align:center;">주소</td>
-						
+							<td class="stit" rowspan="3" style="text-align: center;">주소</td>
+
 							<td class="frm">
 								<div id="wrap"
 									style="display: none; border: 1px solid; width: 500px; height: 300px; margin: -10px 0px 5px -10px; position: absolute">
@@ -217,9 +251,10 @@
 										id="btnFoldWrap"
 										style="cursor: pointer; position: absolute; right: 0px; top: -1px; z-index: 1"
 										onclick="foldDaumPostcode()" alt="접기 버튼">
-								</div> <input type="text" class="ipf" name='zipCode' id='zipCode' placeholder="* 검색 버튼을 누르세요."><input
-								type="button" class="btn btn-secondary"
-								onclick="sample3_execDaumPostcode()" value="검색" />
+								</div> <input type="text" class="ipf" name='zipCode' id='zipCode'
+								placeholder="* 검색 버튼을 누르세요."><input type="button"
+								class="btn btn-secondary" onclick="sample3_execDaumPostcode()"
+								value="검색" />
 							</td>
 						</tr>
 						<tr>
@@ -228,14 +263,17 @@
 						</tr>
 						<tr>
 							<td class="frm"><input type="text" class="ipf"
-								name='detailAddr' id='detailAddr'placeholder="* 상세주소 입력" style="float:left;position:relative;"></td>
+								name='detailAddr' id='detailAddr' placeholder="* 상세주소 입력(필수)"
+								style="float: left;"></td>
 						</tr>
 						<tr>
 							<td class="stit">이메일</td>
 							<td class="frm"><input type="text" class="ipf"
-								name='emailId' id='emailId' placeholder="ex) abcdef">@<input type="text"
-								class="ipf" id="emailDomain" name='emailDomain' placeholder="naver.com"> 입력하신
-								메일주소로 견적서 및 계약서가 발송됩니다.</td>
+								name='emailId' id='emailId' placeholder="ex) abcdef">
+								<li style="margin-top: 5px;">@</li> <input type="text"
+								class="ipf" id="emailDomain" name='emailDomain'
+								placeholder="ex) naver.com"> 입력하신 메일주소로 견적서 및 계약서가
+								발송됩니다.</td>
 						</tr>
 						<tr>
 							<td class="stit">연락처</td>
@@ -438,13 +476,12 @@
 								<div id="txt2">
 
 									[ 개인정보 수집, 이용에 관한사항 ]<br /> <br /> 회사는 회원제 서비스 제공을 위해 귀하의
-									개인정보를 아래와 같이 수집하고자 합니다.<br>
-									<br /> 1.수집하는개인정보항목 : 이름,아이디,비밀번호,생년월일,휴대폰번호,이메일 <br>
-									<br /> 2.수집및이용목적 : 회원제 가입 서비스제공, 계약이행을 위한 연락, 민원 및 고충처리<br>
-									<br /> 3. 보유및 이용기간 : 회원탈퇴 후 5일까지<br>
-									<br /> ※서비스 제공을 위해 필요한 최소한의 개인정보이므로 동의를 해 주셔야 서비스를 이용하실 수
-									있습니다.<br>
-									<br /> 개인정보의 수집,이용에 관한 사항에 동의하십니까?
+									개인정보를 아래와 같이 수집하고자 합니다.<br> <br /> 1.수집하는개인정보항목 :
+									이름,아이디,비밀번호,생년월일,휴대폰번호,이메일 <br> <br /> 2.수집및이용목적 : 회원제 가입
+									서비스제공, 계약이행을 위한 연락, 민원 및 고충처리<br> <br /> 3. 보유및 이용기간 :
+									회원탈퇴 후 5일까지<br> <br /> ※서비스 제공을 위해 필요한 최소한의 개인정보이므로 동의를 해
+									주셔야 서비스를 이용하실 수 있습니다.<br> <br /> 개인정보의 수집,이용에 관한 사항에
+									동의하십니까?
 								</div> <br> <input type="radio" name="muni2" id="muni21">
 								<span>개인정보 수집에 동의합니다.</span><input type="radio" name="muni2"
 								id="muni22" checked> <span>개인정보 수집에 동의하지 않습니다</span><br>
@@ -452,13 +489,15 @@
 							</td>
 						</tr>
 					</table>
-					<button class="btn btn-lg btn-secondary" type="submit" id="btn">가입하기</button>
+					<input type="submit" class="btn btn-lg btn-secondary" id="btn"
+						value="가입하기" />
 				</form>
 			</div>
 			<script src="bootstrap-validate.js"></script>
 			<script>
-				bootstrapValidate('#userId','min:7:')
-				bootstrapValidate('#userPwd','min:8:')
+				bootstrapValidate('#userId', 'min:7:')
+				bootstrapValidate('#userPwd', 'min:8:')
+				bootstrapValidate('#chkPwd', 'min:8:')
 			</script>
 		</div>
 		<script>

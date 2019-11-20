@@ -14,6 +14,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="headerFooterStyle.css" type="text/css"/>
+<script src="https://kit.fontawesome.com/6a894ec103.js" crossorigin="anonymous"></script>
 
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -40,7 +41,10 @@
 					</div>
 				</div>
 				<div class="title_text" style="text-align: left">
-					<div class="circle_heart"><a href="">&#9825;</a></div>
+					<div class="circle_heart">
+					<input type="checkbox" id="cart1" style="display:none;"/>
+									<label for="cart1"><i class="fas fa-heart"></i></label>
+					</div>
 					<div class="title_name"><h1 style="text-align: left; padding-right: 40px; font-size:30px; font-weight: 600;">남쪽 나라의 명소! 남해+여수+순천 (1박2일)</h1></div>
 					<div class='code' style="text-align: left"> ( 상품코드: AAPP33 )</div>
 					<div class="product_list">
@@ -137,40 +141,41 @@
 		</P>
 	</div>
 	
+	<!-- 탭누르면 탭메뉴 시작  -->
+	
 	<div class="mt-3">
-  <h2>Dynamic Tabs</h2>
-  <br>
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#home">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#menu1">Menu 1</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#menu2">Menu 2</a>
-    </li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div id="home" class="container tab-pane active"><br>
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div id="menu1" class="container tab-pane fade"><br>
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div id="menu2" class="container tab-pane fade"><br>
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-  </div>
-</div>
-
-
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs nav-tabs1">
+		    <li class="nav-item">
+		      <a class="nav-link active" href="#home">일정표</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="#menu1">여행약관&참고사항</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="#menu2">여행안전정보</a>
+		    </li>
+		  </ul>
+		
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div id="home" class="tab-pane active"><br>
+		      <h3>Home</h3>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		    </div>
+		    <div id="menu1" class="tab-pane fade"><br>
+		      <h3>Menu 1</h3>
+		      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		    </div>
+		    <div id="menu2" class="tab-pane fade"><br>
+		      <h3>Menu 2</h3>
+		      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+		    </div>
+		  </div>
+	</div>
+	
+	<!-- 탭누르면 나오는 div menu1, menu2, menu3 끝 -->
+	
 </div>
 
 	<script>
@@ -180,7 +185,6 @@
 	  });
 	});
 	</script>
-	
 
 	<script>
 		var myIndex = 0;
@@ -199,6 +203,7 @@
 		  setTimeout(carousel, 9000);    
 		}
 	</script>
+	
 <%@ include file="footer.jspf"%>
 </body>
 </html>

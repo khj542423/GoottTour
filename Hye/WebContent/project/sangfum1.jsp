@@ -70,8 +70,8 @@
 			#eve {width:1200px; height:100px;margin:150px 0px 50px 0px;}
 			#product_list{width:1200px;}
 			#tblist{font-family:"맑은 고딕";font-size:13px;}
-			input[id^=cart]+label{width: 20px;height: 20px;background: url(../image/cart_off.png);}
-			input[id^=cart]:checked+label{background: url(../image/cart_on.png);}
+			input[id^=cart]+label{width: 20px;height: 20px;background: #fff;}
+			input[id^=cart]:checked+label{background-color: red;}
 		</style>
 		<script>
 			var state=0;
