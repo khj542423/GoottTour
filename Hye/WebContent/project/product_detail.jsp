@@ -20,6 +20,80 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="product_detail.css" type="text/css"/>
 <title>상품 상세 페이지</title>
+<style>
+	ul,li{margin:0px;}
+	#revDetailTable *{text-align:left; margin-top:0px;}
+	#revDetailTable table{margin:0px auto 30px auto; background-color:#fff}
+	
+	.circleIco{width:20px; height:20px; border-radius:20px; background-color:#aaa; border:5px solid #ddd; position:absolute; left:170px; z-index:2}
+	.tableLeftMargin{margin-left:30px; margin-bottom:10px;}
+	.tableBar{position:absolute; width:2px; height:213px; background-color:#ddd; z-index:1; left:179px;}
+	.m-tTen{margin-top:20px;}
+	.dayVal{background:#aaa; color:white; font-size:1.1em; font-weight:bold; z-index:2}
+	
+	#revDetailTable table tr:first-child td{border-bottom:0px;}
+	.dayTable td{width:100px; padding:20px; border:1px solid #ccc;}
+	.dayTable td:last-child{width:1000px;}
+	#revDetailTable button:focus { outline:none;}
+	.btStyle {margin-left: 20px; width:15px; height:15px; font-size:15px; border: 0; background:none;}
+	.btStylePlus {margin-left: 20px; width:25px; height:25px; font-size:25px; border: 0; background:none;}
+</style>
+<c:set var="day" value="${2}"/>
+<script>
+	$(function(){
+		var clickYN = true;
+			$("#gg").click(function(){
+				if(clickYN){
+					clickYN = false;
+					$(".OkClose").css("display","none");
+					$(".btnClose").css("visibility","hidden");
+				}else{
+					clickYN = true;
+					$(".OkClose").css("display","block");
+					$(".btnClose").css("visibility","visible");
+				}
+				
+				for(i=1; i<=${day}; i++){
+					$("#"+i+"DayPan tr td .tableBar").height($("#"+i+"DayPan").height()-65);
+				}
+			});
+	});
+	function revDetailInsert()	{
+		//이벤트가 발생한 버튼
+		var targetButton = $(event.target);
+		//이벤트가 발생한 작성 Div
+		var targetDiv = targetButton.parent().parent();
+		//이벤트가 발생한 테이블
+		var targetTable = targetDiv.parent().parent().parent();
+		var inputData = targetButton.siblings("input").val();
+		console.log(inputData);
+		
+		if(inputData!=null && inputData!=""){
+			var txt =  "<div><div class='circleIco'></div><div class='tableLeftMargin'>";
+			txt+= "<strong>"+inputData+"</strong><button class='btStyle btnClose' onclick='revDetailDelete()'>x</button>";
+			var revContent = targetButton.siblings("textarea").val().replace(/\n/g,"<br/>");
+			txt+= "<div class='m-tTen'>"+revContent+"</div>";
+			txt+= "</div>"
+			
+			targetButton.siblings().val("");
+			
+			$(txt).insertBefore(targetDiv);
+			
+			targetTable.children().children().children(".tableBar").height(targetTable.height()-65);
+		}
+	}
+	function revDetailDelete() {
+		//이벤트가 발생한 버튼
+		var targetButton = $(event.target);
+		//이벤트가 발생한 작성 Div
+		var targetDiv = targetButton.parent().parent();
+		//이벤트가 발생한 테이블
+		var targetTable = targetDiv.parent().parent().parent();
+		
+		var targetDiv = event.target.parentElement.parentElement.remove();
+		targetTable.children().children().children(".tableBar").height(targetTable.height()-65);
+	}
+</script>
 </head>
 
 
@@ -160,8 +234,29 @@
 		  <!-- Tab panes -->
 		  <div class="tab-content">
 		    <div id="home" class="tab-pane active"><br>
-		      <h3>Home</h3>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		      <div id="revDetailTable" style="position:relative">
+				<c:forEach var="dayFor" begin="1" end="${day}">
+					<table id="${dayFor}DayPan" class="dayTable">
+						<tr>
+							<td colspan="1" class="dayVal">&nbsp;&nbsp;${dayFor}일차</td>
+							<td><div>2019년 11월 26일 화요일</div></td>
+						</tr>
+						<tr><td colspan="2" style="padding:0px; border:0px; height:0px;"><div class="tableBar"></div></td></tr>
+						<tr>
+							<td colspan="2">
+								<div class="OkClose">
+									<div class="circleIco"></div><!-- 동그라미 아이콘 -->
+									<div class="tableLeftMargin" style="float:left">
+										<input type="text" placeholder="일정제목" style="width:600px; margin-bottom:20px"/><br/>
+										<textarea cols="100" rows="5" placeholder="일정내용" style="resize:none"></textarea><button class="btStylePlus btnClose" onclick="revDetailInsert()">+</button>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</c:forEach>
+				</div>
+				<button id="gg">클릭~</button>
 		    </div>
 		    <div id="menu1" class="tab-pane fade"><br>
 		      <h3>Menu 1</h3>
@@ -175,6 +270,31 @@
 	</div>
 	
 	<!-- 탭누르면 나오는 div menu1, menu2, menu3 끝 -->
+	
+	
+		
+		<!-- 상품문의  -->
+			
+		<div class="que_div" style="border: 4px solid gray;">
+			<h3>상품문의</h3>
+				<div class="reply-div" style="text-align: left; border:3px solid red"> 
+					<!-- 댓글 달기  -->
+						<form method="post"	 id="replyFrm" onsubmit="return false" >
+							<textarea class="comment" name="coment" id="coment"></textarea>
+							<input type="submit" value="등록"/>
+							<input type="hidden" name="num"	 value="${vo.num }" /> <!-- 현재글 글번호  -->
+						</form>
+			
+					<c:if test="${userId == vo.userId }">
+						<a href="/WebMVC/board/edit.do?pageNum=${vo.pageNum }&num=${vo.num}">수정</a>
+						<a href="javascript:delChk()">삭제</a>
+					</c:if>
+					<hr/>
+					
+			</div>
+		
+		</div>
+			<!-- 상품문의 끝  -->
 	
 </div>
 
@@ -203,7 +323,6 @@
 		  setTimeout(carousel, 9000);    
 		}
 	</script>
-	
-<%@ include file="footer.jspf"%>
+<%@ include file="footer.jspf"%>	
 </body>
 </html>
