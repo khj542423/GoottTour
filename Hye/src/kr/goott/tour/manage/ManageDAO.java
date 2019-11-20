@@ -12,7 +12,7 @@ public class ManageDAO extends DBConn implements ManageInterface{
 		List<ManageVO> lst = new ArrayList<ManageVO>();
 		try {
 			dbConn();
-			String sql = "select userName, to_char(regDate, 'yyyy-mm-dd') as regDate, TRUNC(MONTHS_BETWEEN(TRUNC(SYSDATE), BIRTHDAY) / 12 )+1 as age, memType, userId, tel, addr, email, num from gt_register";
+			String sql = "select userName, to_char(regDate, 'yyyy-mm-dd') as regDate, TRUNC(MONTHS_BETWEEN(TRUNC(SYSDATE), BIRTHDAY) / 12 )+1 as age, memType, userId, tel, addr, email, num from gt_register order by userId";
 			pstmt = conn.prepareStatement(sql);
 			rs= pstmt.executeQuery();
 			
@@ -43,5 +43,23 @@ public class ManageDAO extends DBConn implements ManageInterface{
 		
 		return lst;
 	}
+
+	@Override
+	public int memUpdate(ManageVO vo) {
+		int cnt=0;
+		try {
+			dbConn();
+			String sql = "update gt_register set memType=? where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getMemType());
+			pstmt.setInt(2, vo.getNum());
+			
+			cnt = pstmt.executeUpdate();
+		}catch(Exception e) {e.printStackTrace();}
+		finally {dbClose();}
+		
+		return cnt;
+	}
+	
 	
 }

@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface ManageInterface {
 	public List<ManageVO> selectMem();
+	public int memUpdate(ManageVO vo);
 }

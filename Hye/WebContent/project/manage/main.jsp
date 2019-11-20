@@ -21,7 +21,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-
+  <link rel='stylesheet' href='https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css'>
 </head>
 <body id="page-top">
 
@@ -33,20 +33,8 @@
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="검색..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
     <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
+    <!-- <ul class="navbar-nav ml-auto ml-md-0" style='margin-left: auto !important;'>
       <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-bell fa-fw"></i>
@@ -81,7 +69,7 @@
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
         </div>
       </li>
-    </ul>
+    </ul> -->
 
   </nav>
 
@@ -90,7 +78,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="main.jsp">
+        <a class="nav-link" href="<%=request.getContextPath()%>/project/manage/main.jsp">
           <i class="fas fa-fw fa-home"></i>
           <span>홈</span>
         </a>
@@ -99,6 +87,11 @@
         <a class="nav-link" href="<%=request.getContextPath()%>/project/manage/tables.do">
           <i class="fas fa-fw fa-table"></i>
           <span>회원관리</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+          <i class="fas fa-fw fa-user-circle"></i>
+          <span>로그아웃</span></a>
       </li>
     </ul>
 
@@ -109,7 +102,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">홈</a>
+            <a href="<%=request.getContextPath()%>/project/manage/main.jsp">홈</a>
           </li>
           <li class="breadcrumb-item active">Overview</li>
         </ol>
@@ -170,121 +163,19 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-          	회원 목록</div>
+            회원목록</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>이름</th>
-                    <th>회원등록일</th>
-                    <th>나이</th>
-                    <th>예약 수</th>
-                    <th>장바구니 수</th>
-                    <th>탈퇴</th>
+                  	<th>회원권한</th>
+                    <th>회원수</th>
                   </tr>
                 </thead>
-                <tfoot>
-                  <tr>
-                    <th>이름</th>
-                    <th>회원등록일</th>
-                    <th>나이</th>
-                    <th>예약 수</th>
-                    <th>장바구니 수</th>
-                    <th>탈퇴</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
-                  <tr>
-                    <td>박해영</td>
-                    <td>2015/06/10</td>
-                    <td>24</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>
-						<button class="btn btn-secondary btn-block" type="button" data-dismiss="modal">회원탈퇴</button>
-					</td>
-                  </tr>
+                <tbody id="memList">
+                    <td>dfa</td>
+                    <td>afd</td>
                 </tbody>
               </table>
             </div>
@@ -328,7 +219,7 @@
         <div class="modal-body">"Logout"버튼을 누르면 로그아웃 됩니다.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="<%=request.getContextPath()%>/project/register/logout.do">Logout</a>
         </div>
       </div>
     </div>
@@ -350,8 +241,13 @@
   <script src="js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
-
+  <script src='https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js'></script>
+  <script>
+   $(document).ready(function() {
+	  $('#dataTable').DataTable({
+			  'fixedHeader': true
+	  });
+	});
+</script>
 </body>
 </html>

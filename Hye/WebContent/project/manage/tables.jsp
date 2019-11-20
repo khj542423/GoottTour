@@ -21,32 +21,35 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <script>
+	function changeType(num, txt) {
+		if(confirm("변경하시겠습니까?")) {
+			$.ajax({
+				url : "/Hye/project/manage/typeChange.do",
+				data : "num=" + num + "&memType=" + txt,
+				success : function(result) {
+					$("#memList").html(result);
+				}
+			});
+		}
+	}
+  </script>
 </head>
 <body id="page-top">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">GOOTTOUR관리</a>
+    <a class="navbar-brand mr-1" href="main.jsp">GOOTTOUR관리</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="검색..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
     <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
+    <!-- <ul class="navbar-nav ml-auto ml-md-0" style='margin-left: auto !important;'>
       <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-bell fa-fw"></i>
@@ -81,7 +84,7 @@
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
         </div>
       </li>
-    </ul>
+    </ul> -->
 
   </nav>
 
@@ -90,15 +93,20 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="main.jsp">
+        <a class="nav-link" href="<%=request.getContextPath()%>/project/manage/main.jsp">
           <i class="fas fa-fw fa-home"></i>
           <span>홈</span>
         </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="tables.jsp">
+        <a class="nav-link" href="<%=request.getContextPath()%>/project/manage/tables.do">
           <i class="fas fa-fw fa-table"></i>
           <span>회원관리</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+          <i class="fas fa-fw fa-user-circle"></i>
+          <span>로그아웃</span></a>
       </li>
     </ul>
 
@@ -136,43 +144,30 @@
                     <th>권한변경</th>
                   </tr>
                 </thead>
-                <tfoot>
-                  <tr>
-                    <th>아이디</th>
-                    <th>이름</th>
-                    <th>회원등록일</th>
-                    <th>전화번호</th>
-                    <th>주소</th>
-                    <th>이메일</th>
-                    <th>나이</th>
-                    <th>예약 수</th>
-                    <th>권한</th>
-                    <th>권한변경</th>
-                  </tr>
-                </tfoot>
-                <tbody>
+                <tfoot></tfoot>
+                <tbody id="memList">
                   <c:forEach var="l" items="${lst }">
-	                  <tr class="trtr" id="user${l.num }">
-	                    <td id="userId${l.num }">${l.userId }</td>
-	                    <td id="userName${l.num }">${l.userName }</td>
-	                    <td id="regDate${l.num }">${l.regDate }</td>
-	                    <td id="tel${l.num }">${l.tel }</td>
-	                    <td id="addr${l.num }">${l.addr }</td>
-	                    <td id="email${l.num }">${l.email }</td>
-	                    <td id="age${l.num }">${l.age }</td>
-	                    <td id="resCnt${l.num }">${l.resCnt }</td>
-	                    <td id="memType${l.num }">${l.memType }</td>
+	                  <tr id="user${l.num }">
+	                    <td>${l.userId }</td>
+	                    <td>${l.userName }</td>
+	                    <td>${l.regDate }</td>
+	                    <td>${l.age }</td>
+	                    <td>${l.tel }</td>
+	                    <td>${l.addr }</td>
+	                    <td>${l.email }</td>
+	                    <td>${l.resCnt }</td>
+	                    <td>${l.memType }</td>
 	                    <td>
 							<c:if test="${l.memType=='관리자'}">
 								<input type="button" id="pub" name="pub" style="width:100px;" class="checkBtn btn btn-light" value="일반" onclick="changeType(${l.num}, '일반')"/>
-								<input type="button" id="emp" name="emp" style="width:100px;" class="checkBtn btn btn-danger" value="직원" onclick="changeType(${l.num}, '직원')"/>
+								<input type="button" id="emp" name="emp" style="width:100px;" class="checkBtn btn btn-light" value="직원" onclick="changeType(${l.num}, '직원')"/>
 							</c:if>
 							<c:if test="${l.memType=='일반'}">
-								<input type="button" id="man" name="man" style="width:100px;" class="checkBtn btn btn-warning" value="관리자" onclick="changeType(${l.num}, '관리자')"/>
-								<input type="button" id="emp" name="emp" style="width:100px;" class="checkBtn btn btn-danger" value="직원" onclick="changeType(${l.num}, '직원')"/>
+								<input type="button" id="man" name="man" style="width:100px;" class="checkBtn btn btn-light" value="관리자" onclick="changeType(${l.num}, '관리자')"/>
+								<input type="button" id="emp" name="emp" style="width:100px;" class="checkBtn btn btn-light" value="직원" onclick="changeType(${l.num}, '직원')"/>
 							</c:if>
 							<c:if test="${l.memType=='직원'}">
-								<input type="button" id="man" name="man" style="width:100px;" class="checkBtn btn btn-warning" value="관리자" onclick="changeType(${l.num}, '관리자')"/>
+								<input type="button" id="man" name="man" style="width:100px;" class="checkBtn btn btn-light" value="관리자" onclick="changeType(${l.num}, '관리자')"/>
 								<input type="button" id="pub" name="pub" style="width:100px;" class="checkBtn btn btn-light" value="일반" onclick="changeType(${l.num}, '일반')"/>
 							</c:if>
 						</td>
@@ -183,34 +178,6 @@
               </table>
             </div>
           </div>
-          <script>
-            /* $(function() {
-				$(document).on('click', '#pub', function() {
-					alert($(this).attr("value") + $());
-				});
-			}); */
-			/* $(function() {
-				$(".checkBtn").click(function() {
-					var tdArr = new Array();
-					var checkBtn = $(this);
-					
-					var tr=  checkBtn.parent().parent();
-					var td = tr.children();
-					var userid = td.eq(0).text();
-					
-					console.log("아이뒤: "+$(".trtr td:first").text() + ", "+$(this).attr("value"));
-				});
-			}); */
-			function changeType(num, txt) {
-				$.ajax({
-					url : "/Hye/project/manage/typeChange.do",
-					data : "num=" + num + "&memType=" + txt,
-					success : function(result) {
-						$("#").html(result);
-					}
-				});
-			}
-		  </script>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
       </div>
@@ -249,7 +216,7 @@
         <div class="modal-body">"Logout"버튼을 누르면 로그아웃 됩니다.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="<%=request.getContextPath()%>/project/register/logout.do">Logout</a>
         </div>
       </div>
     </div>
@@ -270,7 +237,13 @@
   <script src="js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
-
+  <script src='https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js'></script>
+  <script>
+   $(document).ready(function() {
+	  $('#dataTable').DataTable({
+			  'fixedHeader': true
+	  });
+	});
+</script>
 </body>
 </html>
