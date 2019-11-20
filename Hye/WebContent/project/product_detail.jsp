@@ -176,6 +176,29 @@
 	
 	<!-- 탭누르면 나오는 div menu1, menu2, menu3 끝 -->
 	
+	
+		
+		<!-- 상품문의  -->
+			
+		<div class="que_div" style="border: 4px solid gray;">
+			<h3>상품문의</h3>
+			<div class="reply-div" style="text-align: left; border:3px solid red"> 
+					<!-- 댓글 달기  -->
+					<form method="post"	 id="replyFrm" onsubmit="return false" >
+							<textarea class="comment" name="coment" id="coment"></textarea>
+							<input type="submit" value="등록"/>
+							<input type="hidden" name="num"	 value="${vo.num }" /> <!-- 현재글 글번호  -->
+					</form>
+			
+					<c:if test="${userId == vo.userId }">
+						<a href="/WebMVC/board/edit.do?pageNum=${vo.pageNum }&num=${vo.num}">수정</a>
+						<a href="javascript:delChk()">삭제</a>
+					</c:if>
+					<hr/>
+			</div>
+		</div>
+			<!-- 상품문의 끝  -->
+	
 </div>
 
 	<script>
@@ -203,7 +226,6 @@
 		  setTimeout(carousel, 9000);    
 		}
 	</script>
-	
-<%@ include file="footer.jspf"%>
+<%@ include file="footer.jspf"%>	
 </body>
 </html>
