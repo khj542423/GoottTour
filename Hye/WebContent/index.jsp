@@ -18,8 +18,8 @@ index.jsp<%@ page language="java" contentType="text/html; charset=UTF-8" pageEnc
 		function setImage(){
 			
 			var imglist = '';
-			var url = ['project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp',
-						'project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp','project/sangfum1.jsp']
+			var url = ['project/sangfum.do','project/sangfum.do','project/sangfum.do','project/sangfum.do','project/sangfum.do',
+						'project/sangfum.do','project/sangfum.do','project/sangfum.do','project/sangfum.do']
 			for(i=1; i<=9; i++){
 				imglist += '<div><a href="'+url[i-1]+'"><img src="<%=request.getContextPath()%>/image/main_img_banner_';
 				

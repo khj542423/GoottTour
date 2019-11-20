@@ -6,6 +6,7 @@
 <%-- <%@page import="org.json.simple.*" %> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%
 	String pageName = "상품정보";
 	String pageSideName = "여행 상품 정보";
@@ -84,20 +85,7 @@
 					state=0;
 				}
 			}
-			function setCal(){
-		 		var List="";
-				for(i=1; i<=12; i++){
-					List += "<div>"+i+"월</div>";
-				}
-				document.getElementById("allMonth").innerHTML = List;
-				
-				/*List="";
-				for(i=1; i<=12; i++){
-					List += "<div id='"+ i +"' style='clear:left;width:750px;height:430px;border:1px solid blue;'>"+i+"월</div>";
-				}
-				$("#month").append($(List));*/
-			}
-			
+
 			function imageMove(){
 				$("#allMonth div").first().appendTo("#allMonth");
 				//$("#allMonth div:first").animate({marginLeft:"100px"}, 1000, 'easeOutBounce');
@@ -151,7 +139,7 @@
 			});			
 		</script>
 	</head>
-	<body onload="setCal();">
+	<body>
 		<%@ include file="header.jspf"%>
 		<section>
 			<%@ include file="sidebar.jspf"%>
@@ -299,20 +287,20 @@
 			    
 			    //데이터 등록
 			    function setData(){
-			        jsonData = 
+			    	jsonData = 
 			        {
 			            "2019":{
 			                "07":{
-			                    "17":"제헌절"
+			                    "17":"500,000~"
 			                }
 			                ,"08":{
-			                    "7":"칠석"
-			                    ,"15":"광복절"
-			                    ,"23":"처서"
+			                    "7":"400,000~"
+			                    ,"15":"500,000~"
+			                    ,"23":"400,000~"
 			                }
 			                ,"09":{
-			                    "13":"추석"
-			                    ,"23":"추분"
+			                    "13":"500,000~"
+			                    ,"23":"450,000~"
 			                }
 			                ,"11":{
 			                	"21" : "450,000~"
@@ -340,6 +328,28 @@
 			                }
 			            }
 			        }
+			    	var dateMatch = null;
+			        var y=null; var m=null; var d=null;
+			    	for(var i=firstDay.getDay();i<firstDay.getDay()+lastDay.getDate();i++){
+			    		var txt = "";
+			            txt =jsonData[year];
+			            if(txt){
+			                txt = jsonData[year][month];
+			                if(txt){
+			                    txt =  jsonData[year][month][i];
+			                    if(txt) {
+			                    	txt = "<a href='#product_list'>" + jsonData[year][month][i] + "</a>";
+				                    dateMatch = firstDay.getDay() + i -1; 
+				                    $tdSche.eq(dateMatch).html(txt);
+			                    }
+			                }
+			            }
+			    	}
+			    	/*<c:forEach items="${stday}" var="lst">
+			    	<c:set var="str" value="${stday.stDate}"/>
+			    		var y = str.substr(0,4);
+			    		alert(y);
+			    	</c:forEach>*/
 			    }
 			 
 			</script>
@@ -371,7 +381,7 @@
 								<td><span style="color:blue;">11월21일(목) 09:30</span><br>11월24일(일) 19:35</td>
 								<td>가자에어</td>
 								<td>1박2일</td>
-								<td><a href="/Package/Itinerary.aspx?Pnum=58740423&amp;criteo=google" data-idx="0" data-pnum="58740423" target="_blank"> [프리한패키지][호핑+마사지] 보라카이 / 라까멜라 신관 4일</a></td>
+								<td><a href="<%=request.getContextPath() %>/project/product_detail.jsp" target="_blank"> [프리한패키지][호핑+마사지] 보라카이 / 라까멜라 신관 4일</a></td>
 								<td>450,000</td>
 								<td>예약대기</td>
 								<td><input type="checkbox" id="cart1" style="display:none;"/>
@@ -382,7 +392,7 @@
 								<td><span style="color:blue;">11월21일(목) 10:10</span><br>11월24일(일) 15:35</td>
 								<td>대한항공</td>
 								<td>1박2일</td>
-								<td><a href="/Package/Itinerary.aspx?Pnum=58740423&amp;criteo=google" data-idx="0" data-pnum="58740423" target="_blank"> [프리한패키지][호핑+마사지] 보라카이 / 라까멜라 신관 4일</a></td>
+								<td><a href="<%=request.getContextPath() %>/project/product_detail.jsp" target="_blank"> [프리한패키지][호핑+마사지] 보라카이 / 라까멜라 신관 4일</a></td>
 								<td>630,000</td>
 								<td>예약대기</td>
 								<td><input type="checkbox" id="cart2"style="display:none;"/>
@@ -393,11 +403,11 @@
 								<td><span style="color:blue;">11월21일(금) 14:30</span><br>12월01일(일) 14:10</td>
 								<td>티웨이항공</td>
 								<td>1박2일</td>
-								<td><a href="/Package/Itinerary.aspx?Pnum=58740423&amp;criteo=google" data-idx="0" data-pnum="58740423" target="_blank"> [프리한패키지][호핑+마사지] 보라카이 / 라까멜라 신관 4일</a></td>
+								<td><a href="<%=request.getContextPath() %>/project/product_detail.jsp" target="_blank"> [프리한패키지][호핑+마사지] 보라카이 / 라까멜라 신관 4일</a></td>
 								<td>810,000</td>
 								<td>예약대기</td>
-								<td><input type="checkbox" id="cart2"style="display:none;"/>
-									<label for="cart2"></label>
+								<td><input type="checkbox" id="cart3"style="display:none;"/>
+									<label for="cart3"></label>
 								</td>
 							</tr>
 						</tbody>
